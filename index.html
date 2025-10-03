@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Inas Najah Zhahirah</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'pink-primary': '#ec4899',
+                        'pink-light': '#f9a8d4',
+                        'pink-lighter': '#fce7f3',
+                        'pink-dark': '#db2777',
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #fce7f3 0%, #fbcfe8 50%, #f9a8d4 100%);
+        }
+        
+        .gradient-pink {
+            background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
+        }
+        
+        .nav-blur {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+        }
+        
+        .card-hover {
+            transition: all 0.4s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(236, 72, 153, 0.3);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #ec4899, #db2777);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-divider {
+            height: 4px;
+            width: 80px;
+            background: linear-gradient(to right, #ec4899, #f9a8d4);
+            margin: 0 auto;
+            border-radius: 2px;
+        }
+
+        .skill-icon {
+            transition: all 0.3s ease;
+        }
+
+        .skill-icon:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="gradient-bg">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 nav-blur shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-heart text-pink-primary text-2xl mr-2"></i>
+                        <span class="font-bold text-pink-primary text-xl">Inas Najah</span>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-6">
+                        <a href="#home" class="text-pink-primary hover:text-pink-dark font-medium transition">Home</a>
+                        <a href="#about" class="text-pink-primary hover:text-pink-dark font-medium transition">About</a>
+                        <a href="#education" class="text-pink-primary hover:text-pink-dark font-medium transition">Education</a>
+                        <a href="#experience" class="text-pink-primary hover:text-pink-dark font-medium transition">Experience</a>
+                        <a href="#portfolio" class="text-pink-primary hover:text-pink-dark font-medium transition">Portfolio</a>
+                        <a href="#contact" class="text-pink-primary hover:text-pink-dark font-medium transition">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-pink-primary">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 text-pink-primary font-medium">Home</a>
+                <a href="#about" class="block px-3 py-2 text-pink-primary font-medium">About</a>
+                <a href="#education" class="block px-3 py-2 text-pink-primary font-medium">Education</a>
+                <a href="#experience" class="block px-3 py-2 text-pink-primary font-medium">Experience</a>
+                <a href="#portfolio" class="block px-3 py-2 text-pink-primary font-medium">Portfolio</a>
+                <a href="#contact" class="block px-3 py-2 text-pink-primary font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-28 pb-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center">
+                <div class="flex justify-center mb-8">
+                    <div class="relative">
+                        <div class="w-48 h-48 rounded-full bg-gradient-pink flex items-center justify-center border-4 border-white shadow-2xl">
+                            <i class="fas fa-user text-white text-8xl"></i>
+                        </div>
+                        <div class="absolute -bottom-2 -right-2 gradient-pink rounded-full p-4 shadow-xl">
+                            <i class="fas fa-palette text-white text-2xl"></i>
+                        </div>
+                    </div>
+                </div>
+                <h1 class="text-5xl md:text-6xl font-bold text-gray-800 mb-4">
+                    Hello, I'm <span class="text-gradient">Inas Najah Zhahirah</span>
+                </h1>
+                <p class="text-xl text-gray-700 max-w-2xl mx-auto mb-6 font-medium">
+                    Creative Designer & Full Stack Developer
+                </p>
+                <div class="bg-white rounded-2xl shadow-xl p-8 max-w-3xl mx-auto mb-10">
+                    <p class="text-lg text-gray-600 leading-relaxed">
+                        I'm a creative thinker with a knack for <span class="font-semibold text-pink-primary">graphic design and programming</span>. I specialize in layout design, infographics, social media, and branding, and I'm proficient in web and mobile programming. I'm a quick learner who loves embracing new challenges and thrives in team environments.
+                    </p>
+                </div>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#portfolio" class="gradient-pink hover:opacity-90 text-white px-8 py-4 rounded-full font-semibold transition shadow-lg hover:shadow-2xl flex items-center justify-center gap-2">
+                        <i class="fas fa-briefcase"></i>
+                        View My Portfolio
+                    </a>
+                    <a href="#contact" class="bg-white border-2 border-pink-primary text-pink-primary hover:bg-pink-primary hover:text-white px-8 py-4 rounded-full font-semibold transition shadow-lg flex items-center justify-center gap-2">
+                        <i class="fas fa-envelope"></i>
+                        Contact Me
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold text-pink-primary mb-4">About Me</h2>
+                <div class="section-divider"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="order-2 lg:order-1">
+                    <div class="bg-gradient-to-br from-pink-lighter to-pink-100 p-10 rounded-3xl shadow-2xl">
+                        <h3 class="text-3xl font-bold text-pink-primary mb-6 flex items-center">
+                            <i class="fas fa-user-circle mr-3"></i>
+                            Biography
+                        </h3>
+                        <p class="text-gray-700 mb-6 leading-relaxed text-lg">
+                            I am a student at <span class="font-bold text-pink-primary">Universitas Airlangga</span> majoring in D-IV Informatics Engineering. As a creative professional, I combine my skills in graphic design with programming expertise to create innovative digital solutions.
+                        </p>
+                        
+                        <h4 class="text-2xl font-bold text-pink-primary mb-4 flex items-center">
+                            <i class="fas fa-star mr-3"></i>
+                            Interests & Expertise
+                        </h4>
+                        <p class="text-gray-700 mb-6 leading-relaxed">
+                            I specialize in <span class="font-semibold text-pink-dark">layout design, infographics, social media, and branding</span>. On the technical side, I'm proficient in web and mobile programming using Laravel, Flutter, and various modern frameworks. With extensive experience in Canva and Figma, I've achieved professional-level proficiency in design.
+                        </p>
+                        
+                        <h4 class="text-2xl font-bold text-pink-primary mb-4 flex items-center">
+                            <i class="fas fa-users mr-3"></i>
+                            Personality
+                        </h4>
+                        <p class="text-gray-700 mb-8 leading-relaxed">
+                            I'm easy-going, enjoy collaborating with others, and thrive in team environments. I have good time management skills (not a deadliner!) and bring attention to detail along with critical and creative thinking to every project.
+                        </p>
+                        
+                        <div class="bg-pink-primary text-white p-6 rounded-2xl text-center">
+                            <p class="text-2xl font-bold mb-2">OPEN TO NEW COLLABORATIONS</p>
+                            <p class="text-lg">Let's create something amazing together!</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="order-1 lg:order-2">
+                    <div class="relative">
+                        <div class="bg-gradient-pink rounded-3xl shadow-2xl w-full h-96 flex items-center justify-center">
+                            <i class="fas fa-image text-white text-8xl"></i>
+                        </div>
+                        <div class="absolute -bottom-6 -left-6 bg-white p-8 rounded-2xl shadow-2xl border-4 border-pink-lighter">
+                            <div class="text-pink-primary text-center">
+                                <i class="fas fa-award text-4xl mb-2"></i>
+                                <p class="text-sm font-semibold">Certified Junior</p>
+                                <p class="text-sm font-semibold">Web Programmer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20 px-4 sm:px-6 lg:px-8 gradient-bg">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold text-pink-primary mb-4">E D U C A T I O N</h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-2xl p-10 card-hover">
+                <div class="flex items-start mb-6">
+                    <div class="gradient-pink rounded-2xl p-6 mr-6">
+                        <i class="fas fa-graduation-cap text-white text-4xl"></i>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-3xl font-bold text-pink-primary mb-2">Universitas Airlangga, Surabaya</h3>
+                        <p class="text-xl text-pink-dark font-semibold mb-2">D-IV Informatics Engineering</p>
+                        <p class="text-gray-600 text-lg mb-4">2022 - Present</p>
+                        <span class="bg-pink-lighter text-pink-primary px-6 py-2 rounded-full text-sm font-bold inline-block">Active Student</span>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-r from-pink-lighter to-pink-100 rounded-2xl p-8 mt-6">
+                    <h4 class="text-2xl font-bold text-pink-primary mb-4">Academic Journey</h4>
+                    <p class="text-gray-700 leading-relaxed">
+                        Throughout my studies at Universitas Airlangga, I've been actively involved in various organizations and projects that have shaped my skills in both design and programming. I've contributed to faculty branding, organized major events, and developed multiple web and mobile applications.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold text-pink-primary mb-4">S K I L L S</h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                <!-- Laravel -->
+                <div class="skill-icon bg-gradient-to-br from-pink-lighter to-white rounded-2xl p-8 shadow-lg text-center card-hover">
+                    <i class="fab fa-laravel text-6xl text-red-600 mb-3"></i>
+                    <h3 class="font-bold text-gray-800 text-lg">Laravel</h3>
+                    <p class="text-sm text-pink-primary font-medium mt-2">Intermediate</p>
+                </div>
+                
+                <!-- Flask -->
+                <div class="skill-icon bg-gradient-to-br from-pink-lighter to-white rounded-2xl p-8 shadow-lg text-center card-hover">
+                    <i class="fas fa-flask text-6xl text-gray-800 mb-3"></i>
+                    <h3 class="font-bold text-gray-800 text-lg">Flask</h3>
+                    <p class="text-sm text-pink-primary font-medium mt-2">Intermediate</p>
+                </div>
+                
+                <!-- Bootstrap -->
+                <div class="skill-icon bg-gradient-to-br from-pink-lighter to-white rounded-2xl p-8 shadow-lg text-center card-hover">
+                    <i class="fab fa-bootstrap text-6xl text-purple-600 mb-3"></i>
+                    <h3 class="font-bold text-gray-800 text-lg">Bootstrap</h3>
+                    <p class="text-sm text-pink-primary font-medium mt-2">Intermediate</p>
+                </div>
+                
+                <!-- Flutter -->
+                <div class="skill-icon bg-gradient-to-br from-pink-lighter to-white rounded-2xl p-8 shadow-lg text-center card-hover">
+                    <i class="fas fa-mobile-alt text-6xl text-blue-500 mb-3"></i>
+                    <h3 class="font-bold text-gray-800 text-lg">Flutter</h3>
+                    <p class="text-sm text-pink-primary font-medium mt-2">Beginner</p>
+                </div>
+                
+                <!-- Streamlit -->
+                <div class="skill-icon bg-gradient-to-br from-pink-lighter to-white rounded-2xl p-8 shadow-lg text-center card-hover">
+                    <i class="fas fa-chart-line text-6xl text-pink-primary mb-3"></i>
+                    <h3 class="font-bold text-gray-800 text-lg">Streamlit</h3>
+                    <p class="text-sm text-pink-primary font-medium mt-2">Beginner</p>
+                </div>
+                
+                <!-- Golang -->
+                <div class="skill-icon bg-gradient-to-br from-pink-lighter to-white rounded-2xl p-8 shadow-lg text-center card-hover">
+                    <i class="fab fa-golang text-6xl text-cyan-500 mb-3"></i>
+                    <h3 class="font-bold text-gray-800 text-lg">Golang</h3>
+                    <p class="text-sm text-pink-primary font-medium mt-2">Beginner</p>
+                </div>
+                
+                <!-- MySQL -->
+                <div class="skill-icon bg-gradient-to-br from-pink-lighter to-white rounded-2xl p-8 shadow-lg text-center card-hover">
+                    <i class="fas fa-database text-6xl text-blue-600 mb-3"></i>
+                    <h3 class="font-bold text-gray-800 text-lg">MySQL</h3>
+                    <p class="text-sm text-pink-primary font-medium mt-2">Intermediate</p>
+                </div>
+                
+                <!-- MongoDB -->
+                <div class="skill-icon bg-gradient-to-br from-pink-lighter to-white rounded-2xl p-8 shadow-lg text-center card-hover">
+                    <i class="fas fa-leaf text-6xl text-green-600 mb-3"></i>
+                    <h3 class="font-bold text-gray-800 text-lg">MongoDB</h3>
+                    <p class="text-sm text-pink-primary font-medium mt-2">Beginner</p>
+                </div>
+                
+                <!-- Figma -->
+                <div class="skill-icon bg-gradient-to-br from-pink-lighter to-white rounded-2xl p-8 shadow-lg text-center card-hover">
+                    <i class="fab fa-figma text-6xl text-pink-primary mb-3"></i>
+                    <h3 class="font-bold text-gray-800 text-lg">Figma</h3>
+                    <p class="text-sm text-pink-primary font-medium mt-2">Intermediate</p>
+                </div>
+                
+                <!-- Canva -->
+                <div class="skill-icon bg-gradient-to-br from-pink-lighter to-white rounded-2xl p-8 shadow-lg text-center card-hover">
+                    <i class="fas fa-palette text-6xl text-pink-dark mb-3"></i>
+                    <h3 class="font-bold text-gray-800 text-lg">Canva</h3>
+                    <p class="text-sm text-pink-primary font-medium mt-2">Proficient</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 px-4 sm:px-6 lg:px-8 gradient-bg">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold text-pink-primary mb-4">E X P E R I E N C E</h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <!-- Organization -->
+            <div class="mb-16">
+                <h3 class="text-3xl font-bold text-pink-primary mb-8 flex items-center justify-center">
+                    <i class="fas fa-users mr-3"></i>
+                    Organization
+                </h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-2xl shadow-xl p-8 card-hover">
+                        <div class="flex items-start mb-4">
+                            <div class="bg-pink-lighter rounded-full p-4 mr-4">
+                                <i class="fas fa-palette text-pink-primary text-2xl"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-2xl font-bold text-gray-800 mb-2">SKI Fakultas Vokasi Unair</h4>
+                                <p class="text-pink-primary font-semibold text-lg mb-2">Creative Design Staff</p>
+                                <p class="text-gray-600 mb-3">June 2023 - March 2024</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed">Responsible for creating visual designs and supporting creative initiatives for faculty events and activities.</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl shadow-xl p-8 card-hover">
+                        <div class="flex items-start mb-4">
+                            <div class="bg-pink-lighter rounded-full p-4 mr-4">
+                                <i class="fas fa-camera text-pink-primary text-2xl"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-2xl font-bold text-gray-800 mb-2">Dekan Cup - BEM Fakultas Vokasi</h4>
+                                <p class="text-pink-primary font-semibold text-lg mb-2">PDD Division</p>
+                                <p class="text-gray-600 mb-3">June 2023 - Sept 2023</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed">Handled Publication, Documentation, and Design for the Dekan Cup competition, including creating booklets and guidebooks.</p>
+                    </div>
+
+                    <div class="bg-white rounded-2xl shadow-xl p-8 card-hover">
+                        <div class="flex items-start mb-4">
+                            <div class="bg-pink-lighter rounded-full p-4 mr-4">
+                                <i class="fas fa-hand-holding-heart text-pink-primary text-2xl"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-2xl font-bold text-gray-800 mb-2">HIMA D-IV Informatics Engineering</h4>
+                                <p class="text-pink-primary font-semibold text-lg mb-2">Student Advocacy & Welfare, Treasurer</p>
+                                <p class="text-gray-600 mb-3">May 2023 - Dec 2023, Feb 2024 - Dec 2024</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed">Member of Student Advocacy and Welfare division, managing financial responsibilities and supporting student welfare initiatives.</p>
+                    </div>
+
+                    <div class="bg-white rounded-2xl shadow-xl p-8 card-hover">
+                        <div class="flex items-start mb-4">
+                            <div class="bg-pink-lighter rounded-full p-4 mr-4">
+                                <i class="fas fa-pen-fancy text-pink-primary text-2xl"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-2xl font-bold text-gray-800 mb-2">National Vocational Conference</h4>
+                                <p class="text-pink-primary font-semibold text-lg mb-2">Writer</p>
+                                <p class="text-gray-600 mb-3">September 2024</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed">Contributed as a writer for the National Vocational Conference, creating content and documentation.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Working Experience -->
+            <div>
+                <h3 class="text-3xl font-bold text-pink-primary mb-8 flex items-center justify-center">
+                    <i class="fas fa-briefcase mr-3"></i>
+                    Working Experience
+                </h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-2xl shadow-xl p-8 card-hover">
+                        <div class="flex items-start mb-4">
+                            <div class="bg-pink-lighter rounded-full p-4 mr-4">
+                                <i class="fas fa-paint-brush text-pink-primary text-2xl"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-2xl font-bold text-gray-800 mb-2">Branding Fakultas Vokasi Unair</h4>
+                                <p class="text-pink-primary font-semibold text-lg mb-2">Creative Design Staff</p>
+                                <p class="text-gray-600 mb-3">January 2025 - Present</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed">Contributing to faculty branding through graphic design, creating layouts, infographics, flyers, banners, and other design materials.</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl shadow-xl p-8 card-hover">
+                        <div class="flex items-start mb-4">
+                            <div class="bg-pink-lighter rounded-full p-4 mr-4">
+                                <i class="fas fa-keyboard text-pink-primary text-2xl"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-2xl font-bold text-gray-800 mb-2">DIPP Unair</h4>
+                                <p class="text-pink-primary font-semibold text-lg mb-2">Data Entry Assistant (Freelance)</p>
+                                <p class="text-gray-600 mb-3">January 2024 - February 2024</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed">Worked as a freelance data entry staff for Direktorat Perencanaan dan Pengembangan Universitas Airlangga.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Competence Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold text-pink-primary mb-4">C O M P E T E N C E</h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gradient-to-br from-pink-lighter to-white rounded-3xl shadow-xl p-10 text-center card-hover">
+                    <div class="gradient-pink rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <i class="fas fa-eye text-white text-4xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-pink-primary mb-4">Attention to Detail</h3>
+                    <p class="text-gray-600 leading-relaxed">Meticulous approach to every design and code element</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-pink-lighter to-white rounded-3xl shadow-xl p-10 text-center card-hover">
+                    <div class="gradient-pink rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <i class="fas fa-brain text-white text-4xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-pink-primary mb-4">Critical Thinking</h3>
+                    <p class="text-gray-600 leading-relaxed">Analytical problem-solving and strategic decision-making</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-pink-lighter to-white rounded-3xl shadow-xl p-10 text-center card-hover">
+                    <div class="gradient-pink rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <i class="fas fa-lightbulb text-white text-4xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-pink-primary mb-4">Creative Thinking</h3>
+                    <p class="text-gray-600 leading-relaxed">Innovative solutions and unique design perspectives</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certification Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 gradient-bg">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold text-pink-primary mb-4">C E R T I F I C A T I O N</h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-2xl p-10 card-hover">
+                <div class="flex items-start">
+                    <div class="bg-pink-lighter rounded-full p-6 mr-6 flex-shrink-0">
+                        <i class="fas fa-certificate text-pink-primary text-4xl"></i>
+                    </div>
+                    <div class="flex-1">
+                        <h4 class="text-3xl font-bold text-gray-800 mb-3">Junior Web Programmer</h4>
+                        <p class="text-pink-primary font-semibold text-xl mb-3">LSP (Lembaga Sertifikasi Profesi)</p>
+                        <p class="text-gray-600 text-lg mb-6">June 2024</p>
+                        
+                        <div class="bg-gradient-to-r from-pink-lighter to-pink-100 rounded-2xl p-6">
+                            <h5 class="font-bold text-pink-primary mb-3 text-lg">Competency Coverage:</h5>
+                            <ul class="grid md:grid-cols-2 gap-3 text-gray-700">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-pink-primary mt-1 mr-2"></i>
+                                    <span>Applying data structures</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-pink-primary mt-1 mr-2"></i>
+                                    <span>Implementing UI design</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-pink-primary mt-1 mr-2"></i>
+                                    <span>Installing programming tools</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-pink-primary mt-1 mr-2"></i>
+                                    <span>Writing clean code</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-pink-primary mt-1 mr-2"></i>
+                                    <span>Developing structured programs</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-pink-primary mt-1 mr-2"></i>
+                                    <span>Utilizing libraries & components</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-pink-primary mt-1 mr-2"></i>
+                                    <span>Code documentation</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-pink-primary mt-1 mr-2"></i>
+                                    <span>Debugging & testing</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold text-pink-primary mb-4">P O R T F O L I O</h2>
+                <div class="section-divider mb-6"></div>
+                <p class="text-gray-600 text-lg max-w-3xl mx-auto">A showcase of my technical projects and design works</p>
+            </div>
+
+            <!-- Technical Portfolio -->
+            <div class="mb-16">
+                <h3 class="text-3xl font-bold text-pink-primary mb-8 flex items-center justify-center">
+                    <i class="fas fa-laptop-code mr-3"></i>
+                    Technical Projects (Programming)
+                </h3>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project 1: Dobujack Indonesia -->
+                    <div class="bg-gradient-to-br from-pink-lighter to-white rounded-3xl overflow-hidden shadow-xl card-hover">
+                        <div class="h-48 bg-gradient-pink relative overflow-hidden flex items-center justify-center">
+                            <i class="fas fa-shopping-bag text-white text-6xl"></i>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-2xl font-bold text-gray-800 mb-3">Dobujack Indonesia</h4>
+                            <p class="text-gray-700 mb-4 leading-relaxed">
+                                Men's fashion e-commerce website with modern responsive design, smooth animations, and interactive elements using Bootstrap and jQuery.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-pink-primary text-white px-3 py-1 rounded-full text-xs font-medium">Bootstrap</span>
+                                <span class="bg-pink-primary text-white px-3 py-1 rounded-full text-xs font-medium">jQuery</span>
+                                <span class="bg-pink-primary text-white px-3 py-1 rounded-full text-xs font-medium">Responsive</span>
+                            </div>
+                            <a href="#" class="text-pink-primary hover:text-pink-dark font-semibold flex items-center gap-2">
+                                <i class="fab fa-github"></i>
+                                View Project
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: This Is July -->
+                    <div class="bg-gradient-to-br from-pink-lighter to-white rounded-3xl overflow-hidden shadow-xl card-hover">
+                        <div class="h-48 bg-gradient-pink relative overflow-hidden flex items-center justify-center">
+                            <i class="fas fa-shopping-cart text-white text-6xl"></i>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-2xl font-bold text-gray-800 mb-3">This Is July</h4>
+                            <p class="text-gray-700 mb-4 leading-relaxed">
+                                Women's online shopping platform inspired by This Is April, built with Laravel and MySQL for a robust e-commerce experience.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-pink-primary text-white px-3 py-1 rounded-full text-xs font-medium">Laravel</span>
+                                <span class="bg-pink-primary text-white px-3 py-1 rounded-full text-xs font-medium">MySQL</span>
+                                <span class="bg-pink-primary text-white px-3 py-1 rounded-full text-xs font-medium">E-commerce</span>
+                            </div>
+                            <a href="#" class="text-pink-primary hover:text-pink-dark font-semibold flex items-center gap-2">
+                                <i class="fab fa-github"></i>
+                                View Project
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: CareNest -->
+                    <div class="bg-gradient-to-br from-pink-lighter to-white rounded-3xl overflow-hidden shadow-xl card-hover">
+                        <div class="h-48 bg-gradient-pink relative overflow-hidden flex items-center justify-center">
+                            <i class="fas fa-heartbeat text-white text-6xl"></i>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-2xl font-bold text-gray-800 mb-3">CareNest</h4>
+                            <p class="text-gray-700 mb-4 leading-relaxed">
+                                Posyandu tracking application with dual interfaces (admin & user) designed in Figma, providing digital solution for child healthcare monitoring.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-pink-primary text-white px-3 py-1 rounded-full text-xs font-medium">HTML/CSS</span>
+                                <span class="bg-pink-primary text-white px-3 py-1 rounded-full text-xs font-medium">Figma</span>
+                                <span class="bg-pink-primary text-white px-3 py-1 rounded-full text-xs font-medium">Healthcare</span>
+                            </div>
+                            <a href="#" class="text-pink-primary hover:text-pink-dark font-semibold flex items-center gap-2">
+                                <i class="fab fa-github"></i>
+                                View Project
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 4: HiddenGame -->
+                    <div class="bg-gradient-to-br from-pink-lighter to-white rounded-3xl overflow-hidden shadow-xl card-hover">
+                        <div class="h-48 bg-gradient-pink relative overflow-hidden flex items-center justify-center">
+                            <i class="fas fa-brain text-white text-6xl"></i>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-2xl font-bold text-gray-800 mb-3">HiddenGame</h4>
+                            <p class="text-gray-700 mb-4 leading-relaxed">
+                                AI-powered customer satisfaction website using Forward Chaining method. Fully responsive Flask application for analyzing user feedback.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-pink-primary text-white px-3 py-1 rounded-full text-xs font-medium">Flask</span>
+                                <span class="bg-pink-primary text-white px-3 py-1 rounded-full text-xs font-medium">AI</span>
+                                <span class="bg-pink-primary text-white px-3 py-1 rounded-full text-xs font-medium">Responsive</span>
+                            </div>
+                            <a href="#" class="text-pink-primary hover:text-pink-dark font-semibold flex items-center gap-2">
+                                <i class="fab fa-github"></i>
+                                View Project
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 5: Oemah Ibu -->
+                    <div class="bg-gradient-to-br from-pink-lighter to-white rounded-3xl overflow-hidden shadow-xl card-hover">
+                        <div class="h-48 bg-gradient-pink relative overflow-hidden flex items-center justify-center">
+                            <i class="fas fa-utensils text-white text-6xl"></i>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-2xl font-bold text-gray-800 mb-3">Oemah Ibu</h4>
+                            <p class="text-gray-700 mb-4 leading-relaxed">
+                                Mobile app showcasing diverse menu with Figma UI design, Flutter framework, and CodeIgniter 4 API for browsing and filtering dishes.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-pink-primary text-white px-3 py-1 rounded-full text-xs font-medium">Flutter</span>
+                                <span class="bg-pink-primary text-white px-3 py-1 rounded-full text-xs font-medium">Dart</span>
+                                <span class="bg-pink-primary text-white px-3 py-1 rounded-full text-xs font-medium">API</span>
+                            </div>
+                            <a href="#" class="text-pink-primary hover:text-pink-dark font-semibold flex items-center gap-2">
+                                <i class="fab fa-github"></i>
+                                View Project
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 6: Arcadia -->
+                    <div class="bg-gradient-to-br from-pink-lighter to-white rounded-3xl overflow-hidden shadow-xl card-hover">
+                        <div class="h-48 bg-gradient-pink relative overflow-hidden flex items-center justify-center">
+                            <i class="fas fa-book text-white text-6xl"></i>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-2xl font-bold text-gray-800 mb-3">Arcadia</h4>
+                            <p class="text-gray-700 mb-4 leading-relaxed">
+                                Library book lending website with efficient management system using Laravel and MySQL, designed in Figma for optimal user experience.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-pink-primary text-white px-3 py-1 rounded-full text-xs font-medium">Laravel</span>
+                                <span class="bg-pink-primary text-white px-3 py-1 rounded-full text-xs font-medium">MySQL</span>
+                                <span class="bg-pink-primary text-white px-3 py-1 rounded-full text-xs font-medium">Figma</span>
+                            </div>
+                            <a href="#" class="text-pink-primary hover:text-pink-dark font-semibold flex items-center gap-2">
+                                <i class="fab fa-github"></i>
+                                View Project
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Design Portfolio -->
+            <div>
+                <h3 class="text-3xl font-bold text-pink-primary mb-8 flex items-center justify-center">
+                    <i class="fas fa-palette mr-3"></i>
+                    Design Projects
+                </h3>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Design 1: Dekan Cup Vokasi -->
+                    <div class="bg-gradient-to-br from-pink-lighter to-white rounded-3xl overflow-hidden shadow-xl card-hover">
+                        <div class="h-48 bg-gradient-to-br from-pink-300 to-purple-300 relative overflow-hidden flex items-center justify-center">
+                            <i class="fas fa-book-open text-white text-6xl"></i>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-2xl font-bold text-gray-800 mb-3">Dekan Cup Vokasi</h4>
+                            <p class="text-gray-700 mb-4 leading-relaxed">
+                                Competition booklet and guidebook design with clear, well-structured information for participants created using Canva.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-purple-200 text-purple-700 px-3 py-1 rounded-full text-xs font-medium">Canva</span>
+                                <span class="bg-purple-200 text-purple-700 px-3 py-1 rounded-full text-xs font-medium">Layout Design</span>
+                                <span class="bg-purple-200 text-purple-700 px-3 py-1 rounded-full text-xs font-medium">Print</span>
+                            </div>
+                            <a href="#" class="text-pink-primary hover:text-pink-dark font-semibold flex items-center gap-2">
+                                <i class="fas fa-eye"></i>
+                                View Design
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Design 2: Branding Vokasi -->
+                    <div class="bg-gradient-to-br from-pink-lighter to-white rounded-3xl overflow-hidden shadow-xl card-hover">
+                        <div class="h-48 bg-gradient-to-br from-pink-300 to-purple-300 relative overflow-hidden flex items-center justify-center">
+                            <i class="fas fa-bullhorn text-white text-6xl"></i>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-2xl font-bold text-gray-800 mb-3">Branding Vokasi</h4>
+                            <p class="text-gray-700 mb-4 leading-relaxed">
+                                Faculty branding materials including layouts, infographics, flyers, banners with professional-level proficiency in Canva.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-purple-200 text-purple-700 px-3 py-1 rounded-full text-xs font-medium">Canva</span>
+                                <span class="bg-purple-200 text-purple-700 px-3 py-1 rounded-full text-xs font-medium">Branding</span>
+                                <span class="bg-purple-200 text-purple-700 px-3 py-1 rounded-full text-xs font-medium">Graphics</span>
+                            </div>
+                            <a href="#" class="text-pink-primary hover:text-pink-dark font-semibold flex items-center gap-2">
+                                <i class="fas fa-eye"></i>
+                                View Design
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Design 3: Pujasera App -->
+                    <div class="bg-gradient-to-br from-pink-lighter to-white rounded-3xl overflow-hidden shadow-xl card-hover">
+                        <div class="h-48 bg-gradient-to-br from-pink-300 to-purple-300 relative overflow-hidden flex items-center justify-center">
+                            <i class="fas fa-mobile-alt text-white text-6xl"></i>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-2xl font-bold text-gray-800 mb-3">Pujasera App</h4>
+                            <p class="text-gray-700 mb-4 leading-relaxed">
+                                Food court ordering application UI/UX design with intuitive interface created in Figma.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-purple-200 text-purple-700 px-3 py-1 rounded-full text-xs font-medium">Figma</span>
+                                <span class="bg-purple-200 text-purple-700 px-3 py-1 rounded-full text-xs font-medium">UI/UX</span>
+                                <span class="bg-purple-200 text-purple-700 px-3 py-1 rounded-full text-xs font-medium">Mobile</span>
+                            </div>
+                            <a href="#" class="text-pink-primary hover:text-pink-dark font-semibold flex items-center gap-2">
+                                <i class="fas fa-eye"></i>
+                                View Design
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Design 4: E-Trashure -->
+                    <div class="bg-gradient-to-br from-pink-lighter to-white rounded-3xl overflow-hidden shadow-xl card-hover">
+                        <div class="h-48 bg-gradient-to-br from-pink-300 to-purple-300 relative overflow-hidden flex items-center justify-center">
+                            <i class="fas fa-recycle text-white text-6xl"></i>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-2xl font-bold text-gray-800 mb-3">E-Trashure</h4>
+                            <p class="text-gray-700 mb-4 leading-relaxed">
+                                Waste bank application design promoting environmental awareness through digital waste management.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-purple-200 text-purple-700 px-3 py-1 rounded-full text-xs font-medium">Figma</span>
+                                <span class="bg-purple-200 text-purple-700 px-3 py-1 rounded-full text-xs font-medium">UI/UX</span>
+                                <span class="bg-purple-200 text-purple-700 px-3 py-1 rounded-full text-xs font-medium">Eco</span>
+                            </div>
+                            <a href="#" class="text-pink-primary hover:text-pink-dark font-semibold flex items-center gap-2">
+                                <i class="fas fa-eye"></i>
+                                View Design
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Design 5: Parkopedia -->
+                    <div class="bg-gradient-to-br from-pink-lighter to-white rounded-3xl overflow-hidden shadow-xl card-hover">
+                        <div class="h-48 bg-gradient-to-br from-pink-300 to-purple-300 relative overflow-hidden flex items-center justify-center">
+                            <i class="fas fa-parking text-white text-6xl"></i>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-2xl font-bold text-gray-800 mb-3">Parkopedia</h4>
+                            <p class="text-gray-700 mb-4 leading-relaxed">
+                                Digital parking application interface design streamlining parking management with modern UI.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-purple-200 text-purple-700 px-3 py-1 rounded-full text-xs font-medium">Figma</span>
+                                <span class="bg-purple-200 text-purple-700 px-3 py-1 rounded-full text-xs font-medium">UI/UX</span>
+                                <span class="bg-purple-200 text-purple-700 px-3 py-1 rounded-full text-xs font-medium">Smart City</span>
+                            </div>
+                            <a href="#" class="text-pink-primary hover:text-pink-dark font-semibold flex items-center gap-2">
+                                <i class="fas fa-eye"></i>
+                                View Design
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Design 6: GreenGlam -->
+                    <div class="bg-gradient-to-br from-pink-lighter to-white rounded-3xl overflow-hidden shadow-xl card-hover">
+                        <div class="h-48 bg-gradient-to-br from-pink-300 to-purple-300 relative overflow-hidden flex items-center justify-center">
+                            <i class="fas fa-leaf text-white text-6xl"></i>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-2xl font-bold text-gray-800 mb-3">GreenGlam</h4>
+                            <p class="text-gray-700 mb-4 leading-relaxed">
+                                Cosmetic recycling application promoting sustainable beauty practices with eco-friendly design approach.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-purple-200 text-purple-700 px-3 py-1 rounded-full text-xs font-medium">Figma</span>
+                                <span class="bg-purple-200 text-purple-700 px-3 py-1 rounded-full text-xs font-medium">UI/UX</span>
+                                <span class="bg-purple-200 text-purple-700 px-3 py-1 rounded-full text-xs font-medium">Sustainability</span>
+                            </div>
+                            <a href="#" class="text-pink-primary hover:text-pink-dark font-semibold flex items-center gap-2">
+                                <i class="fas fa-eye"></i>
+                                View Design
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- View More -->
+            <div class="text-center mt-12">
+                <a href="https://github.com/inassiperboi" target="_blank" class="gradient-pink text-white px-10 py-4 rounded-full font-bold text-lg hover:opacity-90 transition shadow-xl inline-flex items-center gap-3">
+                    <i class="fab fa-github text-2xl"></i>
+                    More Projects on GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 gradient-bg">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold text-pink-primary mb-4">C O N T A C T  M E</h2>
+                <div class="section-divider mb-6"></div>
+                <p class="text-gray-700 text-lg">Let's collaborate and create something amazing together!</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Email -->
+                <div class="bg-white p-8 rounded-3xl shadow-xl card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="gradient-pink rounded-full p-5 mr-5">
+                            <i class="fas fa-envelope text-white text-3xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800 text-xl mb-1">Email Address</h4>
+                            <p class="text-gray-600 text-lg">inasnajahz@gmail.com</p>
+                        </div>
+                    </div>
+                    <a href="mailto:inasnajahz@gmail.com" class="text-pink-primary hover:text-pink-dark font-semibold flex items-center gap-2 mt-4">
+                        <i class="fas fa-paper-plane"></i>
+                        Send Email
+                    </a>
+                </div>
+
+                <!-- Phone -->
+                <div class="bg-white p-8 rounded-3xl shadow-xl card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="gradient-pink rounded-full p-5 mr-5">
+                            <i class="fas fa-phone text-white text-3xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800 text-xl mb-1">Phone Number</h4>
+                            <p class="text-gray-600 text-lg">+62 895 8053 5185</p>
+                        </div>
+                    </div>
+                    <a href="tel:+6289580535185" class="text-pink-primary hover:text-pink-dark font-semibold flex items-center gap-2 mt-4">
+                        <i class="fas fa-phone-alt"></i>
+                        Call Now
+                    </a>
+                </div>
+
+                <!-- GitHub -->
+                <div class="bg-white p-8 rounded-3xl shadow-xl card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="gradient-pink rounded-full p-5 mr-5">
+                            <i class="fab fa-github text-white text-3xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800 text-xl mb-1">GitHub</h4>
+                            <p class="text-gray-600 text-lg">github.com/inassiperboi</p>
+                        </div>
+                    </div>
+                    <a href="https://github.com/inassiperboi" target="_blank" class="text-pink-primary hover:text-pink-dark font-semibold flex items-center gap-2 mt-4">
+                        <i class="fab fa-github"></i>
+                        Visit GitHub Profile
+                    </a>
+                </div>
+
+                <!-- Instagram -->
+                <div class="bg-white p-8 rounded-3xl shadow-xl card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="gradient-pink rounded-full p-5 mr-5">
+                            <i class="fab fa-instagram text-white text-3xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800 text-xl mb-1">Instagram</h4>
+                            <p class="text-gray-600 text-lg">@inas.nais</p>
+                        </div>
+                    </div>
+                    <a href="https://instagram.com/inas.nais" target="_blank" class="text-pink-primary hover:text-pink-dark font-semibold flex items-center gap-2 mt-4">
+                        <i class="fab fa-instagram"></i>
+                        Follow on Instagram
+                    </a>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="mt-12 text-center">
+                <div class="bg-white rounded-3xl shadow-2xl p-12">
+                    <h3 class="text-3xl font-bold text-pink-primary mb-4">Ready to Collaborate?</h3>
+                    <p class="text-gray-600 text-lg mb-8 max-w-2xl mx-auto">
+                        I'm always open to new projects, creative ideas, and opportunities to be part of your visions. Feel free to reach out!
+                    </p>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <a href="mailto:inasnajahz@gmail.com" class="gradient-pink text-white px-8 py-4 rounded-full font-semibold transition shadow-lg hover:opacity-90 flex items-center gap-2">
+                            <i class="fas fa-envelope"></i>
+                            Get in Touch
+                        </a>
+                        <a href="https://github.com/inassiperboi" target="_blank" class="bg-white border-2 border-pink-primary text-pink-primary hover:bg-pink-primary hover:text-white px-8 py-4 rounded-full font-semibold transition shadow-lg flex items-center gap-2">
+                            <i class="fab fa-github"></i>
+                            View My Work
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white py-12 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="flex justify-center mb-6">
+                    <div class="gradient-pink rounded-full p-4">
+                        <i class="fas fa-heart text-white text-3xl"></i>
+                    </div>
+                </div>
+                <h3 class="text-3xl font-bold text-pink-primary mb-2">Inas Najah Zhahirah</h3>
+                <p class="text-gray-600 mb-6 max-w-2xl mx-auto">
+                    Creative Designer & Full Stack Developer | Universitas Airlangga
+                </p>
+                
+                <div class="flex justify-center space-x-4 mb-8">
+                    <a href="mailto:inasnajahz@gmail.com" class="bg-pink-lighter hover:bg-pink-primary text-pink-primary hover:text-white p-4 rounded-full transition shadow-lg">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </a>
+                    <a href="https://github.com/inassiperboi" target="_blank" class="bg-pink-lighter hover:bg-pink-primary text-pink-primary hover:text-white p-4 rounded-full transition shadow-lg">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="https://instagram.com/inas.nais" target="_blank" class="bg-pink-lighter hover:bg-pink-primary text-pink-primary hover:text-white p-4 rounded-full transition shadow-lg">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                    <a href="tel:+6289580535185" class="bg-pink-lighter hover:bg-pink-primary text-pink-primary hover:text-white p-4 rounded-full transition shadow-lg">
+                        <i class="fas fa-phone text-xl"></i>
+                    </a>
+                </div>
+                
+                <div class="border-t-2 border-pink-lighter pt-6">
+                    <p class="text-gray-600">
+                        &copy; 2025 Inas Najah Zhahirah. All rights reserved. | Made with 
+                        <span class="text-pink-primary">♥</span> 
+                        using Tailwind CSS
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu after clicking a link
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-xl');
+            } else {
+                nav.classList.remove('shadow-xl');
+            }
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards
+        document.querySelectorAll('.card-hover').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
