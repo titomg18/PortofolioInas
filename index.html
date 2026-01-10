@@ -73,6 +73,204 @@
         .skill-icon:hover {
             transform: scale(1.1);
         }
+
+        /* Modal Popup Card Styles */
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .popup-card {
+            background: white;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: slideUp 0.4s ease;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .popup-header {
+            background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
+            padding: 25px 30px;
+            border-radius: 20px 20px 0 0;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .popup-close {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 20px;
+        }
+
+        .popup-close:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(90deg);
+        }
+
+        .popup-body {
+            padding: 30px;
+        }
+
+        .certificate-image-container {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            border: 3px solid #fce7f3;
+        }
+
+        .certificate-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+            cursor: zoom-in;
+        }
+
+        .certificate-image.zoomed {
+            transform: scale(1.5);
+            cursor: zoom-out;
+        }
+
+        .zoom-controls {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            display: flex;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 8px 12px;
+            border-radius: 50px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .zoom-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: #ec4899;
+            color: white;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 18px;
+        }
+
+        .zoom-btn:hover {
+            background: #db2777;
+            transform: scale(1.1);
+        }
+
+        .certificate-thumbnail {
+            cursor: pointer;
+            transition: all 0.3s ease;
+            height: 250px;
+            object-fit: contain;
+        }
+
+        .certificate-thumbnail:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(236, 72, 153, 0.2);
+        }
+
+        .certificate-details {
+            background: linear-gradient(135deg, #fce7f3 0%, #f9a8d4 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        .detail-item {
+            display: flex;
+            margin-bottom: 15px;
+            align-items: flex-start;
+        }
+
+        .detail-icon {
+            width: 40px;
+            height: 40px;
+            background: #ec4899;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .detail-content h4 {
+            font-weight: 600;
+            color: #db2777;
+            margin-bottom: 5px;
+        }
+
+        .detail-content p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .competency-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .competency-item {
+            background: white;
+            padding: 12px 15px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .competency-icon {
+            color: #ec4899;
+            margin-right: 10px;
+            font-size: 14px;
+        }
     </style>
 </head>
 <body class="gradient-bg">
@@ -163,9 +361,9 @@
                 <div class="section-divider"></div>
             </div>
             
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div class="order-2 lg:order-1">
-                    <div class="bg-gradient-to-br from-pink-lighter to-pink-100 p-10 rounded-3xl shadow-2xl">
+            <div class="grid grid-cols-1 gap-12">
+                <div>
+                    <div class="bg-white rounded-3xl shadow-2xl p-10 card-hover">
                         <h3 class="text-3xl font-bold text-pink-primary mb-6 flex items-center">
                             <i class="fas fa-user-circle mr-3"></i>
                             Biography
@@ -193,32 +391,6 @@
                         <div class="bg-pink-primary text-white p-6 rounded-2xl text-center">
                             <p class="text-2xl font-bold mb-2">OPEN TO NEW COLLABORATIONS</p>
                             <p class="text-lg">Let's create something amazing together!</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="order-1 lg:order-2">
-                    <div class="relative">
-                        <div id="cert-carousel" class="bg-gradient-pink rounded-3xl shadow-2xl w-full h-[620px] md:h-[760px] flex items-center justify-center overflow-hidden">
-                            <div id="cert-slides" class="w-full h-full relative">
-                                <img src="image/JuniorWebSertif.jpg" alt="Junior Web Certificate" data-index="0" class="absolute inset-0 w-full h-full object-contain transition-opacity duration-500 opacity-100">
-                                <img src="image/DataSciencSertif.jpg" alt="Data Science Certificate" data-index="1" class="absolute inset-0 w-full h-full object-contain transition-opacity duration-500 opacity-0">
-                            </div>
-
-                            <button id="cert-prev" class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-pink-primary rounded-full w-10 h-10 flex items-center justify-center shadow-md">‹</button>
-                            <button id="cert-next" class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-pink-primary rounded-full w-10 h-10 flex items-center justify-center shadow-md">›</button>
-
-                            <div id="cert-dots" class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2"></div>
-                        </div>
-
-                        <div class="absolute -bottom-6 -left-6 bg-white p-8 rounded-2xl shadow-2xl border-4 border-pink-lighter">
-                            <div class="flex items-center gap-4 text-pink-primary">
-                                <i id="cert-icon" class="fas fa-code text-3xl"></i>
-                                <div class="text-left">
-                                    <p id="cert-line1" class="text-sm font-semibold">Certified Junior</p>
-                                    <p id="cert-line2" class="text-sm font-semibold">Web Programmer</p>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -496,7 +668,7 @@
             </div>
 
             <div class="grid md:grid-cols-2 gap-6">
-                <!-- Certificate 1 -->
+                <!-- Certificate 1: Junior Web Programmer -->
                 <div class="bg-white rounded-3xl shadow-2xl p-10 card-hover">
                     <div class="flex items-start">
                         <div class="flex-1">
@@ -504,92 +676,26 @@
                             <p class="text-pink-primary font-semibold text-xl mb-3">LSP (Lembaga Sertifikasi Profesi)</p>
                             <p class="text-gray-600 text-lg mb-6">June 2024</p>
 
-                            <div class="bg-gradient-to-r from-pink-lighter to-pink-100 rounded-2xl p-6">
-                                <h5 class="font-bold text-pink-primary mb-3 text-lg">Competency Coverage:</h5>
-                                <ul class="grid md:grid-cols-2 gap-3 text-gray-700">
-                                    <li class="flex items-start">
-                                        <i class="fas fa-check-circle text-pink-primary mt-1 mr-2"></i>
-                                        <span>Applying data structures</span>
-                                    </li>
-                                    <li class="flex items-start">
-                                        <i class="fas fa-check-circle text-pink-primary mt-1 mr-2"></i>
-                                        <span>Implementing UI design</span>
-                                    </li>
-                                    <li class="flex items-start">
-                                        <i class="fas fa-check-circle text-pink-primary mt-1 mr-2"></i>
-                                        <span>Installing programming tools</span>
-                                    </li>
-                                    <li class="flex items-start">
-                                        <i class="fas fa-check-circle text-pink-primary mt-1 mr-2"></i>
-                                        <span>Writing clean code</span>
-                                    </li>
-                                    <li class="flex items-start">
-                                        <i class="fas fa-check-circle text-pink-primary mt-1 mr-2"></i>
-                                        <span>Developing structured programs</span>
-                                    </li>
-                                    <li class="flex items-start">
-                                        <i class="fas fa-check-circle text-pink-primary mt-1 mr-2"></i>
-                                        <span>Utilizing libraries & components</span>
-                                    </li>
-                                    <li class="flex items-start">
-                                        <i class="fas fa-check-circle text-pink-primary mt-1 mr-2"></i>
-                                        <span>Code documentation</span>
-                                    </li>
-                                    <li class="flex items-start">
-                                        <i class="fas fa-check-circle text-pink-primary mt-1 mr-2"></i>
-                                        <span>Debugging & testing</span>
-                                    </li>
-                                </ul>
+                            <div class="flex items-center justify-center rounded-2xl p-6 h-64 md:h-72 cursor-pointer" onclick="openCertificatePopup('junior-web')">
+                                <img src="image/JuniorWebSertif.jpg" alt="Junior Web Certificate" class="certificate-thumbnail w-full h-full rounded-xl object-contain">
                             </div>
+                            <p class="text-center mt-4 text-gray-600">Click image to view details</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Certificate 2 -->
+                <!-- Certificate 2: Certified Associate Data Scientist -->
                 <div class="bg-white rounded-3xl shadow-2xl p-10 card-hover">
                     <div class="flex items-start">
                         <div class="flex-1">
-                            <h4 class="text-3xl font-bold text-gray-800 mb-3">Certified Associate Data Scientist</h4>
+                            <h4 class="text-3xl font-bold text-gray-800 mb-3">Associate Data Scientist</h4>
                             <p class="text-pink-primary font-semibold text-xl mb-3">LSP (Lembaga Sertifikasi Profesi)</p>
                             <p class="text-gray-600 text-lg mb-6">2025</p>
 
-                            <div class="bg-gradient-to-r from-pink-lighter to-pink-100 rounded-2xl p-6">
-                                <h5 class="font-bold text-pink-primary mb-3 text-lg">Competency Coverage:</h5>
-                                <ul class="grid md:grid-cols-2 gap-3 text-gray-700">
-                                    <li class="flex items-start">
-                                        <i class="fas fa-check-circle text-pink-primary mt-1 mr-2"></i>
-                                        <span>Data preprocessing & cleaning</span>
-                                    </li>
-                                    <li class="flex items-start">
-                                        <i class="fas fa-check-circle text-pink-primary mt-1 mr-2"></i>
-                                        <span>Exploratory data analysis</span>
-                                    </li>
-                                    <li class="flex items-start">
-                                        <i class="fas fa-check-circle text-pink-primary mt-1 mr-2"></i>
-                                        <span>Feature engineering</span>
-                                    </li>
-                                    <li class="flex items-start">
-                                        <i class="fas fa-check-circle text-pink-primary mt-1 mr-2"></i>
-                                        <span>Model selection & evaluation</span>
-                                    </li>
-                                    <li class="flex items-start">
-                                        <i class="fas fa-check-circle text-pink-primary mt-1 mr-2"></i>
-                                        <span>Statistical analysis</span>
-                                    </li>
-                                    <li class="flex items-start">
-                                        <i class="fas fa-check-circle text-pink-primary mt-1 mr-2"></i>
-                                        <span>Data visualization</span>
-                                    </li>
-                                    <li class="flex items-start">
-                                        <i class="fas fa-check-circle text-pink-primary mt-1 mr-2"></i>
-                                        <span>Python/R tools & libraries</span>
-                                    </li>
-                                    <li class="flex items-start">
-                                        <i class="fas fa-check-circle text-pink-primary mt-1 mr-2"></i>
-                                        <span>Model deployment basics</span>
-                                    </li>
-                                </ul>
+                            <div class="flex items-center justify-center rounded-2xl p-6 h-64 md:h-72 cursor-pointer" onclick="openCertificatePopup('data-science')">
+                                <img src="image/DataSciencSertif.jpg" alt="Data Science Certificate" class="certificate-thumbnail w-full h-full rounded-xl object-contain">
                             </div>
+                            <p class="text-center mt-4 text-gray-600">Click image to view details</p>
                         </div>
                     </div>
                 </div>
@@ -1041,7 +1147,62 @@
         </div>
     </footer>
 
+    <!-- Certificate Popup Card -->
+    <div id="certificatePopup" class="popup-overlay">
+        <div class="popup-card">
+            <div class="popup-header">
+                <h3 id="popupTitle" class="text-2xl font-bold">Certificate Details</h3>
+                <button class="popup-close" onclick="closeCertificatePopup()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="popup-body">
+                <div id="popupContent">
+                    <!-- Content will be inserted here by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
+        // Certificate Data
+        const certificateData = {
+            'junior-web': {
+                title: 'Junior Web Programmer',
+                issuer: 'LSP (Lembaga Sertifikasi Profesi)',
+                date: 'June 2024',
+                image: 'image/JuniorWebSertif.jpg',
+                description: 'This certification validates my skills in web development including frontend and backend programming, database management, and web application deployment.',
+                competencies: [
+                    'Applying data structures',
+                    'Implementing UI design',
+                    'Installing programming tools',
+                    'Writing clean code',
+                    'Developing structured programs',
+                    'Utilizing libraries & components',
+                    'Code documentation',
+                    'Debugging & testing'
+                ]
+            },
+            'data-science': {
+                title: 'Associate Data Scientist',
+                issuer: 'LSP (Lembaga Sertifikasi Profesi)',
+                date: '2025',
+                image: 'image/DataSciencSertif.jpg',
+                description: 'This certification demonstrates my proficiency in data analysis, machine learning, statistical modeling, and data visualization techniques.',
+                competencies: [
+                    'Data preprocessing & cleaning',
+                    'Exploratory data analysis',
+                    'Feature engineering',
+                    'Model selection & evaluation',
+                    'Statistical analysis',
+                    'Data visualization',
+                    'Python/R tools & libraries',
+                    'Model deployment basics'
+                ]
+            }
+        };
+
         // Mobile menu toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -1099,57 +1260,166 @@
             observer.observe(card);
         });
 
-        // Certificate carousel (About section)
-        (function() {
-            const slides = Array.from(document.querySelectorAll('#cert-slides img'));
-            if (!slides.length) return;
-            const prevBtn = document.getElementById('cert-prev');
-            const nextBtn = document.getElementById('cert-next');
-            const dotsContainer = document.getElementById('cert-dots');
-            const line1 = document.getElementById('cert-line1');
-            const line2 = document.getElementById('cert-line2');
+        // Certificate Popup Functions
+        function openCertificatePopup(certId) {
+            const cert = certificateData[certId];
+            if (!cert) return;
+            
+            const popup = document.getElementById('certificatePopup');
+            const title = document.getElementById('popupTitle');
+            const content = document.getElementById('popupContent');
+            
+            title.textContent = cert.title;
+            
+            // Create popup content
+            content.innerHTML = `
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <div class="certificate-image-container">
+                            <img src="${cert.image}" alt="${cert.title}" 
+                                 class="certificate-image" id="certImage"
+                                 onclick="toggleZoom()">
+                            <div class="zoom-controls">
+                                <button class="zoom-btn" onclick="zoomIn()">
+                                    <i class="fas fa-search-plus"></i>
+                                </button>
+                                <button class="zoom-btn" onclick="zoomOut()">
+                                    <i class="fas fa-search-minus"></i>
+                                </button>
+                                <button class="zoom-btn" onclick="resetZoom()">
+                                    <i class="fas fa-sync-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <p class="text-center mt-4 text-gray-600">Click image to zoom in/out</p>
+                    </div>
+                    
+                    <div>
+                        <div class="certificate-details">
+                            <div class="detail-item">
+                                <div class="detail-icon">
+                                    <i class="fas fa-award"></i>
+                                </div>
+                                <div class="detail-content">
+                                    <h4>Certificate Title</h4>
+                                    <p>${cert.title}</p>
+                                </div>
+                            </div>
+                            
+                            <div class="detail-item">
+                                <div class="detail-icon">
+                                    <i class="fas fa-building"></i>
+                                </div>
+                                <div class="detail-content">
+                                    <h4>Issuing Organization</h4>
+                                    <p>${cert.issuer}</p>
+                                </div>
+                            </div>
+                            
+                            <div class="detail-item">
+                                <div class="detail-icon">
+                                    <i class="fas fa-calendar-alt"></i>
+                                </div>
+                                <div class="detail-content">
+                                    <h4>Issue Date</h4>
+                                    <p>${cert.date}</p>
+                                </div>
+                            </div>
+                            
+                            <div class="detail-item">
+                                <div class="detail-icon">
+                                    <i class="fas fa-info-circle"></i>
+                                </div>
+                                <div class="detail-content">
+                                    <h4>Description</h4>
+                                    <p>${cert.description}</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="text-xl font-bold text-pink-primary mb-4">Competencies Covered</h4>
+                            <div class="competency-list">
+                                ${cert.competencies.map(comp => `
+                                    <div class="competency-item">
+                                        <i class="fas fa-check-circle competency-icon"></i>
+                                        <span>${comp}</span>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            popup.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
 
-            const meta = [
-                { l1: 'Certified Junior', l2: 'Web Programmer', iconClass: 'fas fa-code' },
-                { l1: 'Certified Associate', l2: 'Data Scientist', iconClass: 'fas fa-chart-line' }
-            ];
+        function closeCertificatePopup() {
+            const popup = document.getElementById('certificatePopup');
+            popup.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
 
-            let idx = 0;
+        // Zoom functions
+        let zoomLevel = 1;
+        const maxZoom = 3;
+        const minZoom = 1;
+        const zoomStep = 0.5;
 
-            function show(i) {
-                slides.forEach((s, j) => {
-                    s.classList.toggle('opacity-100', j === i);
-                    s.classList.toggle('opacity-0', j !== i);
-                });
-                // update badge text and icon
-                const m = meta[i] || { l1: '', l2: '', iconClass: '' };
-                if (line1) line1.textContent = m.l1;
-                if (line2) line2.textContent = m.l2;
-                const iconEl = document.getElementById('cert-icon');
-                if (iconEl) iconEl.className = (m.iconClass || '') + ' text-3xl text-pink-primary';
-                // update dots
-                Array.from(dotsContainer.children).forEach((d, j) => d.classList.toggle('bg-pink-primary', j === i));
+        function toggleZoom() {
+            const image = document.getElementById('certImage');
+            if (zoomLevel === 1) {
+                zoomLevel = 1.5;
+                image.classList.add('zoomed');
+            } else {
+                zoomLevel = 1;
+                image.classList.remove('zoomed');
             }
+        }
 
-            // build dots
-            slides.forEach((_, i) => {
-                const dot = document.createElement('button');
-                dot.className = 'w-3 h-3 rounded-full bg-white/60';
-                dot.addEventListener('click', () => { idx = i; show(idx); });
-                dotsContainer.appendChild(dot);
-            });
+        function zoomIn() {
+            const image = document.getElementById('certImage');
+            if (zoomLevel < maxZoom) {
+                zoomLevel += zoomStep;
+                image.classList.add('zoomed');
+            }
+        }
 
-            if (prevBtn) prevBtn.addEventListener('click', () => { idx = (idx - 1 + slides.length) % slides.length; show(idx); });
-            if (nextBtn) nextBtn.addEventListener('click', () => { idx = (idx + 1) % slides.length; show(idx); });
+        function zoomOut() {
+            const image = document.getElementById('certImage');
+            if (zoomLevel > minZoom) {
+                zoomLevel -= zoomStep;
+                if (zoomLevel === 1) {
+                    image.classList.remove('zoomed');
+                }
+            }
+        }
 
-            // keyboard support
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'ArrowLeft') { idx = (idx - 1 + slides.length) % slides.length; show(idx); }
-                if (e.key === 'ArrowRight') { idx = (idx + 1) % slides.length; show(idx); }
-            });
+        function resetZoom() {
+            const image = document.getElementById('certImage');
+            zoomLevel = 1;
+            image.classList.remove('zoomed');
+        }
 
-            show(idx);
-        })();
+        // Close popup when clicking outside the card
+        document.getElementById('certificatePopup').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeCertificatePopup();
+            }
+        });
+
+        // Keyboard controls
+        document.addEventListener('keydown', function(e) {
+            const popup = document.getElementById('certificatePopup');
+            if (popup.style.display === 'flex') {
+                if (e.key === 'Escape') closeCertificatePopup();
+                if (e.key === '+' || e.key === '=') zoomIn();
+                if (e.key === '-' || e.key === '_') zoomOut();
+                if (e.key === '0') resetZoom();
+            }
+        });
     </script>
 </body>
 </html>
