@@ -1,1478 +1,999 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" data-theme="light" data-lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Inas Najah Zhahirah</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'pink-primary': '#ec4899',
-                        'pink-light': '#f9a8d4',
-                        'pink-lighter': '#fce7f3',
-                        'pink-dark': '#db2777',
-                    },
-                    fontFamily: {
-                        'poppins': ['Poppins', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        * {
-            font-family: 'Poppins', sans-serif;
-            scroll-behavior: smooth;
-        }
-        
-        .gradient-bg {
-            background: linear-gradient(135deg, #fce7f3 0%, #fbcfe8 50%, #f9a8d4 100%);
-        }
-        
-        .gradient-pink {
-            background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
-        }
-        
-        .nav-blur {
-            backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.95);
-        }
-        
-        .card-hover {
-            transition: all 0.4s ease;
-        }
-        
-        .card-hover:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(236, 72, 153, 0.3);
-        }
-        
-        .text-gradient {
-            background: linear-gradient(135deg, #ec4899, #db2777);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Inas Najah Zhahirah</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    /* ═══════════════════════════════════
+       TOKENS — LIGHT
+    ═══════════════════════════════════ */
+    :root {
+      --sky:        #AEDEFC;
+      --pink:       #F875AA;
+      --pinkl:      #fba8cc;
+      --skydk:      #5bb8f0;
+      --cream:      #FFF7FC;
+      --white:      #ffffff;
+      --txt:        #3a2040;
+      --txtm:       #7a5580;
+      --card-bg:    rgba(255,255,255,.95);
+      --card-bdr:   rgba(174,222,252,.45);
+      --sec-alt:    #f4f9ff;
+      --nav-bg:     rgba(255,247,252,.9);
+      --nav-bdr:    rgba(248,117,170,.22);
+      --hero-g:     linear-gradient(155deg,#ddf2ff 0%,#fce4f2 50%,#fff7fc 100%);
+      --edu-g:      linear-gradient(135deg,rgba(174,222,252,.18),rgba(248,117,170,.08));
+      --ct-wrap:    #ffffff;
+      --cc-bg:      rgba(174,222,252,.1);
+      --cc-bdr:     rgba(174,222,252,.4);
+      --foot-bg:    #3a2040;
+      --ps-bg:      rgba(174,222,252,.22);  --ps-c:#3a99d8;
+      --pp-bg:      rgba(248,117,170,.1);   --pp-c:#F875AA;
+      --ticker-bg:  rgba(248,117,170,.04);
+      --ticker-bdr: rgba(248,117,170,.18);
+      --modal-bg:   #FFF7FC;
+      --modal-ov:   rgba(58,32,64,.8);
+      --shad:       0 4px 20px rgba(174,222,252,.22);
+      --shad-pink:  0 14px 36px rgba(248,117,170,.2);
+    }
+    /* ═══════════════════════════════════
+       TOKENS — DARK
+    ═══════════════════════════════════ */
+    [data-theme="dark"] {
+      --sky:        #7ec8f8;
+      --pink:       #f875aa;
+      --pinkl:      #f9a8cc;
+      --skydk:      #5bb8f0;
+      --cream:      #1a0f1e;
+      --white:      #261530;
+      --txt:        #f5e6f0;
+      --txtm:       #c49ab8;
+      --card-bg:    rgba(40,22,54,.9);
+      --card-bdr:   rgba(126,200,248,.18);
+      --sec-alt:    #1e1228;
+      --nav-bg:     rgba(26,15,30,.92);
+      --nav-bdr:    rgba(248,117,170,.22);
+      --hero-g:     linear-gradient(155deg,#0d1e2e 0%,#2a0d20 50%,#1a0f1e 100%);
+      --edu-g:      linear-gradient(135deg,rgba(126,200,248,.1),rgba(248,117,170,.06));
+      --ct-wrap:    #261530;
+      --cc-bg:      rgba(126,200,248,.07);
+      --cc-bdr:     rgba(126,200,248,.22);
+      --foot-bg:    #12080e;
+      --ps-bg:      rgba(126,200,248,.14);  --ps-c:#7ec8f8;
+      --pp-bg:      rgba(248,117,170,.12);  --pp-c:#f875aa;
+      --ticker-bg:  rgba(248,117,170,.06);
+      --ticker-bdr: rgba(248,117,170,.15);
+      --modal-bg:   #1a0f1e;
+      --modal-ov:   rgba(10,4,14,.88);
+      --shad:       0 4px 22px rgba(0,0,0,.45);
+      --shad-pink:  0 14px 36px rgba(0,0,0,.4);
+    }
 
-        .section-divider {
-            height: 4px;
-            width: 80px;
-            background: linear-gradient(to right, #ec4899, #f9a8d4);
-            margin: 0 auto;
-            border-radius: 2px;
-        }
+    /* ═══════════════════════════════════  BASE  ═══ */
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Poppins',sans-serif;background:var(--cream);color:var(--txt);overflow-x:hidden;cursor:none;transition:background .4s,color .4s;}
 
-        .skill-icon {
-            transition: all 0.3s ease;
-        }
+    /* ═══ CURSOR ═══ */
+    #cur{position:fixed;width:12px;height:12px;background:var(--pink);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);}
+    #cur2{position:fixed;width:32px;height:32px;border:2px solid var(--pink);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:all .22s ease;opacity:.5;}
+    #cur2.big{transform:translate(-50%,-50%) scale(2.2);opacity:.15;}
 
-        .skill-icon:hover {
-            transform: scale(1.1);
-        }
+    /* ═══ BUBBLE CANVAS ═══ */
+    #bc{position:fixed;inset:0;pointer-events:none;z-index:0;}
 
-        /* Modal Popup Card Styles */
-        .popup-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            animation: fadeIn 0.3s ease;
-        }
+    /* ═══ LOADER ═══ */
+    #loader{position:fixed;inset:0;background:var(--cream);z-index:10000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.2rem;transition:opacity .7s;}
+    #loader.out{opacity:0;pointer-events:none;}
+    .ld-txt{font-size:.9rem;font-weight:700;color:var(--pink);letter-spacing:.1em;}
+    .ld-bar{width:160px;height:4px;background:rgba(248,117,170,.15);border-radius:99px;overflow:hidden;}
+    .ld-fill{height:100%;background:linear-gradient(90deg,var(--sky),var(--pink));border-radius:99px;width:0%;transition:width 1.2s cubic-bezier(.16,1,.3,1);}
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
+    /* ═══ NAV ═══ */
+    nav{position:fixed;top:.9rem;left:50%;transform:translateX(-50%);z-index:100;background:var(--nav-bg);backdrop-filter:blur(18px);border:2px solid var(--nav-bdr);border-radius:99px;padding:.6rem 1.5rem;display:flex;align-items:center;gap:1.4rem;box-shadow:0 4px 24px rgba(248,117,170,.12);transition:all .35s;}
+    .nav-logo{font-weight:800;font-size:.9rem;color:var(--pink);text-decoration:none;white-space:nowrap;}
+    .nav-logo span{color:var(--skydk);}
+    .nav-links{display:flex;gap:1.2rem;list-style:none;}
+    .nav-links a{font-size:.7rem;font-weight:600;color:var(--txtm);text-decoration:none;letter-spacing:.04em;transition:color .2s;}
+    .nav-links a:hover{color:var(--pink);}
+    .nav-ctrls{display:flex;align-items:center;gap:.5rem;}
+    /* lang */
+    .lang-tgl{display:flex;align-items:center;background:rgba(248,117,170,.1);border:1.5px solid rgba(248,117,170,.25);border-radius:99px;overflow:hidden;padding:2px;cursor:none;}
+    .lang-btn{padding:.26rem .6rem;border-radius:99px;font-size:.66rem;font-weight:700;font-family:'Poppins',sans-serif;border:none;background:transparent;color:var(--txtm);cursor:none;transition:all .22s;letter-spacing:.04em;}
+    .lang-btn.on{background:var(--pink);color:#fff;box-shadow:0 2px 8px rgba(248,117,170,.32);}
+    /* dark toggle */
+    .dk-tgl{width:40px;height:21px;border-radius:99px;background:rgba(248,117,170,.14);border:1.5px solid rgba(248,117,170,.25);position:relative;cursor:none;transition:background .3s;flex-shrink:0;}
+    .dk-tgl.on{background:rgba(126,200,248,.2);border-color:rgba(126,200,248,.38);}
+    .dk-ball{position:absolute;top:2px;left:2px;width:13px;height:13px;border-radius:50%;background:var(--pink);transition:all .3s cubic-bezier(.34,1.56,.64,1);display:flex;align-items:center;justify-content:center;font-size:.55rem;}
+    .dk-tgl.on .dk-ball{transform:translateX(19px);background:var(--sky);}
+    .nav-ham{display:none;background:none;border:none;cursor:none;font-size:1.1rem;color:var(--pink);}
 
-        .popup-card {
-            background: white;
-            border-radius: 20px;
-            width: 90%;
-            max-width: 800px;
-            max-height: 90vh;
-            overflow-y: auto;
-            position: relative;
-            animation: slideUp 0.4s ease;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
-        }
+    /* ═══ HERO ═══ */
+    #home{min-height:100vh;background:var(--hero-g);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:6rem 2rem 4rem;transition:background .4s;}
+    .deco{position:absolute;border-radius:50%;filter:blur(60px);pointer-events:none;}
+    .dc1{width:480px;height:480px;background:rgba(174,222,252,.38);top:-110px;left:-140px;animation:dcF 9s ease-in-out infinite;}
+    .dc2{width:360px;height:360px;background:rgba(248,117,170,.2);bottom:-70px;right:-90px;animation:dcF 11s ease-in-out infinite reverse;}
+    .dc3{width:220px;height:220px;background:rgba(174,222,252,.22);top:38%;right:8%;animation:dcF 7s ease-in-out 2s infinite;}
+    [data-theme="dark"] .dc1{background:rgba(126,200,248,.14);}
+    [data-theme="dark"] .dc2{background:rgba(248,117,170,.1);}
+    [data-theme="dark"] .dc3{background:rgba(126,200,248,.09);}
+    @keyframes dcF{0%,100%{transform:translate(0,0);}50%{transform:translate(18px,-22px);}}
+    .hero-inner{position:relative;z-index:2;text-align:center;max-width:660px;}
+    .h-av{width:140px;height:140px;border-radius:50%;overflow:hidden;margin:0 auto 1.3rem;border:5px solid var(--white);box-shadow:0 0 0 6px rgba(248,117,170,.16),0 12px 36px rgba(248,117,170,.2);animation:avP .7s cubic-bezier(.34,1.56,.64,1) .2s both;}
+    @keyframes avP{from{transform:scale(0) rotate(-15deg);opacity:0;}to{transform:scale(1) rotate(0);opacity:1;}}
+    .h-av img{width:100%;height:100%;object-fit:cover;}
+    .h-tag{display:inline-flex;align-items:center;gap:.45rem;background:rgba(248,117,170,.1);border:1.5px solid rgba(248,117,170,.26);color:var(--pink);font-size:.7rem;font-weight:700;letter-spacing:.08em;padding:.35rem .9rem;border-radius:99px;margin-bottom:1rem;animation:fUp .6s ease .4s both;}
+    .h-dot{width:7px;height:7px;background:var(--pink);border-radius:50%;animation:dpls 1.4s infinite;}
+    @keyframes dpls{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.3;transform:scale(.5);}}
+    .h-name{font-size:clamp(2.2rem,7vw,4.5rem);font-weight:900;line-height:1.05;margin-bottom:.65rem;animation:fUp .7s ease .5s both;}
+    .h-name .l1{color:var(--txt);}
+    .h-name .l2{color:var(--pink);position:relative;display:inline-block;}
+    .h-name .l2::after{content:'';position:absolute;bottom:-3px;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--pink),var(--sky));border-radius:99px;animation:ulG .8s ease 1.2s both;transform-origin:left;}
+    @keyframes ulG{from{transform:scaleX(0);}to{transform:scaleX(1);}}
+    .h-sub{font-size:.93rem;color:var(--txtm);font-weight:600;margin-bottom:.4rem;animation:fUp .7s ease .65s both;}
+    .h-desc{font-size:.87rem;color:var(--txtm);font-weight:400;line-height:1.72;max-width:490px;margin:0 auto 1.75rem;animation:fUp .7s ease .75s both;}
+    .h-btns{display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap;animation:fUp .7s ease .9s both;}
+    .btn{padding:.78rem 1.8rem;border-radius:99px;font-family:'Poppins',sans-serif;font-weight:700;font-size:.79rem;letter-spacing:.04em;text-decoration:none;display:inline-flex;align-items:center;gap:.45rem;cursor:none;transition:all .25s;border:2.5px solid transparent;}
+    .btn-f{background:var(--pink);color:#fff;box-shadow:0 8px 22px rgba(248,117,170,.34);}
+    .btn-f:hover{transform:translateY(-3px);box-shadow:0 14px 28px rgba(248,117,170,.46);}
+    .btn-o{background:transparent;border-color:var(--pink);color:var(--pink);}
+    .btn-o:hover{background:rgba(248,117,170,.07);transform:translateY(-3px);}
+    .h-scroll{position:absolute;bottom:1.8rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.3rem;color:var(--pinkl);font-size:.6rem;font-weight:700;letter-spacing:.12em;animation:fIn 1s ease 1.5s both;}
+    .sdots{display:flex;flex-direction:column;align-items:center;gap:3px;}
+    .sd{width:4px;height:4px;border-radius:50%;background:var(--pinkl);animation:sdot 1.5s infinite;}
+    .sd:nth-child(2){animation-delay:.2s;}.sd:nth-child(3){animation-delay:.4s;}
+    @keyframes sdot{0%,100%{opacity:.3;}50%{opacity:1;transform:scale(1.3);}}
+    @keyframes fUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
+    @keyframes fIn{from{opacity:0;}to{opacity:1;}}
 
-        @keyframes slideUp {
-            from { transform: translateY(50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
+    /* ═══ SECTIONS BASE ═══ */
+    section{padding:5.5rem 0;position:relative;z-index:1;transition:background .4s;}
+    .container{max-width:1080px;margin:0 auto;padding:0 2rem;}
+    .sl{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--pink);margin-bottom:.85rem;}
+    .sl::before{content:'—';opacity:.5;}
+    .stit{font-size:clamp(1.7rem,3.5vw,2.5rem);font-weight:800;line-height:1.15;color:var(--txt);margin-bottom:.4rem;}
+    .stit em{font-style:italic;color:var(--pink);}
+    .ssub{font-size:.87rem;color:var(--txtm);font-weight:400;line-height:1.72;margin-bottom:2rem;}
+    /* reveal */
+    .rv{opacity:0;transform:translateY(26px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1);}
+    .rv.on{opacity:1;transform:none;}
+    .rv.d1{transition-delay:.1s;}.rv.d2{transition-delay:.2s;}.rv.d3{transition-delay:.3s;}
 
-        .popup-header {
-            background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
-            padding: 25px 30px;
-            border-radius: 20px 20px 0 0;
-            color: white;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    /* ═══ ABOUT ═══ */
+    #about{background:var(--white);}
+    .ab-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:3.5rem;align-items:center;}
+    .ab-iw{position:relative;max-width:310px;}
+    .ab-bg{position:absolute;inset:-10px;border-radius:2.2rem;background:linear-gradient(135deg,var(--sky),var(--pinkl));z-index:0;animation:bgP 4s ease-in-out infinite;}
+    @keyframes bgP{0%,100%{transform:scale(1) rotate(-2deg);}50%{transform:scale(1.02) rotate(.5deg);}}
+    .ab-img{position:relative;z-index:1;width:100%;border-radius:1.7rem;aspect-ratio:4/5;object-fit:cover;box-shadow:0 16px 44px rgba(248,117,170,.18);}
+    .ab-badge{position:absolute;bottom:-.8rem;right:-.8rem;z-index:2;background:var(--pink);color:#fff;padding:.85rem 1rem;border-radius:1.2rem;text-align:center;font-weight:800;box-shadow:0 8px 24px rgba(248,117,170,.32);animation:bb 2.5s ease-in-out infinite;}
+    @keyframes bb{0%,100%{transform:translateY(0);}50%{transform:translateY(-6px);}}
+    .ab-badge .n{font-size:1.6rem;line-height:1;}.ab-badge .l{font-size:.58rem;opacity:.85;font-weight:500;}
+    .fc{position:absolute;top:1.3rem;left:-1.3rem;z-index:2;background:var(--white);border:2px solid var(--card-bdr);color:var(--skydk);font-size:.7rem;font-weight:700;padding:.5rem .85rem;border-radius:.85rem;display:flex;align-items:center;gap:.38rem;box-shadow:var(--shad);animation:cf 3.5s ease-in-out infinite;}
+    @keyframes cf{0%,100%{transform:translateY(0) rotate(-2deg);}50%{transform:translateY(-8px) rotate(1deg);}}
+    .ab-pills{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.2rem 0;}
+    .pill{padding:.35rem .85rem;border-radius:99px;font-size:.73rem;font-weight:600;display:inline-flex;align-items:center;gap:.32rem;cursor:default;transition:transform .2s;}
+    .pill:hover{transform:translateY(-2px);}
+    .ps{background:var(--ps-bg);color:var(--ps-c);border:1.5px solid rgba(174,222,252,.4);}
+    .pp{background:var(--pp-bg);color:var(--pp-c);border:1.5px solid rgba(248,117,170,.24);}
+    .ab-open{display:inline-flex;align-items:center;gap:.6rem;background:linear-gradient(135deg,var(--pink),var(--pinkl));color:#fff;padding:.82rem 1.65rem;border-radius:99px;font-weight:700;font-size:.8rem;margin-top:.65rem;box-shadow:0 8px 20px rgba(248,117,170,.28);transition:transform .22s;}
+    .ab-open:hover{transform:translateY(-3px);}
 
-        .popup-close {
-            background: rgba(255, 255, 255, 0.2);
-            border: none;
-            color: white;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 20px;
-        }
+    /* ═══ SKILLS ═══ */
+    #skills{background:var(--sec-alt);}
+    .sk-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;margin-top:1.6rem;}
+    .sk-card{background:var(--card-bg);border:1.5px solid var(--card-bdr);border-radius:1.3rem;padding:1.6rem .9rem;text-align:center;transition:all .3s cubic-bezier(.34,1.56,.64,1);box-shadow:var(--shad);cursor:default;position:relative;overflow:hidden;}
+    .sk-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(174,222,252,.1),rgba(248,117,170,.07));opacity:0;transition:opacity .3s;}
+    .sk-card:hover{transform:translateY(-7px) scale(1.04);border-color:rgba(248,117,170,.3);box-shadow:0 14px 32px rgba(248,117,170,.16);}
+    .sk-card:hover::before{opacity:1;}
+    .sk-card i{font-size:2rem;margin-bottom:.6rem;display:block;}
+    .sk-card h3{font-size:.8rem;font-weight:700;color:var(--txt);margin-bottom:.16rem;}
+    .sk-card .lv{font-size:.6rem;font-weight:600;color:var(--pink);letter-spacing:.07em;text-transform:uppercase;}
+    .ticker-w{overflow:hidden;margin:2.6rem -2rem 0;padding:.85rem 0;background:var(--ticker-bg);border-top:2px dashed var(--ticker-bdr);border-bottom:2px dashed var(--ticker-bdr);}
+    .ticker{display:flex;width:max-content;animation:tck 28s linear infinite;gap:.85rem;}
+    .ticker:hover{animation-play-state:paused;}
+    @keyframes tck{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+    .tp{display:inline-flex;align-items:center;gap:.42rem;padding:.42rem 1rem;border-radius:99px;white-space:nowrap;font-size:.73rem;font-weight:600;background:var(--card-bg);border:1.5px solid rgba(248,117,170,.2);color:var(--txtm);transition:all .22s;}
+    .tp:hover{border-color:var(--pink);color:var(--pink);transform:translateY(-3px);}
+    .tp i{color:var(--pink);}
 
-        .popup-close:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: rotate(90deg);
-        }
+    /* ═══ EDUCATION ═══ */
+    #education{background:var(--white);}
+    .edu-card{background:var(--edu-g);border:2px solid var(--card-bdr);border-radius:1.8rem;padding:2.4rem;display:flex;gap:2rem;align-items:flex-start;box-shadow:var(--shad);position:relative;overflow:hidden;}
+    .edu-card::after{content:'';position:absolute;right:2rem;bottom:1rem;font-size:5rem;opacity:.06;line-height:1;pointer-events:none;}
+    .edu-icon{background:var(--pink);color:#fff;width:56px;height:56px;border-radius:1rem;display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0;box-shadow:0 8px 18px rgba(248,117,170,.32);}
+    .edu-school{font-size:1.15rem;font-weight:800;color:var(--txt);}
+    .edu-major{font-size:.9rem;font-weight:600;color:var(--pink);margin:.16rem 0;}
+    .edu-year{font-size:.76rem;color:var(--txtm);}
+    .edu-badge{display:inline-block;background:rgba(248,117,170,.11);color:var(--pink);font-size:.66rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.26rem .82rem;border-radius:99px;border:1.5px solid rgba(248,117,170,.24);margin-top:.6rem;}
 
-        .popup-body {
-            padding: 30px;
-        }
+    /* ═══ EXPERIENCE ═══ */
+    #experience{background:var(--sec-alt);}
+    .exp-tabs{display:flex;gap:.5rem;margin-bottom:2rem;flex-wrap:wrap;}
+    .exp-tab{padding:.52rem 1.3rem;border-radius:99px;font-size:.76rem;font-weight:700;font-family:'Poppins',sans-serif;cursor:none;background:var(--card-bg);border:2px solid var(--card-bdr);color:var(--txtm);transition:all .22s;}
+    .exp-tab.on{background:var(--pink);border-color:var(--pink);color:#fff;box-shadow:0 5px 16px rgba(248,117,170,.28);}
+    .exp-pane{display:none;}.exp-pane.on{display:block;}
+    .exp-tl{position:relative;padding-left:1.8rem;}
+    .exp-tl::before{content:'';position:absolute;left:0;top:.7rem;bottom:2rem;width:2px;background:linear-gradient(to bottom,var(--pink),rgba(174,222,252,.3));}
+    .exp-item{position:relative;padding-bottom:2rem;opacity:0;transform:translateX(-12px);transition:all .46s ease;}
+    .exp-item.on{opacity:1;transform:none;}
+    .exp-item::before{content:'';position:absolute;left:-2.15rem;top:.32rem;width:12px;height:12px;background:var(--pink);border-radius:50%;border:3px solid var(--cream);box-shadow:0 0 0 3px rgba(248,117,170,.2);}
+    [data-theme="dark"] .exp-item::before{border-color:var(--sec-alt);}
+    .exp-date{font-size:.66rem;font-weight:700;color:var(--skydk);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.25rem;}
+    .exp-role{font-size:1rem;font-weight:700;color:var(--txt);margin-bottom:.16rem;}
+    .exp-org{font-size:.8rem;font-weight:600;color:var(--pink);margin-bottom:.42rem;}
+    .exp-desc{font-size:.83rem;color:var(--txtm);line-height:1.68;}
 
-        .certificate-image-container {
-            position: relative;
-            width: 100%;
-            height: 400px;
-            overflow: hidden;
-            border-radius: 15px;
-            margin-bottom: 20px;
-            border: 3px solid #fce7f3;
-        }
+    /* ═══ PORTFOLIO — uniform grid ═══ */
+    #portfolio{background:var(--white);}
+    .pf-filter{display:flex;gap:.5rem;margin-bottom:1.6rem;flex-wrap:wrap;}
+    .pf-btn{padding:.45rem 1.1rem;border-radius:99px;font-size:.74rem;font-weight:700;font-family:'Poppins',sans-serif;cursor:none;background:var(--card-bg);border:2px solid var(--card-bdr);color:var(--txtm);transition:all .22s;}
+    .pf-btn.on,.pf-btn:hover{background:rgba(174,222,252,.28);border-color:var(--skydk);color:var(--txt);}
 
-        .certificate-image {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            transition: transform 0.3s ease;
-            cursor: zoom-in;
-        }
+    /* strict 3-col equal cards */
+    .pf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem;}
+    .pf-item{border-radius:1.3rem;overflow:hidden;position:relative;aspect-ratio:4/3;background:var(--sec-alt);box-shadow:var(--shad);transition:all .3s cubic-bezier(.34,1.56,.64,1);}
+    .pf-item.hide{display:none;}
+    .pf-item:hover{transform:translateY(-6px);box-shadow:var(--shad-pink);}
+    .pf-thumb{width:100%;height:100%;object-fit:cover;transition:all .5s;}
+    .pf-item:hover .pf-thumb{transform:scale(1.05);filter:brightness(.5);}
+    .pf-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(30,10,40,.9) 0%,transparent 55%);display:flex;flex-direction:column;justify-content:flex-end;padding:1.2rem;opacity:0;transform:translateY(6px);transition:all .3s ease;}
+    .pf-item:hover .pf-ov{opacity:1;transform:none;}
+    .pf-tags{display:flex;gap:.3rem;flex-wrap:wrap;margin-bottom:.4rem;}
+    .ptg{font-size:.58rem;font-family:'Poppins',sans-serif;font-weight:600;padding:.18rem .6rem;border-radius:99px;background:rgba(174,222,252,.2);border:1px solid rgba(174,222,252,.32);color:#c5e8ff;}
+    .pf-name{font-size:.98rem;font-weight:800;color:#fff;margin-bottom:.16rem;}
+    .pf-desc{font-size:.73rem;color:rgba(255,255,255,.6);line-height:1.45;}
+    .pf-cat{position:absolute;top:.8rem;right:.8rem;z-index:2;background:rgba(255,247,252,.88);backdrop-filter:blur(8px);color:var(--pink);font-size:.6rem;font-weight:700;letter-spacing:.06em;padding:.2rem .6rem;border-radius:99px;border:1px solid rgba(248,117,170,.18);}
+    [data-theme="dark"] .pf-cat{background:rgba(26,15,30,.85);color:var(--pinkl);}
 
-        .certificate-image.zoomed {
-            transform: scale(1.5);
-            cursor: zoom-out;
-        }
+    /* ═══ CERTIFICATIONS ═══ */
+    #certifications{background:var(--sec-alt);}
+    .cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem;}
+    .cert-card{background:var(--card-bg);border:1.5px solid var(--card-bdr);border-radius:1.6rem;overflow:hidden;cursor:none;box-shadow:var(--shad);transition:all .3s cubic-bezier(.34,1.56,.64,1);}
+    .cert-card:hover{transform:translateY(-8px);box-shadow:var(--shad-pink);border-color:rgba(248,117,170,.28);}
+    .cert-img{height:175px;overflow:hidden;background:rgba(174,222,252,.1);}
+    .cert-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
+    .cert-card:hover .cert-img img{transform:scale(1.05);}
+    .cert-body{padding:1.3rem;}
+    .cert-iss{font-size:.64rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--skydk);margin-bottom:.25rem;}
+    .cert-name{font-size:.92rem;font-weight:800;color:var(--txt);margin-bottom:.25rem;}
+    .cert-date{font-size:.74rem;color:var(--txtm);}
+    .cert-peek{display:flex;align-items:center;gap:.32rem;font-size:.73rem;font-weight:700;color:var(--pink);margin-top:.65rem;opacity:0;transition:opacity .25s;}
+    .cert-card:hover .cert-peek{opacity:1;}
 
-        .zoom-controls {
-            position: absolute;
-            bottom: 15px;
-            right: 15px;
-            display: flex;
-            gap: 10px;
-            background: rgba(255, 255, 255, 0.9);
-            padding: 8px 12px;
-            border-radius: 50px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
+    /* ═══ CV SECTION ═══ */
+    #cv{background:var(--white);}
+    .cv-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.8rem;margin-top:2rem;}
+    .cv-card{border-radius:1.6rem;overflow:hidden;border:2px solid var(--card-bdr);box-shadow:var(--shad);transition:all .3s cubic-bezier(.34,1.56,.64,1);background:var(--card-bg);cursor:none;}
+    .cv-card:hover{transform:translateY(-6px);box-shadow:var(--shad-pink);border-color:rgba(248,117,170,.3);}
+    .cv-img-wrap{position:relative;overflow:hidden;height:540px;}
+    .cv-img-wrap img{width:100%;height:100%;object-fit:contain;object-position:top;transition:transform .5s;background:var(--sec-alt);padding:1rem;}
+    .cv-card:hover .cv-img-wrap img{transform:scale(1.03);}
+    .cv-label{padding:1rem 1.3rem;display:flex;align-items:center;justify-content:space-between;}
+    .cv-label-txt{font-size:.8rem;font-weight:700;color:var(--txt);}
+    .cv-label-sub{font-size:.7rem;color:var(--txtm);}
+    .cv-download{display:inline-flex;align-items:center;gap:.4rem;font-size:.72rem;font-weight:700;color:var(--pink);text-decoration:none;background:rgba(248,117,170,.1);border:1.5px solid rgba(248,117,170,.25);padding:.38rem .9rem;border-radius:99px;transition:all .22s;}
+    .cv-download:hover{background:var(--pink);color:#fff;transform:translateY(-2px);}
 
-        .zoom-btn {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            background: #ec4899;
-            color: white;
-            border: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 18px;
-        }
+    /* ═══ MODAL ═══ */
+    .modal{position:fixed;inset:0;background:var(--modal-ov);backdrop-filter:blur(16px);z-index:2000;display:flex;align-items:center;justify-content:center;padding:1.5rem;opacity:0;visibility:hidden;transition:all .3s ease;}
+    .modal.open{opacity:1;visibility:visible;}
+    .modal-box{background:var(--modal-bg);border-radius:1.7rem;width:100%;max-width:740px;max-height:90vh;overflow-y:auto;transform:scale(.9) translateY(16px);transition:all .3s cubic-bezier(.34,1.56,.64,1);box-shadow:0 24px 60px rgba(248,117,170,.22);}
+    .modal.open .modal-box{transform:scale(1) translateY(0);}
+    .modal-head{background:linear-gradient(135deg,var(--pink),var(--pinkl));padding:1.5rem 1.8rem;border-radius:1.7rem 1.7rem 0 0;display:flex;justify-content:space-between;align-items:center;}
+    .modal-title{font-size:1.05rem;font-weight:800;color:#fff;}
+    .modal-close{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.2);border:none;color:#fff;font-size:.95rem;cursor:none;display:flex;align-items:center;justify-content:center;transition:all .22s;}
+    .modal-close:hover{background:rgba(255,255,255,.3);transform:rotate(90deg);}
+    .modal-body{padding:1.7rem;}
+    .modal-img{width:100%;border-radius:.9rem;margin-bottom:1.5rem;box-shadow:0 6px 24px rgba(0,0,0,.1);}
+    .modal-meta{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin-bottom:1rem;}
+    .mm-lbl{font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--pink);margin-bottom:.16rem;}
+    .mm-val{font-size:.86rem;font-weight:600;color:var(--txt);}
+    .modal-desc{font-size:.83rem;color:var(--txtm);line-height:1.72;margin-bottom:1.3rem;}
+    .comp-list{display:flex;flex-wrap:wrap;gap:.42rem;}
+    .ctag{display:inline-flex;align-items:center;gap:.3rem;background:var(--ps-bg);color:var(--ps-c);border:1.5px solid rgba(174,222,252,.32);font-size:.7rem;font-weight:600;padding:.3rem .72rem;border-radius:99px;}
+    .ctag i{font-size:.6rem;color:var(--pink);}
 
-        .zoom-btn:hover {
-            background: #db2777;
-            transform: scale(1.1);
-        }
+    /* ═══ CONTACT ═══ */
+    #contact{background:var(--sec-alt);}
+    .ct-wrap{background:var(--ct-wrap);border-radius:2rem;padding:3.2rem;box-shadow:0 10px 40px rgba(248,117,170,.1);text-align:center;max-width:760px;margin:0 auto;position:relative;overflow:hidden;transition:background .4s;}
+    .ct-wrap::before{content:'';position:absolute;top:-1.5rem;right:1.5rem;font-size:6.5rem;color:rgba(248,117,170,.04);pointer-events:none;line-height:1;}
+    .ct-title{font-size:1.8rem;font-weight:900;color:var(--txt);margin-bottom:.4rem;}
+    .ct-title em{color:var(--pink);font-style:italic;}
+    .ct-sub{font-size:.88rem;color:var(--txtm);max-width:460px;margin:0 auto 2rem;}
+    .ct-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:.85rem;margin-bottom:1.6rem;}
+    .cc{display:flex;align-items:center;gap:.85rem;background:var(--cc-bg);border:1.5px solid var(--cc-bdr);border-radius:1.2rem;padding:1rem 1.3rem;text-decoration:none;color:var(--txt);transition:all .22s;text-align:left;}
+    .cc:hover{background:rgba(248,117,170,.07);border-color:rgba(248,117,170,.28);transform:translateY(-3px);}
+    .cc-icon{width:40px;height:40px;border-radius:.85rem;background:var(--pink);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0;transition:transform .22s;}
+    .cc:hover .cc-icon{transform:scale(1.1);}
+    .cc-lbl{font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--txtm);margin-bottom:.06rem;}
+    .cc-val{font-size:.8rem;font-weight:700;color:var(--txt);}
+    .ct-btns{display:flex;gap:.85rem;justify-content:center;flex-wrap:wrap;}
 
-        .certificate-thumbnail {
-            cursor: pointer;
-            transition: all 0.3s ease;
-            height: 250px;
-            object-fit: contain;
-        }
+    /* ═══ FOOTER ═══ */
+    footer{background:var(--foot-bg);padding:1.6rem 2.4rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.85rem;transition:background .4s;}
+    .ft-logo{font-size:.88rem;font-weight:800;color:var(--pinkl);}
+    .ft-logo span{color:var(--sky);}
+    .ft-copy{font-size:.72rem;color:rgba(255,255,255,.28);}
+    .ft-copy span{color:var(--pinkl);}
+    .ft-soc{display:flex;gap:.6rem;}
+    .ft-s{width:30px;height:30px;border-radius:50%;border:1.5px solid rgba(248,117,170,.2);color:rgba(255,255,255,.35);display:flex;align-items:center;justify-content:center;font-size:.78rem;text-decoration:none;transition:all .22s;}
+    .ft-s:hover{border-color:var(--pink);color:var(--pinkl);transform:translateY(-3px);}
 
-        .certificate-thumbnail:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 20px rgba(236, 72, 153, 0.2);
-        }
+    /* ═══ FLOATING STARS ═══ */
+    .star{position:fixed;pointer-events:none;animation:sf linear infinite;z-index:0;}
+    @keyframes sf{0%{transform:translateY(100vh) rotate(0deg) scale(1);opacity:0;}10%{opacity:.4;}90%{opacity:.25;}100%{transform:translateY(-10vh) rotate(700deg) scale(.4);opacity:0;}}
 
-        .certificate-details {
-            background: linear-gradient(135deg, #fce7f3 0%, #f9a8d4 100%);
-            padding: 25px;
-            border-radius: 15px;
-            margin-top: 20px;
-        }
+    /* ═══ THEME FLASH ═══ */
+    .tfl{position:fixed;inset:0;background:var(--pink);z-index:9997;pointer-events:none;opacity:0;transition:opacity .18s;}
+    .tfl.go{opacity:.1;}
 
-        .detail-item {
-            display: flex;
-            margin-bottom: 15px;
-            align-items: flex-start;
-        }
-
-        .detail-icon {
-            width: 40px;
-            height: 40px;
-            background: #ec4899;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            margin-right: 15px;
-            flex-shrink: 0;
-        }
-
-        .detail-content h4 {
-            font-weight: 600;
-            color: #db2777;
-            margin-bottom: 5px;
-        }
-
-        .detail-content p {
-            color: #666;
-            line-height: 1.6;
-        }
-
-        .competency-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .competency-item {
-            background: white;
-            padding: 12px 15px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-        }
-
-        .competency-icon {
-            color: #ec4899;
-            margin-right: 10px;
-            font-size: 14px;
-        }
-    </style>
+    /* ═══ RESPONSIVE ═══ */
+    @media(max-width:920px){
+      nav{padding:.55rem 1rem;gap:.7rem;}
+      .nav-links{display:none;}
+      .nav-ham{display:block;}
+      .ab-grid{grid-template-columns:1fr;gap:2rem;}
+      .ab-iw{max-width:260px;margin:0 auto;}
+      .sk-grid{grid-template-columns:repeat(2,1fr);}
+      .pf-grid{grid-template-columns:repeat(2,1fr);}
+      .cert-grid{grid-template-columns:1fr 1fr;}
+      .cv-grid{grid-template-columns:1fr;}
+      .ct-cards{grid-template-columns:repeat(2,1fr);}
+      .ct-wrap{padding:2rem 1.3rem;}
+      footer{flex-direction:column;text-align:center;}
+      .modal-meta{grid-template-columns:1fr;}
+    }
+    @media(max-width:560px){
+      .pf-grid{grid-template-columns:1fr;}
+      .cert-grid{grid-template-columns:1fr;}
+    }
+  </style>
 </head>
-<body class="gradient-bg">
-    <!-- Navigation -->
-    <nav class="fixed w-full z-50 nav-blur shadow-lg">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center">
-                    <div class="flex-shrink-0 flex items-center">
-                        <i class="fas fa-heart text-pink-primary text-2xl mr-2"></i>
-                        <span class="font-bold text-pink-primary text-xl">Inas Najah</span>
-                    </div>
-                </div>
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-6">
-                        <a href="#home" class="text-pink-primary hover:text-pink-dark font-medium transition">Home</a>
-                        <a href="#about" class="text-pink-primary hover:text-pink-dark font-medium transition">About</a>
-                        <a href="#education" class="text-pink-primary hover:text-pink-dark font-medium transition">Education</a>
-                        <a href="#experience" class="text-pink-primary hover:text-pink-dark font-medium transition">Experience</a>
-                        <a href="#portfolio" class="text-pink-primary hover:text-pink-dark font-medium transition">Portfolio</a>
-                        <a href="#contact" class="text-pink-primary hover:text-pink-dark font-medium transition">Contact</a>
-                    </div>
-                </div>
-                <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-pink-primary">
-                        <i class="fas fa-bars text-2xl"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <!-- Mobile menu -->
-        <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#home" class="block px-3 py-2 text-pink-primary font-medium">Home</a>
-                <a href="#about" class="block px-3 py-2 text-pink-primary font-medium">About</a>
-                <a href="#education" class="block px-3 py-2 text-pink-primary font-medium">Education</a>
-                <a href="#experience" class="block px-3 py-2 text-pink-primary font-medium">Experience</a>
-                <a href="#portfolio" class="block px-3 py-2 text-pink-primary font-medium">Portfolio</a>
-                <a href="#contact" class="block px-3 py-2 text-pink-primary font-medium">Contact</a>
-            </div>
-        </div>
-    </nav>
+<body>
 
-    <!-- Hero Section -->
-    <section id="home" class="pt-28 pb-20 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center">
-                <div class="flex justify-center mb-8">
-                    <div class="relative">
-                        <div class="w-48 h-48 rounded-full overflow-hidden border-4 border-white shadow-2xl">
-                            <img src="image/profile.jpeg" alt="Inas Najah Zhahirah" class="w-full h-full object-cover">
-                        </div>
-                        <div class="absolute -bottom-2 -right-2 gradient-pink rounded-full p-4 shadow-xl">
-                            <i class="fas fa-palette text-white text-2xl"></i>
-                        </div>
-                    </div>
-                </div>
-                <h1 class="text-5xl md:text-6xl font-bold text-gray-800 mb-4">
-                    Hello, I'm <span class="text-gradient">Inas Najah Zhahirah</span>
-                </h1>
-                <p class="text-xl text-gray-700 max-w-2xl mx-auto mb-6 font-medium">
-                    Creative Designer & Full Stack Developer
-                </p>
-                <div class="bg-white rounded-2xl shadow-xl p-8 max-w-3xl mx-auto mb-10 text-left">
-                    <p class="text-lg text-gray-600 leading-relaxed text-left">
-                        I'm a creative thinker with a knack for <span class="font-semibold text-pink-primary">graphic design and programming</span>. I specialize in layout design, infographics, social media, and branding, and I'm proficient in web and mobile programming. I'm a quick learner who loves embracing new challenges and thrives in team environments.
-                    </p>
-                </div>
-                <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="#portfolio" class="gradient-pink hover:opacity-90 text-white px-8 py-4 rounded-full font-semibold transition shadow-lg hover:shadow-2xl flex items-center justify-center gap-2">
-                        <i class="fas fa-briefcase"></i>
-                        View My Portfolio
-                    </a>
-                    <a href="#contact" class="bg-white border-2 border-pink-primary text-pink-primary hover:bg-pink-primary hover:text-white px-8 py-4 rounded-full font-semibold transition shadow-lg flex items-center justify-center gap-2">
-                        <i class="fas fa-envelope"></i>
-                        Contact Me
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="tfl" id="tfl"></div>
 
-    <!-- About Section -->
-    <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-12">
-                <h2 class="text-4xl md:text-5xl font-bold text-pink-primary mb-4">About Me</h2>
-                <div class="section-divider"></div>
-            </div>
-            
-            <div class="grid grid-cols-1 gap-12">
-                <div>
-                    <div class="bg-white rounded-3xl shadow-2xl p-10 card-hover">
-                        <h3 class="text-3xl font-bold text-pink-primary mb-6 flex items-center">
-                            <i class="fas fa-user-circle mr-3"></i>
-                            Biography
-                        </h3>
-                        <p class="text-gray-700 mb-6 leading-relaxed text-lg">
-                            I am a student at <span class="font-bold text-pink-primary">Universitas Airlangga</span> majoring in D-IV Informatics Engineering. As a creative professional, I combine my skills in graphic design with programming expertise to create innovative digital solutions.
-                        </p>
-                        
-                        <h4 class="text-2xl font-bold text-pink-primary mb-4 flex items-center">
-                            <i class="fas fa-star mr-3"></i>
-                            Interests & Expertise
-                        </h4>
-                        <p class="text-gray-700 mb-6 leading-relaxed">
-                            I specialize in <span class="font-semibold text-pink-dark">layout design, infographics, social media, and branding</span>. On the technical side, I'm proficient in web and mobile programming using Laravel, Flutter, and various modern frameworks. With extensive experience in Canva and Figma, I've achieved professional-level proficiency in design.
-                        </p>
-                        
-                        <h4 class="text-2xl font-bold text-pink-primary mb-4 flex items-center">
-                            <i class="fas fa-users mr-3"></i>
-                            Personality
-                        </h4>
-                        <p class="text-gray-700 mb-8 leading-relaxed">
-                            I'm easy-going, enjoy collaborating with others, and thrive in team environments. I have good time management skills (not a deadliner!) and bring attention to detail along with critical and creative thinking to every project.
-                        </p>
-                        
-                        <div class="bg-pink-primary text-white p-6 rounded-2xl text-center">
-                            <p class="text-2xl font-bold mb-2">OPEN TO NEW COLLABORATIONS</p>
-                            <p class="text-lg">Let's create something amazing together!</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Loader -->
+<div id="loader">
+  <div class="ld-txt" data-i18n="loading">Memuat portfolio...</div>
+  <div class="ld-bar"><div class="ld-fill" id="lf"></div></div>
+</div>
 
-    <!-- Education Section -->
-    <section id="education" class="py-20 px-4 sm:px-6 lg:px-8 gradient-bg">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-12">
-                <h2 class="text-4xl md:text-5xl font-bold text-pink-primary mb-4">E D U C A T I O N</h2>
-                <div class="section-divider"></div>
-            </div>
+<canvas id="bc"></canvas>
+<div id="cur"></div>
+<div id="cur2"></div>
 
-            <div class="bg-white rounded-3xl shadow-2xl p-10 card-hover">
-                <div class="flex items-start mb-6">
-                    <div class="gradient-pink rounded-2xl p-6 mr-6">
-                        <i class="fas fa-graduation-cap text-white text-4xl"></i>
-                    </div>
-                    <div class="flex-1">
-                        <h3 class="text-3xl font-bold text-pink-primary mb-2">Universitas Airlangga, Surabaya</h3>
-                        <p class="text-xl text-pink-dark font-semibold mb-2">D-IV Informatics Engineering</p>
-                        <p class="text-gray-600 text-lg mb-4">2022 - Present</p>
-                        <span class="bg-pink-lighter text-pink-primary px-6 py-2 rounded-full text-sm font-bold inline-block">Active Student</span>
-                    </div>
-                </div>
-                
-                <div class="bg-gradient-to-r from-pink-lighter to-pink-100 rounded-2xl p-8 mt-6">
-                    <h4 class="text-2xl font-bold text-pink-primary mb-4">Academic Journey</h4>
-                    <p class="text-gray-700 leading-relaxed">
-                        Throughout my studies at Universitas Airlangga, I've been actively involved in various organizations and projects that have shaped my skills in both design and programming. I've contributed to faculty branding, organized major events, and developed multiple web and mobile applications.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-12">
-                <h2 class="text-4xl md:text-5xl font-bold text-pink-primary mb-4">S K I L L S</h2>
-                <div class="section-divider"></div>
-            </div>
-
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-                <!-- Laravel -->
-                <div class="skill-icon bg-gradient-to-br from-pink-lighter to-white rounded-2xl p-8 shadow-lg text-center card-hover">
-                    <i class="fab fa-laravel text-6xl text-red-600 mb-3"></i>
-                    <h3 class="font-bold text-gray-800 text-lg">Laravel</h3>
-                    <p class="text-sm text-pink-primary font-medium mt-2">Intermediate</p>
-                </div>
-                
-                <!-- Flask -->
-                <div class="skill-icon bg-gradient-to-br from-pink-lighter to-white rounded-2xl p-8 shadow-lg text-center card-hover">
-                    <i class="fas fa-flask text-6xl text-gray-800 mb-3"></i>
-                    <h3 class="font-bold text-gray-800 text-lg">Flask</h3>
-                    <p class="text-sm text-pink-primary font-medium mt-2">Intermediate</p>
-                </div>
-                
-                <!-- Bootstrap -->
-                <div class="skill-icon bg-gradient-to-br from-pink-lighter to-white rounded-2xl p-8 shadow-lg text-center card-hover">
-                    <i class="fab fa-bootstrap text-6xl text-purple-600 mb-3"></i>
-                    <h3 class="font-bold text-gray-800 text-lg">Bootstrap</h3>
-                    <p class="text-sm text-pink-primary font-medium mt-2">Intermediate</p>
-                </div>
-                
-                <!-- Flutter -->
-                <div class="skill-icon bg-gradient-to-br from-pink-lighter to-white rounded-2xl p-8 shadow-lg text-center card-hover">
-                    <i class="fas fa-mobile-alt text-6xl text-blue-500 mb-3"></i>
-                    <h3 class="font-bold text-gray-800 text-lg">Flutter</h3>
-                    <p class="text-sm text-pink-primary font-medium mt-2">Beginner</p>
-                </div>
-                
-                <!-- Streamlit -->
-                <div class="skill-icon bg-gradient-to-br from-pink-lighter to-white rounded-2xl p-8 shadow-lg text-center card-hover">
-                    <i class="fas fa-chart-line text-6xl text-pink-primary mb-3"></i>
-                    <h3 class="font-bold text-gray-800 text-lg">Streamlit</h3>
-                    <p class="text-sm text-pink-primary font-medium mt-2">Beginner</p>
-                </div>
-                
-                <!-- Golang -->
-                <div class="skill-icon bg-gradient-to-br from-pink-lighter to-white rounded-2xl p-8 shadow-lg text-center card-hover">
-                    <i class="fab fa-golang text-6xl text-cyan-500 mb-3"></i>
-                    <h3 class="font-bold text-gray-800 text-lg">Golang</h3>
-                    <p class="text-sm text-pink-primary font-medium mt-2">Beginner</p>
-                </div>
-                
-                <!-- MySQL -->
-                <div class="skill-icon bg-gradient-to-br from-pink-lighter to-white rounded-2xl p-8 shadow-lg text-center card-hover">
-                    <i class="fas fa-database text-6xl text-blue-600 mb-3"></i>
-                    <h3 class="font-bold text-gray-800 text-lg">MySQL</h3>
-                    <p class="text-sm text-pink-primary font-medium mt-2">Intermediate</p>
-                </div>
-                
-                <!-- MongoDB -->
-                <div class="skill-icon bg-gradient-to-br from-pink-lighter to-white rounded-2xl p-8 shadow-lg text-center card-hover">
-                    <i class="fas fa-leaf text-6xl text-green-600 mb-3"></i>
-                    <h3 class="font-bold text-gray-800 text-lg">MongoDB</h3>
-                    <p class="text-sm text-pink-primary font-medium mt-2">Beginner</p>
-                </div>
-                
-                <!-- Figma -->
-                <div class="skill-icon bg-gradient-to-br from-pink-lighter to-white rounded-2xl p-8 shadow-lg text-center card-hover">
-                    <i class="fab fa-figma text-6xl text-pink-primary mb-3"></i>
-                    <h3 class="font-bold text-gray-800 text-lg">Figma</h3>
-                    <p class="text-sm text-pink-primary font-medium mt-2">Intermediate</p>
-                </div>
-                
-                <!-- Canva -->
-                <div class="skill-icon bg-gradient-to-br from-pink-lighter to-white rounded-2xl p-8 shadow-lg text-center card-hover">
-                    <i class="fas fa-palette text-6xl text-pink-dark mb-3"></i>
-                    <h3 class="font-bold text-gray-800 text-lg">Canva</h3>
-                    <p class="text-sm text-pink-primary font-medium mt-2">Proficient</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="py-20 px-4 sm:px-6 lg:px-8 gradient-bg">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-12">
-                <h2 class="text-4xl md:text-5xl font-bold text-pink-primary mb-4">E X P E R I E N C E</h2>
-                <div class="section-divider"></div>
-            </div>
-
-            <!-- Organization -->
-            <div class="mb-16">
-                <h3 class="text-3xl font-bold text-pink-primary mb-8 flex items-center justify-center">
-                    <i class="fas fa-users mr-3"></i>
-                    Organization
-                </h3>
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="bg-white rounded-2xl shadow-xl p-8 card-hover">
-                        <div class="flex items-start mb-4">
-                            <div class="bg-pink-lighter rounded-full p-4 mr-4">
-                                <i class="fas fa-palette text-pink-primary text-2xl"></i>
-                            </div>
-                            <div class="flex-1">
-                                <h4 class="text-2xl font-bold text-gray-800 mb-2">SKI Fakultas Vokasi Unair</h4>
-                                <p class="text-pink-primary font-semibold text-lg mb-2">Creative Design Staff</p>
-                                <p class="text-gray-600 mb-3">June 2023 - March 2024</p>
-                            </div>
-                        </div>
-                        <p class="text-gray-700 leading-relaxed">Responsible for creating visual designs and supporting creative initiatives for faculty events and activities.</p>
-                    </div>
-                    
-                    <div class="bg-white rounded-2xl shadow-xl p-8 card-hover">
-                        <div class="flex items-start mb-4">
-                            <div class="bg-pink-lighter rounded-full p-4 mr-4">
-                                <i class="fas fa-camera text-pink-primary text-2xl"></i>
-                            </div>
-                            <div class="flex-1">
-                                <h4 class="text-2xl font-bold text-gray-800 mb-2">Dekan Cup - BEM Fakultas Vokasi</h4>
-                                <p class="text-pink-primary font-semibold text-lg mb-2">PDD Division</p>
-                                <p class="text-gray-600 mb-3">June 2023 - Sept 2023</p>
-                            </div>
-                        </div>
-                        <p class="text-gray-700 leading-relaxed">Handled Publication, Documentation, and Design for the Dekan Cup competition, including creating booklets and guidebooks.</p>
-                    </div>
-
-                    <div class="bg-white rounded-2xl shadow-xl p-8 card-hover">
-                        <div class="flex items-start mb-4">
-                            <div class="bg-pink-lighter rounded-full p-4 mr-4">
-                                <i class="fas fa-hand-holding-heart text-pink-primary text-2xl"></i>
-                            </div>
-                            <div class="flex-1">
-                                <h4 class="text-2xl font-bold text-gray-800 mb-2">HIMA D-IV Informatics Engineering</h4>
-                                <p class="text-pink-primary font-semibold text-lg mb-2">Student Advocacy & Welfare, Treasurer</p>
-                                <p class="text-gray-600 mb-3">May 2023 - Dec 2023, Feb 2024 - Dec 2024</p>
-                            </div>
-                        </div>
-                        <p class="text-gray-700 leading-relaxed">Member of Student Advocacy and Welfare division, managing financial responsibilities and supporting student welfare initiatives.</p>
-                    </div>
-
-                    <div class="bg-white rounded-2xl shadow-xl p-8 card-hover">
-                        <div class="flex items-start mb-4">
-                            <div class="bg-pink-lighter rounded-full p-4 mr-4">
-                                <i class="fas fa-pen-fancy text-pink-primary text-2xl"></i>
-                            </div>
-                            <div class="flex-1">
-                                <h4 class="text-2xl font-bold text-gray-800 mb-2">National Vocational Conference</h4>
-                                <p class="text-pink-primary font-semibold text-lg mb-2">Writer</p>
-                                <p class="text-gray-600 mb-3">September 2024</p>
-                            </div>
-                        </div>
-                        <p class="text-gray-700 leading-relaxed">Contributed as a writer for the National Vocational Conference, creating content and documentation.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Working Experience -->
-            <div>
-                <h3 class="text-3xl font-bold text-pink-primary mb-8 flex items-center justify-center">
-                    <i class="fas fa-briefcase mr-3"></i>
-                    Working Experience
-                </h3>
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="bg-white rounded-2xl shadow-xl p-8 card-hover">
-                        <div class="flex items-start mb-4">
-                            <div class="bg-pink-lighter rounded-full p-4 mr-4">
-                                <i class="fas fa-paint-brush text-pink-primary text-2xl"></i>
-                            </div>
-                            <div class="flex-1">
-                                <h4 class="text-2xl font-bold text-gray-800 mb-2">Branding Fakultas Vokasi Unair</h4>
-                                <p class="text-pink-primary font-semibold text-lg mb-2">Creative Design Staff</p>
-                                <p class="text-gray-600 mb-3">January 2025 - Present</p>
-                            </div>
-                        </div>
-                        <p class="text-gray-700 leading-relaxed">Contributing to faculty branding through graphic design, creating layouts, infographics, flyers, banners, and other design materials.</p>
-                    </div>
-                    
-                    <div class="bg-white rounded-2xl shadow-xl p-8 card-hover">
-                        <div class="flex items-start mb-4">
-                            <div class="bg-pink-lighter rounded-full p-4 mr-4">
-                                <i class="fas fa-keyboard text-pink-primary text-2xl"></i>
-                            </div>
-                            <div class="flex-1">
-                                <h4 class="text-2xl font-bold text-gray-800 mb-2">DIPP Unair</h4>
-                                <p class="text-pink-primary font-semibold text-lg mb-2">Data Entry Assistant (Freelance)</p>
-                                <p class="text-gray-600 mb-3">January 2024 - February 2024</p>
-                            </div>
-                        </div>
-                        <p class="text-gray-700 leading-relaxed">Worked as a freelance data entry staff for Direktorat Perencanaan dan Pengembangan Universitas Airlangga.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Competence Section -->
-    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-12">
-                <h2 class="text-4xl md:text-5xl font-bold text-pink-primary mb-4">C O M P E T E N C E</h2>
-                <div class="section-divider"></div>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-gradient-to-br from-pink-lighter to-white rounded-3xl shadow-xl p-10 text-center card-hover">
-                    <div class="gradient-pink rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-6 shadow-lg">
-                        <i class="fas fa-eye text-white text-4xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-pink-primary mb-4">Attention to Detail</h3>
-                    <p class="text-gray-600 leading-relaxed">Meticulous approach to every design and code element</p>
-                </div>
-
-                <div class="bg-gradient-to-br from-pink-lighter to-white rounded-3xl shadow-xl p-10 text-center card-hover">
-                    <div class="gradient-pink rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-6 shadow-lg">
-                        <i class="fas fa-brain text-white text-4xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-pink-primary mb-4">Critical Thinking</h3>
-                    <p class="text-gray-600 leading-relaxed">Analytical problem-solving and strategic decision-making</p>
-                </div>
-
-                <div class="bg-gradient-to-br from-pink-lighter to-white rounded-3xl shadow-xl p-10 text-center card-hover">
-                    <div class="gradient-pink rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-6 shadow-lg">
-                        <i class="fas fa-lightbulb text-white text-4xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-pink-primary mb-4">Creative Thinking</h3>
-                    <p class="text-gray-600 leading-relaxed">Innovative solutions and unique design perspectives</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="py-20 px-4 sm:px-6 lg:px-8 gradient-bg">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-12">
-                <h2 class="text-4xl md:text-5xl font-bold text-pink-primary mb-4">C E R T I F I C A T I O N</h2>
-                <div class="section-divider"></div>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-6">
-                <div class="bg-white rounded-3xl shadow-2xl p-10 card-hover">
-                    <div class="flex items-start">
-                        <div class="flex-1">
-                            <h4 class="text-3xl font-bold text-gray-800 mb-3">Junior Web Programmer</h4>
-                            <p class="text-pink-primary font-semibold text-xl mb-3">LSP (Lembaga Sertifikasi Profesi)</p>
-                            <p class="text-gray-600 text-lg mb-6">June 2024</p>
-
-                            <div class="flex items-center justify-center rounded-2xl p-6 h-64 md:h-72 cursor-pointer" onclick="openCertificatePopup('junior-web')">
-                                <img src="image/JuniorWebSertif.jpg" alt="Junior Web Certificate" class="certificate-thumbnail w-full h-full rounded-xl object-contain">
-                            </div>
-                            <p class="text-center mt-4 text-gray-600">Click image to view details</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-3xl shadow-2xl p-10 card-hover">
-                    <div class="flex items-start">
-                        <div class="flex-1">
-                            <h4 class="text-3xl font-bold text-gray-800 mb-3">Associate Data Scientist</h4>
-                            <p class="text-pink-primary font-semibold text-xl mb-3">LSP (Lembaga Sertifikasi Profesi)</p>
-                            <p class="text-gray-600 text-lg mb-6">2025</p>
-
-                            <div class="flex items-center justify-center rounded-2xl p-6 h-64 md:h-72 cursor-pointer" onclick="openCertificatePopup('data-science')">
-                                <img src="image/DataSciencSertif.jpg" alt="Data Science Certificate" class="certificate-thumbnail w-full h-full rounded-xl object-contain">
-                            </div>
-                            <p class="text-center mt-4 text-gray-600">Click image to view details</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-white rounded-3xl shadow-2xl p-10 card-hover">
-                    <div class="flex items-start">
-                        <div class="flex-1">
-                            <h4 class="text-3xl font-bold text-gray-800 mb-3">Vokasi Branding Contributor</h4>
-                            <p class="text-pink-primary font-semibold text-xl mb-3">Fakultas Vokasi Universitas Airlangga</p>
-                            <p class="text-gray-600 text-lg mb-6">2025</p>
-                            <div class="flex items-center justify-center rounded-2xl p-6 h-64 md:h-72 cursor-pointer" onclick="openCertificatePopup('data-science')">
-                                <img src="image/vokasi.jpeg" alt="Data Science Certificate" class="certificate-thumbnail w-full h-full rounded-xl object-contain">
-                            </div>
-                            <p class="text-center mt-4 text-gray-600">Click image to view details</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-12">
-                <h2 class="text-4xl md:text-5xl font-bold text-pink-primary mb-4">P O R T F O L I O</h2>
-                <div class="section-divider mb-6"></div>
-                <p class="text-gray-600 text-lg max-w-3xl mx-auto">A showcase of my technical projects and design works</p>
-            </div>
-
-            <!-- Technical Portfolio -->
-            <div class="mb-16">
-                <h3 class="text-3xl font-bold text-pink-primary mb-8 flex items-center justify-center">
-                    <i class="fas fa-laptop-code mr-3"></i>
-                    Technical Projects (Programming)
-                </h3>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Project 1: Dobujack Indonesia -->
-                    <div class="bg-gradient-to-br from-pink-lighter to-white rounded-3xl overflow-hidden shadow-xl card-hover">
-                        <div class="h-48 relative overflow-hidden">
-                            <img src="image/Dobujack.jpg" alt="Dobujack Indonesia" class="w-full h-full object-cover">
-                        </div>
-                        <div class="p-6">
-                            <h4 class="text-2xl font-bold text-gray-800 mb-3">Dobujack Indonesia</h4>
-                            <p class="text-gray-700 mb-4 leading-relaxed">
-                                Men's fashion e-commerce website with modern responsive design, smooth animations, and interactive elements using Bootstrap and jQuery.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="bg-pink-primary text-white px-3 py-1 rounded-full text-xs font-medium">Bootstrap</span>
-                                <span class="bg-pink-primary text-white px-3 py-1 rounded-full text-xs font-medium">jQuery</span>
-                                <span class="bg-pink-primary text-white px-3 py-1 rounded-full text-xs font-medium">Responsive</span>
-                            </div>
-                            <a href="https://github.com/inassiperboi/DobujackIndonesia.git" class="text-pink-primary hover:text-pink-dark font-semibold flex items-center gap-2">
-                                <i class="fab fa-github"></i>
-                                View Project
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Project 2: This Is July -->
-                    <div class="bg-gradient-to-br from-pink-lighter to-white rounded-3xl overflow-hidden shadow-xl card-hover">
-                        <div class="h-48 relative overflow-hidden">
-                            <img src="image/This-Is-July.jpg" alt="This Is July" class="w-full h-full object-cover">
-                        </div>
-                        <div class="p-6">
-                            <h4 class="text-2xl font-bold text-gray-800 mb-3">This Is July</h4>
-                            <p class="text-gray-700 mb-4 leading-relaxed">
-                                Women's online shopping platform inspired by This Is April, built with Laravel and MySQL, featuring responsive design, product management, and a user-friendly interface.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="bg-pink-primary text-white px-3 py-1 rounded-full text-xs font-medium">Laravel</span>
-                                <span class="bg-pink-primary text-white px-3 py-1 rounded-full text-xs font-medium">MySQL</span>
-                                <span class="bg-pink-primary text-white px-3 py-1 rounded-full text-xs font-medium">E-commerce</span>
-                            </div>
-                            <a href="https://github.com/inassiperboi/ThisIsJuly.git" class="text-pink-primary hover:text-pink-dark font-semibold flex items-center gap-2">
-                                <i class="fab fa-github"></i>
-                                View Project
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Project 3: CareNest -->
-                    <div class="bg-gradient-to-br from-pink-lighter to-white rounded-3xl overflow-hidden shadow-xl card-hover">
-                        <div class="h-48 relative overflow-hidden">
-                            <img src="image/CareNest.jpg" alt="CareNest" class="w-full h-full object-cover">
-                        </div>
-                        <div class="p-6">
-                            <h4 class="text-2xl font-bold text-gray-800 mb-3">CareNest</h4>
-                            <p class="text-gray-700 mb-4 leading-relaxed">
-                                Posyandu tracking application with dual interfaces (admin & user) designed in Figma, providing digital solution for child healthcare monitoring.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="bg-pink-primary text-white px-3 py-1 rounded-full text-xs font-medium">HTML/CSS</span>
-                                <span class="bg-pink-primary text-white px-3 py-1 rounded-full text-xs font-medium">Figma</span>
-                                <span class="bg-pink-primary text-white px-3 py-1 rounded-full text-xs font-medium">Healthcare</span>
-                            </div>
-                            <a href="#" class="text-pink-primary hover:text-pink-dark font-semibold flex items-center gap-2">
-                                <i class="fab fa-github"></i>
-                                View Project
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Project 4: HiddenGame -->
-                    <div class="bg-gradient-to-br from-pink-lighter to-white rounded-3xl overflow-hidden shadow-xl card-hover">
-                        <div class="h-48 relative overflow-hidden">
-                            <img src="image/HiddenGame.jpg" alt="HiddenGame" class="w-full h-full object-cover">
-                        </div>
-                        <div class="p-6">
-                            <h4 class="text-2xl font-bold text-gray-800 mb-3">HiddenGame</h4>
-                            <p class="text-gray-700 mb-4 leading-relaxed">
-                                AI-powered customer satisfaction website using Forward Chaining method. Fully responsive Flask application for analyzing user feedback.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="bg-pink-primary text-white px-3 py-1 rounded-full text-xs font-medium">Flask</span>
-                                <span class="bg-pink-primary text-white px-3 py-1 rounded-full text-xs font-medium">AI</span>
-                                <span class="bg-pink-primary text-white px-3 py-1 rounded-full text-xs font-medium">Responsive</span>
-                            </div>
-                            <a href="https://github.com/inassiperboi/hiddengame.git" class="text-pink-primary hover:text-pink-dark font-semibold flex items-center gap-2">
-                                <i class="fab fa-github"></i>
-                                View Project
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Project 5: Oemah Ibu -->
-                    <div class="bg-gradient-to-br from-pink-lighter to-white rounded-3xl overflow-hidden shadow-xl card-hover">
-                        <div class="h-48 relative overflow-hidden">
-                            <img src="image/Oemah-Ibu.jpg" alt="Oemah Ibu" class="w-full h-full object-cover">
-                        </div>
-                        <div class="p-6">
-                            <h4 class="text-2xl font-bold text-gray-800 mb-3">Oemah Ibu</h4>
-                            <p class="text-gray-700 mb-4 leading-relaxed">
-                                Mobile app showcasing diverse menu with Figma UI design, Flutter framework, and CodeIgniter 4 API for browsing and filtering dishes.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="bg-pink-primary text-white px-3 py-1 rounded-full text-xs font-medium">Flutter</span>
-                                <span class="bg-pink-primary text-white px-3 py-1 rounded-full text-xs font-medium">Dart</span>
-                                <span class="bg-pink-primary text-white px-3 py-1 rounded-full text-xs font-medium">API</span>
-                            </div>
-                            <a href="https://github.com/inassiperboi/OemahIbu.git" class="text-pink-primary hover:text-pink-dark font-semibold flex items-center gap-2">
-                                <i class="fab fa-github"></i>
-                                View Project
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Project 6: Arcadia -->
-                    <div class="bg-gradient-to-br from-pink-lighter to-white rounded-3xl overflow-hidden shadow-xl card-hover">
-                        <div class="h-48 relative overflow-hidden">
-                            <img src="image/Arcadia.jpg" alt="Arcadia" class="w-full h-full object-cover">
-                        </div>
-                        <div class="p-6">
-                            <h4 class="text-2xl font-bold text-gray-800 mb-3">Arcadia</h4>
-                            <p class="text-gray-700 mb-4 leading-relaxed">
-                                Library book lending website with efficient management system using Laravel and MySQL, designed in Figma for optimal user experience.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="bg-pink-primary text-white px-3 py-1 rounded-full text-xs font-medium">Laravel</span>
-                                <span class="bg-pink-primary text-white px-3 py-1 rounded-full text-xs font-medium">MySQL</span>
-                                <span class="bg-pink-primary text-white px-3 py-1 rounded-full text-xs font-medium">Figma</span>
-                            </div>
-                            <a href="https://github.com/inassiperboi/Arcadia.git" class="text-pink-primary hover:text-pink-dark font-semibold flex items-center gap-2">
-                                <i class="fab fa-github"></i>
-                                View Project
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Project 7: TrustMedis Tracker -->
-                    <div class="bg-gradient-to-br from-pink-lighter to-white rounded-3xl overflow-hidden shadow-xl card-hover">
-                        <div class="h-48 relative overflow-hidden">
-                            <img src="image/TrustMedisTracker.jpg" alt="TrustMedis Tracker" class="w-full h-full object-cover">
-                        </div>
-                        <div class="p-6">
-                            <h4 class="text-2xl font-bold text-gray-800 mb-3">TrustMedis Tracker</h4>
-                            <p class="text-gray-700 mb-4 leading-relaxed">
-                                Sistem informasi berbasis web untuk memantau kinerja fasilitas kesehatan secara real-time dan mendukung pengambilan keputusan berbasis data.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="bg-pink-primary text-white px-3 py-1 rounded-full text-xs font-medium">Laravel</span>
-                                <span class="bg-pink-primary text-white px-3 py-1 rounded-full text-xs font-medium">MySQL</span>
-                                <span class="bg-pink-primary text-white px-3 py-1 rounded-full text-xs font-medium">Healthcare</span>
-                                <span class="bg-pink-primary text-white px-3 py-1 rounded-full text-xs font-medium">Dashboard</span>
-                            </div>
-                            <a href="https://github.com/inassiperboi/Faskes-Trustmedis-Tracker.git" class="text-pink-primary hover:text-pink-dark font-semibold flex items-center gap-2">
-                                <i class="fab fa-github"></i>
-                                View Project
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Project 8: TrustMedis Chatbot -->
-                    <div class="bg-gradient-to-br from-pink-lighter to-white rounded-3xl overflow-hidden shadow-xl card-hover">
-                        <div class="h-48 relative overflow-hidden">
-                            <img src="image/TrustMedisChatBot.jpg" alt="TrustMedis Chatbot" class="w-full h-full object-cover">
-                        </div>
-                        <div class="p-6">
-                            <h4 class="text-2xl font-bold text-gray-800 mb-3">TrustMedis Chatbot</h4>
-                            <p class="text-gray-700 mb-4 leading-relaxed">
-                                Prototipe chatbot web RME TrustMedis berbasis Logistic Regression untuk menyediakan informasi medis dasar, dengan rencana integrasi ke sistem RME.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="bg-pink-primary text-white px-3 py-1 rounded-full text-xs font-medium">Python</span>
-                                <span class="bg-pink-primary text-white px-3 py-1 rounded-full text-xs font-medium">Streamlit</span>
-                                <span class="bg-pink-primary text-white px-3 py-1 rounded-full text-xs font-medium">Healthcare</span>
-                                <span class="bg-pink-primary text-white px-3 py-1 rounded-full text-xs font-medium">AI Chatbot</span>
-                            </div>
-                            <a href="https://github.com/inassiperboi/chatbottrustmedis.git" class="text-pink-primary hover:text-pink-dark font-semibold flex items-center gap-2">
-                                <i class="fab fa-github"></i>
-                                View Project
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Design Portfolio -->
-            <div>
-                <h3 class="text-3xl font-bold text-pink-primary mb-8 flex items-center justify-center">
-                    <i class="fas fa-palette mr-3"></i>
-                    Design Projects
-                </h3>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Design 1: Dekan Cup Vokasi -->
-                    <div class="bg-gradient-to-br from-pink-lighter to-white rounded-3xl overflow-hidden shadow-xl card-hover">
-                        <div class="h-48 relative overflow-hidden">
-                            <img src="image/Dekan-Cup-Vokasi.jpg" alt="Dekan Cup Vokasi" class="w-full h-full object-cover">
-                        </div>
-                        <div class="p-6">
-                            <h4 class="text-2xl font-bold text-gray-800 mb-3">Dekan Cup Vokasi</h4>
-                            <p class="text-gray-700 mb-4 leading-relaxed">
-                                Competition booklet and guidebook design with clear, well-structured information for participants created using Canva.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="bg-purple-200 text-purple-700 px-3 py-1 rounded-full text-xs font-medium">Canva</span>
-                                <span class="bg-purple-200 text-purple-700 px-3 py-1 rounded-full text-xs font-medium">Layout Design</span>
-                                <span class="bg-purple-200 text-purple-700 px-3 py-1 rounded-full text-xs font-medium">Print</span>
-                            </div>
-                            <a href="#" class="text-pink-primary hover:text-pink-dark font-semibold flex items-center gap-2">
-                                <i class="fas fa-eye"></i>
-                                View Design
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Design 2: Branding Vokasi -->
-                    <div class="bg-gradient-to-br from-pink-lighter to-white rounded-3xl overflow-hidden shadow-xl card-hover">
-                        <div class="h-48 relative overflow-hidden">
-                            <img src="image/BrandingVokasi.jpg" alt="Branding Vokasi" class="w-full h-full object-cover">
-                        </div>
-                        <div class="p-6">
-                            <h4 class="text-2xl font-bold text-gray-800 mb-3">Branding Vokasi</h4>
-                            <p class="text-gray-700 mb-4 leading-relaxed">
-                                Faculty branding materials including layouts, infographics, flyers, banners with professional-level proficiency in Canva.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="bg-purple-200 text-purple-700 px-3 py-1 rounded-full text-xs font-medium">Canva</span>
-                                <span class="bg-purple-200 text-purple-700 px-3 py-1 rounded-full text-xs font-medium">Branding</span>
-                                <span class="bg-purple-200 text-purple-700 px-3 py-1 rounded-full text-xs font-medium">Graphics</span>
-                            </div>
-                            <a href="#" class="text-pink-primary hover:text-pink-dark font-semibold flex items-center gap-2">
-                                <i class="fas fa-eye"></i>
-                                View Design
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Design 3: Pujasera App -->
-                    <div class="bg-gradient-to-br from-pink-lighter to-white rounded-3xl overflow-hidden shadow-xl card-hover">
-                        <div class="h-48 relative overflow-hidden">
-                            <img src="image/PujaseraApp.jpg" alt="Pujasera App" class="w-full h-full object-cover">
-                        </div>
-                        <div class="p-6">
-                            <h4 class="text-2xl font-bold text-gray-800 mb-3">Pujasera App</h4>
-                            <p class="text-gray-700 mb-4 leading-relaxed">
-                                Food court ordering application UI/UX design with intuitive interface created in Figma.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="bg-purple-200 text-purple-700 px-3 py-1 rounded-full text-xs font-medium">Figma</span>
-                                <span class="bg-purple-200 text-purple-700 px-3 py-1 rounded-full text-xs font-medium">UI/UX</span>
-                                <span class="bg-purple-200 text-purple-700 px-3 py-1 rounded-full text-xs font-medium">Mobile</span>
-                            </div>
-                            <a href="#" class="text-pink-primary hover:text-pink-dark font-semibold flex items-center gap-2">
-                                <i class="fas fa-eye"></i>
-                                View Design
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Design 4: E-Trashure -->
-                    <div class="bg-gradient-to-br from-pink-lighter to-white rounded-3xl overflow-hidden shadow-xl card-hover">
-                        <div class="h-48 relative overflow-hidden">
-                            <img src="image/E-Trashure.jpg" alt="E-Trashure" class="w-full h-full object-cover">
-                        </div>
-                        <div class="p-6">
-                            <h4 class="text-2xl font-bold text-gray-800 mb-3">E-Trashure</h4>
-                            <p class="text-gray-700 mb-4 leading-relaxed">
-                                Waste bank application design promoting environmental awareness through digital waste management.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="bg-purple-200 text-purple-700 px-3 py-1 rounded-full text-xs font-medium">Figma</span>
-                                <span class="bg-purple-200 text-purple-700 px-3 py-1 rounded-full text-xs font-medium">UI/UX</span>
-                                <span class="bg-purple-200 text-purple-700 px-3 py-1 rounded-full text-xs font-medium">Eco</span>
-                            </div>
-                            <a href="#" class="text-pink-primary hover:text-pink-dark font-semibold flex items-center gap-2">
-                                <i class="fas fa-eye"></i>
-                                View Design
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Design 5: Parkopedia -->
-                    <div class="bg-gradient-to-br from-pink-lighter to-white rounded-3xl overflow-hidden shadow-xl card-hover">
-                        <div class="h-48 relative overflow-hidden">
-                            <img src="image/Parkopedia.jpg" alt="Parkopedia" class="w-full h-full object-cover">
-                        </div>
-                        <div class="p-6">
-                            <h4 class="text-2xl font-bold text-gray-800 mb-3">Parkopedia</h4>
-                            <p class="text-gray-700 mb-4 leading-relaxed">
-                                Digital parking application interface design streamlining parking management with modern UI.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="bg-purple-200 text-purple-700 px-3 py-1 rounded-full text-xs font-medium">Figma</span>
-                                <span class="bg-purple-200 text-purple-700 px-3 py-1 rounded-full text-xs font-medium">UI/UX</span>
-                                <span class="bg-purple-200 text-purple-700 px-3 py-1 rounded-full text-xs font-medium">Smart City</span>
-                            </div>
-                            <a href="#" class="text-pink-primary hover:text-pink-dark font-semibold flex items-center gap-2">
-                                <i class="fas fa-eye"></i>
-                                View Design
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Design 6: GreenGlam -->
-                    <div class="bg-gradient-to-br from-pink-lighter to-white rounded-3xl overflow-hidden shadow-xl card-hover">
-                        <div class="h-48 relative overflow-hidden">
-                            <img src="image/GreenGlam.jpg" alt="GreenGlam" class="w-full h-full object-cover">
-                        </div>
-                        <div class="p-6">
-                            <h4 class="text-2xl font-bold text-gray-800 mb-3">GreenGlam</h4>
-                            <p class="text-gray-700 mb-4 leading-relaxed">
-                                Cosmetic recycling application promoting sustainable beauty practices with eco-friendly design approach.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="bg-purple-200 text-purple-700 px-3 py-1 rounded-full text-xs font-medium">Figma</span>
-                                <span class="bg-purple-200 text-purple-700 px-3 py-1 rounded-full text-xs font-medium">UI/UX</span>
-                                <span class="bg-purple-200 text-purple-700 px-3 py-1 rounded-full text-xs font-medium">Sustainability</span>
-                            </div>
-                            <a href="#" class="text-pink-primary hover:text-pink-dark font-semibold flex items-center gap-2">
-                                <i class="fas fa-eye"></i>
-                                View Design
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- View More -->
-            <div class="text-center mt-12">
-                <a href="https://github.com/inassiperboi" target="_blank" class="gradient-pink text-white px-10 py-4 rounded-full font-bold text-lg hover:opacity-90 transition shadow-xl inline-flex items-center gap-3">
-                    <i class="fab fa-github text-2xl"></i>
-                    More Projects on GitHub
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 gradient-bg">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-12">
-                <h2 class="text-4xl md:text-5xl font-bold text-pink-primary mb-4">C O N T A C T  M E</h2>
-                <div class="section-divider mb-6"></div>
-                <p class="text-gray-700 text-lg">Let's collaborate and create something amazing together!</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Email -->
-                <div class="bg-white p-8 rounded-3xl shadow-xl card-hover">
-                    <div class="flex items-center mb-4">
-                        <div class="gradient-pink rounded-full p-5 mr-5">
-                            <i class="fas fa-envelope text-white text-3xl"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-gray-800 text-xl mb-1">Email Address</h4>
-                            <p class="text-gray-600 text-lg">inasnajahz@gmail.com</p>
-                        </div>
-                    </div>
-                    <a href="mailto:inasnajahz@gmail.com" class="text-pink-primary hover:text-pink-dark font-semibold flex items-center gap-2 mt-4">
-                        <i class="fas fa-paper-plane"></i>
-                        Send Email
-                    </a>
-                </div>
-
-                <!-- Phone -->
-                <div class="bg-white p-8 rounded-3xl shadow-xl card-hover">
-                    <div class="flex items-center mb-4">
-                        <div class="gradient-pink rounded-full p-5 mr-5">
-                            <i class="fas fa-phone text-white text-3xl"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-gray-800 text-xl mb-1">Phone Number</h4>
-                            <p class="text-gray-600 text-lg">+62 895 8053 5185</p>
-                        </div>
-                    </div>
-                    <a href="tel:+6289580535185" class="text-pink-primary hover:text-pink-dark font-semibold flex items-center gap-2 mt-4">
-                        <i class="fas fa-phone-alt"></i>
-                        Call Now
-                    </a>
-                </div>
-
-                <!-- GitHub -->
-                <div class="bg-white p-8 rounded-3xl shadow-xl card-hover">
-                    <div class="flex items-center mb-4">
-                        <div class="gradient-pink rounded-full p-5 mr-5">
-                            <i class="fab fa-github text-white text-3xl"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-gray-800 text-xl mb-1">GitHub</h4>
-                            <p class="text-gray-600 text-lg">github.com/inassiperboi</p>
-                        </div>
-                    </div>
-                    <a href="https://github.com/inassiperboi" target="_blank" class="text-pink-primary hover:text-pink-dark font-semibold flex items-center gap-2 mt-4">
-                        <i class="fab fa-github"></i>
-                        Visit GitHub Profile
-                    </a>
-                </div>
-
-                <!-- Instagram -->
-                <div class="bg-white p-8 rounded-3xl shadow-xl card-hover">
-                    <div class="flex items-center mb-4">
-                        <div class="gradient-pink rounded-full p-5 mr-5">
-                            <i class="fab fa-instagram text-white text-3xl"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-gray-800 text-xl mb-1">Instagram</h4>
-                            <p class="text-gray-600 text-lg">@inas.nais</p>
-                        </div>
-                    </div>
-                    <a href="https://instagram.com/inas.nais" target="_blank" class="text-pink-primary hover:text-pink-dark font-semibold flex items-center gap-2 mt-4">
-                        <i class="fab fa-instagram"></i>
-                        Follow on Instagram
-                    </a>
-                </div>
-            </div>
-
-            <!-- Call to Action -->
-            <div class="mt-12 text-center">
-                <div class="bg-white rounded-3xl shadow-2xl p-12">
-                    <h3 class="text-3xl font-bold text-pink-primary mb-4">Ready to Collaborate?</h3>
-                    <p class="text-gray-600 text-lg mb-8 max-w-2xl mx-auto">
-                        I'm always open to new projects, creative ideas, and opportunities to be part of your visions. Feel free to reach out!
-                    </p>
-                    <div class="flex flex-wrap justify-center gap-4">
-                        <a href="mailto:inasnajahz@gmail.com" class="gradient-pink text-white px-8 py-4 rounded-full font-semibold transition shadow-lg hover:opacity-90 flex items-center gap-2">
-                            <i class="fas fa-envelope"></i>
-                            Get in Touch
-                        </a>
-                        <a href="https://github.com/inassiperboi" target="_blank" class="bg-white border-2 border-pink-primary text-pink-primary hover:bg-pink-primary hover:text-white px-8 py-4 rounded-full font-semibold transition shadow-lg flex items-center gap-2">
-                            <i class="fab fa-github"></i>
-                            View My Work
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-white py-12 shadow-lg">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <div class="flex justify-center mb-6">
-                    <div class="gradient-pink rounded-full p-4">
-                        <i class="fas fa-heart text-white text-3xl"></i>
-                    </div>
-                </div>
-                <h3 class="text-3xl font-bold text-pink-primary mb-2">Inas Najah Zhahirah</h3>
-                <p class="text-gray-600 mb-6 max-w-2xl mx-auto">
-                    Creative Designer & Full Stack Developer | Universitas Airlangga
-                </p>
-                
-                <div class="flex justify-center space-x-4 mb-8">
-                    <a href="mailto:inasnajahz@gmail.com" class="bg-pink-lighter hover:bg-pink-primary text-pink-primary hover:text-white p-4 rounded-full transition shadow-lg">
-                        <i class="fas fa-envelope text-xl"></i>
-                    </a>
-                    <a href="https://github.com/inassiperboi" target="_blank" class="bg-pink-lighter hover:bg-pink-primary text-pink-primary hover:text-white p-4 rounded-full transition shadow-lg">
-                        <i class="fab fa-github text-xl"></i>
-                    </a>
-                    <a href="https://instagram.com/inas.nais" target="_blank" class="bg-pink-lighter hover:bg-pink-primary text-pink-primary hover:text-white p-4 rounded-full transition shadow-lg">
-                        <i class="fab fa-instagram text-xl"></i>
-                    </a>
-                    <a href="tel:+6289580535185" class="bg-pink-lighter hover:bg-pink-primary text-pink-primary hover:text-white p-4 rounded-full transition shadow-lg">
-                        <i class="fas fa-phone text-xl"></i>
-                    </a>
-                </div>
-                
-                <div class="border-t-2 border-pink-lighter pt-6">
-                    <p class="text-gray-600">
-                        &copy; 2025 Inas Najah Zhahirah. All rights reserved. | Made with 
-                        <span class="text-pink-primary">♥</span> 
-                        by myself
-                    </p>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <div id="certificatePopup" class="popup-overlay">
-        <div class="popup-card">
-            <div class="popup-header">
-                <h3 id="popupTitle" class="text-2xl font-bold">Certificate Details</h3>
-                <button class="popup-close" onclick="closeCertificatePopup()">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            <div class="popup-body">
-                <div id="popupContent">
-                    <!-- Content will be inserted here by JavaScript -->
-                </div>
-            </div>
-        </div>
+<!-- NAV -->
+<nav id="nav">
+  <a href="#home" class="nav-logo">inas<span>.nais</span></a>
+  <ul class="nav-links" id="nLinks">
+    <li><a href="#about"          data-i18n="nav_about">Tentang</a></li>
+    <li><a href="#skills"         data-i18n="nav_skills">Keahlian</a></li>
+    <li><a href="#education"      data-i18n="nav_edu">Pendidikan</a></li>
+    <li><a href="#experience"     data-i18n="nav_exp">Pengalaman</a></li>
+    <li><a href="#portfolio"      data-i18n="nav_port">Portofolio</a></li>
+    <li><a href="#certifications" data-i18n="nav_cert">Sertifikat</a></li>
+    <li><a href="#cv"             data-i18n="nav_cv">CV</a></li>
+    <li><a href="#contact"        data-i18n="nav_contact">Kontak</a></li>
+  </ul>
+  <div class="nav-ctrls">
+    <div class="lang-tgl">
+      <button class="lang-btn on" id="btnID" onclick="setLang('id')">ID</button>
+      <button class="lang-btn"   id="btnEN" onclick="setLang('en')">EN</button>
     </div>
+    <div class="dk-tgl" id="dkTgl" onclick="toggleDark()">
+      <div class="dk-ball" id="dkBall">☀️</div>
+    </div>
+    <button class="nav-ham" id="nHam"><i class="fas fa-bars"></i></button>
+  </div>
+</nav>
 
-    <script>
-        // Certificate Data
-        const certificateData = {
-            'junior-web': {
-                title: 'Junior Web Programmer',
-                issuer: 'LSP (Lembaga Sertifikasi Profesi)',
-                date: 'June 2024',
-                image: 'image/JuniorWebSertif.jpg',
-                description: 'This certification validates my skills in web development including frontend and backend programming, database management, and web application deployment.',
-                competencies: [
-                    'Applying data structures',
-                    'Implementing UI design',
-                    'Installing programming tools',
-                    'Writing clean code',
-                    'Developing structured programs',
-                    'Utilizing libraries & components',
-                    'Code documentation',
-                    'Debugging & testing'
-                ]
-            },
-            'data-science': {
-                title: 'Associate Data Scientist',
-                issuer: 'LSP (Lembaga Sertifikasi Profesi)',
-                date: '2025',
-                image: 'image/DataSciencSertif.jpg',
-                description: 'This certification demonstrates my proficiency in data analysis, machine learning, statistical modeling, and data visualization techniques.',
-                competencies: [
-                    'Data preprocessing & cleaning',
-                    'Exploratory data analysis',
-                    'Feature engineering',
-                    'Model selection & evaluation',
-                    'Statistical analysis',
-                    'Data visualization',
-                    'Python/R tools & libraries',
-                    'Model deployment basics'
-                ]
-            }
-        };
+<!-- HERO -->
+<section id="home">
+  <div class="deco dc1"></div><div class="deco dc2"></div><div class="deco dc3"></div>
+  <div class="hero-inner">
+    <div class="h-av"><img src="image/profile.jpeg" alt="Inas Najah Zhahirah"></div>
+    <div class="h-tag"><div class="h-dot"></div><span data-i18n="hero_tag">Terbuka untuk Kolaborasi</span></div>
+    <h1 class="h-name">
+      <div class="l1" data-i18n="hero_hello">Halo, aku</div>
+      <div class="l2">Inas Najah Zhahirah</div>
+    </h1>
+    <p class="h-sub" data-i18n="hero_role">Creative Designer &amp; Full Stack Developer</p>
+    <p class="h-desc" data-i18n="hero_desc">Mahasiswa D-IV Teknik Informatika Universitas Airlangga yang suka design, suka coding, dan suka explore hal-hal baru!</p>
+    <div class="h-btns">
+      <a href="#portfolio" class="btn btn-f"><i class="fas fa-briefcase"></i><span data-i18n="btn_portfolio">Lihat Portofolio</span></a>
+      <a href="#contact"   class="btn btn-o"><i class="fas fa-envelope"></i><span data-i18n="btn_contact">Hubungi Aku</span></a>
+    </div>
+  </div>
+  <div class="h-scroll"><div class="sdots"><div class="sd"></div><div class="sd"></div><div class="sd"></div></div><span data-i18n="scroll">scroll</span></div>
+</section>
 
-        // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        mobileMenuButton.addEventListener('click', function() {
-            mobileMenu.classList.toggle('hidden');
-        });
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="ab-grid">
+      <div class="ab-iw rv">
+        <div class="ab-bg"></div>
+        <div class="fc"><i class="fas fa-palette" style="color:var(--pink)"></i><span data-i18n="chip_design">Designer & Dev</span></div>
+        <img src="image/profile.jpeg" alt="Inas Najah" class="ab-img">
+        <div class="ab-badge"><div class="n">3+</div><div class="l" data-i18n="badge_years">Tahun Aktif</div></div>
+      </div>
+      <div>
+        <div class="sl rv" data-i18n="about_label">Tentang Aku</div>
+        <h2 class="stit rv d1"><span data-i18n="about_t1">Pemikir kreatif,</span><br><em data-i18n="about_t2">pemecah masalah!</em></h2>
+        <p class="ssub rv d2" data-i18n="about_desc">Aku mahasiswa D-IV Teknik Informatika di Universitas Airlangga yang punya passion di design dan programming. Percaya bahwa good design bukan cuma soal estetika — tapi juga logika yang kuat!</p>
+        <div class="ab-pills rv d2">
+          <span class="pill ps"><i class="fas fa-palette"></i><span data-i18n="pill_ld">Desain Layout</span></span>
+          <span class="pill pp"><i class="fas fa-chart-pie"></i><span data-i18n="pill_ig">Infografis</span></span>
+          <span class="pill ps"><i class="fas fa-mobile-alt"></i><span data-i18n="pill_md">Pengembangan Mobile</span></span>
+          <span class="pill pp"><i class="fab fa-laravel"></i> Laravel</span>
+          <span class="pill ps"><i class="fab fa-figma"></i> Figma</span>
+          <span class="pill pp"><i class="fas fa-paint-brush"></i> Canva Pro</span>
+          <span class="pill ps"><i class="fas fa-brain"></i><span data-i18n="pill_ct">Berpikir Kritis</span></span>
+          <span class="pill pp"><i class="fas fa-clock"></i><span data-i18n="pill_dl">Bukan Deadliner!</span></span>
+        </div>
+        <div class="ab-open rv d3">
+          <div class="h-dot" style="background:#fff"></div>
+          <span data-i18n="open_collab">Terbuka untuk Kolaborasi Baru!</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                    // Close mobile menu after clicking a link
-                    mobileMenu.classList.add('hidden');
-                }
-            });
-        });
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <div class="sl rv" data-i18n="skills_label">Tech Stack</div>
+    <h2 class="stit rv d1"><span data-i18n="skills_t1">Keahlian</span> &amp; <em data-i18n="skills_t2">Alat</em></h2>
+    <p class="ssub rv d1" data-i18n="skills_sub">Tools dan teknologi yang digunakan sehari-hari.</p>
+    <div class="sk-grid rv d2">
+      <div class="sk-card"><i class="fab fa-laravel" style="color:#ff2d20"></i><h3>Laravel</h3><span class="lv" data-i18n="lv_int">Menengah</span></div>
+      <div class="sk-card"><i class="fas fa-flask"   style="color:#999"></i><h3>Flask</h3><span class="lv" data-i18n="lv_int">Menengah</span></div>
+      <div class="sk-card"><i class="fab fa-bootstrap" style="color:#7952b3"></i><h3>Bootstrap</h3><span class="lv" data-i18n="lv_int">Menengah</span></div>
+      <div class="sk-card"><i class="fas fa-mobile-alt" style="color:#54c5f8"></i><h3>Flutter</h3><span class="lv" data-i18n="lv_beg">Pemula</span></div>
+      <div class="sk-card"><i class="fas fa-chart-line" style="color:#ff4b4b"></i><h3>Streamlit</h3><span class="lv" data-i18n="lv_beg">Pemula</span></div>
+      <div class="sk-card"><i class="fab fa-golang"    style="color:#00acd7"></i><h3>Golang</h3><span class="lv" data-i18n="lv_beg">Pemula</span></div>
+      <div class="sk-card"><i class="fas fa-database"  style="color:#4479a1"></i><h3>MySQL</h3><span class="lv" data-i18n="lv_int">Menengah</span></div>
+      <div class="sk-card"><i class="fas fa-leaf"      style="color:#4db33d"></i><h3>MongoDB</h3><span class="lv" data-i18n="lv_beg">Pemula</span></div>
+      <div class="sk-card"><i class="fab fa-figma"     style="color:#f24e1e"></i><h3>Figma</h3><span class="lv" data-i18n="lv_int">Menengah</span></div>
+      <div class="sk-card"><i class="fas fa-palette"   style="color:var(--pink)"></i><h3>Canva</h3><span class="lv" data-i18n="lv_pro">Mahir</span></div>
+    </div>
+  </div>
+  <div class="ticker-w">
+    <div class="ticker">
+      <div class="tp"><i class="fas fa-code"></i> HTML/CSS</div>
+      <div class="tp"><i class="fab fa-php"></i> PHP</div>
+      <div class="tp"><i class="fab fa-python"></i> Python</div>
+      <div class="tp"><i class="fas fa-drafting-compass"></i><span data-i18n="tk_uiux">Desain UI/UX</span></div>
+      <div class="tp"><i class="fas fa-paint-brush"></i><span data-i18n="tk_brand">Branding</span></div>
+      <div class="tp"><i class="fas fa-chart-bar"></i><span data-i18n="tk_ds">Ilmu Data</span></div>
+      <div class="tp"><i class="fas fa-robot"></i><span data-i18n="tk_ml">Pembelajaran Mesin</span></div>
+      <div class="tp"><i class="fas fa-layer-group"></i><span data-i18n="tk_info">Infografis</span></div>
+      <div class="tp"><i class="fas fa-server"></i><span data-i18n="tk_be">Pengembangan Backend</span></div>
+      <div class="tp"><i class="fas fa-lightbulb"></i><span data-i18n="tk_ct">Berpikir Kreatif</span></div>
+      <div class="tp"><i class="fas fa-users"></i><span data-i18n="tk_tp">Tim yang Solid</span></div>
+      <div class="tp"><i class="fas fa-code"></i> HTML/CSS</div>
+      <div class="tp"><i class="fab fa-php"></i> PHP</div>
+      <div class="tp"><i class="fab fa-python"></i> Python</div>
+      <div class="tp"><i class="fas fa-drafting-compass"></i><span data-i18n="tk_uiux">Desain UI/UX</span></div>
+      <div class="tp"><i class="fas fa-paint-brush"></i><span data-i18n="tk_brand">Branding</span></div>
+      <div class="tp"><i class="fas fa-chart-bar"></i><span data-i18n="tk_ds">Ilmu Data</span></div>
+      <div class="tp"><i class="fas fa-robot"></i><span data-i18n="tk_ml">Pembelajaran Mesin</span></div>
+      <div class="tp"><i class="fas fa-layer-group"></i><span data-i18n="tk_info">Infografis</span></div>
+      <div class="tp"><i class="fas fa-server"></i><span data-i18n="tk_be">Pengembangan Backend</span></div>
+      <div class="tp"><i class="fas fa-lightbulb"></i><span data-i18n="tk_ct">Berpikir Kreatif</span></div>
+      <div class="tp"><i class="fas fa-users"></i><span data-i18n="tk_tp">Tim yang Solid</span></div>
+    </div>
+  </div>
+</section>
 
-        // Navbar background on scroll
-        window.addEventListener('scroll', function() {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 50) {
-                nav.classList.add('shadow-xl');
-            } else {
-                nav.classList.remove('shadow-xl');
-            }
-        });
+<!-- EDUCATION -->
+<section id="education">
+  <div class="container">
+    <div class="sl rv" data-i18n="edu_label">Latar Belakang</div>
+    <h2 class="stit rv d1" data-i18n="edu_title">Pendidikan</h2>
+    <div class="edu-card rv d2">
+      <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+      <div>
+        <div class="edu-school">Universitas Airlangga, Surabaya</div>
+        <div class="edu-major">D-IV Teknik Informatika</div>
+        <div class="edu-year">2022 — <span data-i18n="now">Sekarang</span> · Surabaya</div>
+        <div class="edu-badge" data-i18n="edu_status">Mahasiswa Aktif</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        // Add animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <div class="sl rv" data-i18n="exp_label">Rekam Jejak</div>
+    <h2 class="stit rv d1"><span data-i18n="exp_t1">Pengalaman</span> &amp; <em data-i18n="exp_t2">Aktivitas</em></h2>
+    <div class="exp-tabs rv d2">
+      <button class="exp-tab on" onclick="swTab('work',this)"><i class="fas fa-briefcase" style="font-size:.7rem"></i> <span data-i18n="tab_work">Pekerjaan</span></button>
+      <button class="exp-tab"    onclick="swTab('org',this)"><i class="fas fa-users" style="font-size:.7rem"></i> <span data-i18n="tab_org">Organisasi</span></button>
+    </div>
+    <div class="exp-pane on" id="pane-work">
+      <div class="exp-tl">
 
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
+        <div class="exp-item">
+          <div class="exp-date">Jan 2026 – <span data-i18n="now">Sekarang</span></div>
+          <div class="exp-role" data-i18n="w5r">Fullstack Web Developer (Magang)</div>
+          <div class="exp-org">Dinas Kebudayaan dan Pariwisata Provinsi Jawa Timur</div>
+          <div class="exp-desc" data-i18n="w5d">Membangun ulang website resmi pemerintah provinsi secara mandiri (100% ownership). Merancang arsitektur database relasional SQL, mengembangkan backend dengan Laravel + Laravel Breeze, dan mengimplementasikan Role-Based Access Control 4 level. Mengurangi proses administrasi manual sebesar 60% melalui otomasi sistem.</div>
+        </div>
 
-        // Observe all cards
-        document.querySelectorAll('.card-hover').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(card);
-        });
+        <div class="exp-item">
+          <div class="exp-date">Sep 2025 – Nov 2025</div>
+          <div class="exp-role" data-i18n="w4r">Product Management — Web &amp; Mobile Developer (Magang)</div>
+          <div class="exp-org">PT Inovasi Teknologi Solusindo (TrustMedis)</div>
+          <div class="exp-desc" data-i18n="w4d">Menyelesaikan 100% desain dan implementasi chatbot penerimaan berbasis machine learning menggunakan Streamlit. Menyelesaikan 100% pengembangan sistem absensi karyawan berbasis Flutter. Merancang dan mengimplementasikan Faskes Implementation Tracker System menggunakan Laravel.</div>
+        </div>
 
-        // Certificate Popup Functions
-        function openCertificatePopup(certId) {
-            const cert = certificateData[certId];
-            if (!cert) return;
-            
-            const popup = document.getElementById('certificatePopup');
-            const title = document.getElementById('popupTitle');
-            const content = document.getElementById('popupContent');
-            
-            title.textContent = cert.title;
-            
-            // Create popup content
-            content.innerHTML = `
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div>
-                        <div class="certificate-image-container">
-                            <img src="${cert.image}" alt="${cert.title}" 
-                                 class="certificate-image" id="certImage"
-                                 onclick="toggleZoom()">
-                            <div class="zoom-controls">
-                                <button class="zoom-btn" onclick="zoomIn()">
-                                    <i class="fas fa-search-plus"></i>
-                                </button>
-                                <button class="zoom-btn" onclick="zoomOut()">
-                                    <i class="fas fa-search-minus"></i>
-                                </button>
-                                <button class="zoom-btn" onclick="resetZoom()">
-                                    <i class="fas fa-sync-alt"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <p class="text-center mt-4 text-gray-600">Click image to zoom in/out</p>
-                    </div>
-                    
-                    <div>
-                        <div class="certificate-details">
-                            <div class="detail-item">
-                                <div class="detail-icon">
-                                    <i class="fas fa-award"></i>
-                                </div>
-                                <div class="detail-content">
-                                    <h4>Certificate Title</h4>
-                                    <p>${cert.title}</p>
-                                </div>
-                            </div>
-                            
-                            <div class="detail-item">
-                                <div class="detail-icon">
-                                    <i class="fas fa-building"></i>
-                                </div>
-                                <div class="detail-content">
-                                    <h4>Issuing Organization</h4>
-                                    <p>${cert.issuer}</p>
-                                </div>
-                            </div>
-                            
-                            <div class="detail-item">
-                                <div class="detail-icon">
-                                    <i class="fas fa-calendar-alt"></i>
-                                </div>
-                                <div class="detail-content">
-                                    <h4>Issue Date</h4>
-                                    <p>${cert.date}</p>
-                                </div>
-                            </div>
-                            
-                            <div class="detail-item">
-                                <div class="detail-icon">
-                                    <i class="fas fa-info-circle"></i>
-                                </div>
-                                <div class="detail-content">
-                                    <h4>Description</h4>
-                                    <p>${cert.description}</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="mt-8">
-                            <h4 class="text-xl font-bold text-pink-primary mb-4">Competencies Covered</h4>
-                            <div class="competency-list">
-                                ${cert.competencies.map(comp => `
-                                    <div class="competency-item">
-                                        <i class="fas fa-check-circle competency-icon"></i>
-                                        <span>${comp}</span>
-                                    </div>
-                                `).join('')}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `;
-            
-            popup.style.display = 'flex';
-            document.body.style.overflow = 'hidden';
-        }
+        <div class="exp-item">
+          <div class="exp-date">Jan 2025 – Jan 2026</div>
+          <div class="exp-role" data-i18n="w3r">Tim Desain — Branding</div>
+          <div class="exp-org">Fakultas Vokasi Universitas Airlangga</div>
+          <div class="exp-desc" data-i18n="w3d">Bertanggung jawab atas desain visual untuk branding Fakultas Vokasi di Airlangga Education Expo 2025. Membuat flyer, banner, dan materi promosi menggunakan Canva dan Figma sesuai identitas visual dan tema acara.</div>
+        </div>
 
-        function closeCertificatePopup() {
-            const popup = document.getElementById('certificatePopup');
-            popup.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
+        <div class="exp-item">
+          <div class="exp-date">Sep 2024</div>
+          <div class="exp-role" data-i18n="w_knv_r">Penulis — Konferensi Nasional Vokasional</div>
+          <div class="exp-org">Konferensi Nasional Vokasional 2024</div>
+          <div class="exp-desc" data-i18n="w_knv_d">Menyelesaikan dan mempresentasikan paper 'Decision Support System for Beginner Workouts Using Machine Learning Methods, K-Means Clustering, and Decision Tree' dalam 5 hari. Mengeksplorasi rekomendasi workout berbasis machine learning untuk pemula.</div>
+        </div>
 
-        // Zoom functions
-        let zoomLevel = 1;
-        const maxZoom = 3;
-        const minZoom = 1;
-        const zoomStep = 0.5;
+        <div class="exp-item">
+          <div class="exp-date">Jan 2024 – Feb 2024</div>
+          <div class="exp-role" data-i18n="w2r">Asisten Entri Data (Freelance/By Project)</div>
+          <div class="exp-org">Direktorat Perencanaan dan Pengembangan (DIPP) Universitas Airlangga</div>
+          <div class="exp-desc" data-i18n="w2d">Melakukan entri data Kartu Rencana Studi (KRS) untuk sekitar 30 mata kuliah per hari, mencakup seluruh program studi di universitas. Memastikan akurasi dan kelengkapan data dalam sistem akademik, dengan fokus menyelesaikan 20% dari total data dalam batas waktu 8 jam per hari.</div>
+        </div>
 
-        function toggleZoom() {
-            const image = document.getElementById('certImage');
-            if (zoomLevel === 1) {
-                zoomLevel = 1.5;
-                image.classList.add('zoomed');
-            } else {
-                zoomLevel = 1;
-                image.classList.remove('zoomed');
-            }
-        }
+      </div>
+    </div>
+    <div class="exp-pane" id="pane-org">
+      <div class="exp-tl">
+        <div class="exp-item"><div class="exp-date">Jun 2023 – Mar 2024</div><div class="exp-role" data-i18n="o1r">Staf Desain Kreatif</div><div class="exp-org">SKI Fakultas Vokasi Unair</div><div class="exp-desc" data-i18n="o1d">Membuat desain visual dan mendukung inisiatif kreatif untuk acara dan kegiatan fakultas.</div></div>
+        <div class="exp-item"><div class="exp-date">Jun 2023 – Sep 2023</div><div class="exp-role" data-i18n="o2r">Divisi PDD</div><div class="exp-org">Dekan Cup – BEM Fakultas Vokasi</div><div class="exp-desc" data-i18n="o2d">Menangani Publikasi, Dokumentasi, dan Desain untuk kompetisi Dekan Cup — termasuk booklet dan guidebook.</div></div>
+        <div class="exp-item"><div class="exp-date">Mei 2023 – Des 2024</div><div class="exp-role" data-i18n="o3r">Advokasi & Kesejahteraan Mahasiswa, Bendahara</div><div class="exp-org">HIMA D-IV Teknik Informatika</div><div class="exp-desc" data-i18n="o3d">Mengelola keuangan dan mendukung inisiatif kesejahteraan mahasiswa di divisi Advokasi dan Kesejahteraan.</div></div>
+        <div class="exp-item"><div class="exp-date">September 2024</div><div class="exp-role" data-i18n="o4r">Penulis</div><div class="exp-org">Konferensi Vokasi Nasional</div><div class="exp-desc" data-i18n="o4d">Berkontribusi sebagai penulis — membuat konten dan dokumentasi untuk konferensi nasional.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        function zoomIn() {
-            const image = document.getElementById('certImage');
-            if (zoomLevel < maxZoom) {
-                zoomLevel += zoomStep;
-                image.classList.add('zoomed');
-            }
-        }
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <div class="container">
+    <div class="sl rv" data-i18n="port_label">Showcase</div>
+    <h2 class="stit rv d1"><span data-i18n="port_t1">Karya</span> <em data-i18n="port_t2">Pilihan</em></h2>
+    <p class="ssub rv d1" data-i18n="port_sub">Kumpulan proyek programming dan karya desain.</p>
+    <div class="pf-filter rv d2">
+      <button class="pf-btn on" onclick="pfF('all',this)"><span data-i18n="f_all">Semua</span></button>
+      <button class="pf-btn"    onclick="pfF('code',this)"><i class="fas fa-code" style="font-size:.7rem"></i> <span data-i18n="f_code">Programming</span></button>
+      <button class="pf-btn"    onclick="pfF('design',this)"><i class="fas fa-paint-brush" style="font-size:.7rem"></i> <span data-i18n="f_design">Desain</span></button>
+    </div>
+    <div class="pf-grid">
+      <!-- code -->
+      <div class="pf-item rv"    data-cat="code"><span class="pf-cat">Laravel</span><img src="image/This-Is-July.jpg"       alt="This Is July"         class="pf-thumb"><div class="pf-ov"><div class="pf-tags"><span class="ptg">Laravel</span><span class="ptg">MySQL</span><span class="ptg">E-Commerce</span></div><div class="pf-name">This Is July</div><div class="pf-desc" data-i18n="p1d">Platform belanja online wanita terinspirasi dari This Is April, dibangun dengan Laravel & MySQL.</div></div></div>
+      <div class="pf-item rv d1" data-cat="code"><span class="pf-cat">Flask · AI</span><img src="image/HiddenGame.jpg"         alt="HiddenGame"           class="pf-thumb"><div class="pf-ov"><div class="pf-tags"><span class="ptg">Flask</span><span class="ptg">AI</span></div><div class="pf-name">HiddenGame</div><div class="pf-desc" data-i18n="p2d">Website kepuasan pelanggan berbasis AI menggunakan metode Forward Chaining.</div></div></div>
+      <div class="pf-item rv d2" data-cat="code"><span class="pf-cat">Bootstrap</span><img src="image/Dobujack.jpg"           alt="Dobujack Indonesia"   class="pf-thumb"><div class="pf-ov"><div class="pf-tags"><span class="ptg">Bootstrap</span><span class="ptg">jQuery</span></div><div class="pf-name">Dobujack Indonesia</div><div class="pf-desc" data-i18n="p3d">E-commerce fashion pria dengan desain responsif modern dan animasi yang halus.</div></div></div>
+      <div class="pf-item rv"    data-cat="code"><span class="pf-cat">Flutter</span><img src="image/Oemah-Ibu.jpg"           alt="Oemah Ibu"            class="pf-thumb"><div class="pf-ov"><div class="pf-tags"><span class="ptg">Flutter</span><span class="ptg">Dart</span><span class="ptg">API</span></div><div class="pf-name">Oemah Ibu</div><div class="pf-desc" data-i18n="p4d">Aplikasi mobile menu restoran dengan Flutter & CodeIgniter 4 API.</div></div></div>
+      <div class="pf-item rv d1" data-cat="code"><span class="pf-cat">Laravel</span><img src="image/TrustMedisTracker.jpg"   alt="TrustMedis Tracker"  class="pf-thumb"><div class="pf-ov"><div class="pf-tags"><span class="ptg">Laravel</span><span class="ptg">MySQL</span><span class="ptg">Healthcare</span></div><div class="pf-name">TrustMedis Tracker</div><div class="pf-desc" data-i18n="p5d">Sistem pemantauan kinerja fasilitas kesehatan secara real-time berbasis web.</div></div></div>
+      <div class="pf-item rv d2" data-cat="code"><span class="pf-cat">Streamlit · AI</span><img src="image/TrustMedisChatBot.jpg" alt="TrustMedis Chatbot" class="pf-thumb"><div class="pf-ov"><div class="pf-tags"><span class="ptg">Python</span><span class="ptg">Streamlit</span><span class="ptg">AI</span></div><div class="pf-name">TrustMedis Chatbot</div><div class="pf-desc" data-i18n="p6d">Prototipe chatbot RME berbasis Logistic Regression untuk informasi medis dasar.</div></div></div>
+      <div class="pf-item rv d1" data-cat="code"><span class="pf-cat">HTML/CSS</span><img src="image/CareNest.jpg"            alt="CareNest"             class="pf-thumb"><div class="pf-ov"><div class="pf-tags"><span class="ptg">HTML/CSS</span><span class="ptg">Figma</span></div><div class="pf-name">CareNest</div><div class="pf-desc" data-i18n="p7d">Aplikasi tracking Posyandu dengan antarmuka ganda (admin & pengguna).</div></div></div>
+      <div class="pf-item rv d2" data-cat="code"><span class="pf-cat">Laravel</span><img src="image/Arcadia.jpg"             alt="Arcadia"              class="pf-thumb"><div class="pf-ov"><div class="pf-tags"><span class="ptg">Laravel</span><span class="ptg">MySQL</span><span class="ptg">Figma</span></div><div class="pf-name">Arcadia</div><div class="pf-desc" data-i18n="p8d">Website peminjaman buku perpustakaan dengan sistem manajemen yang efisien.</div></div></div>
+      <!-- design -->
+      <div class="pf-item rv"    data-cat="design"><span class="pf-cat">Canva · Branding</span><img src="image/BrandingVokasi.jpg"    alt="Branding Vokasi"     class="pf-thumb"><div class="pf-ov"><div class="pf-tags"><span class="ptg">Canva</span><span class="ptg">Branding</span></div><div class="pf-name">Branding Vokasi</div><div class="pf-desc" data-i18n="d1d">Materi branding Fakultas Vokasi — layout, infografis, flyer, dan banner.</div></div></div>
+      <div class="pf-item rv d1" data-cat="design"><span class="pf-cat">Figma · UI/UX</span><img src="image/PujaseraApp.jpg"        alt="Pujasera App"         class="pf-thumb"><div class="pf-ov"><div class="pf-tags"><span class="ptg">Figma</span><span class="ptg">UI/UX</span></div><div class="pf-name">Pujasera App</div><div class="pf-desc" data-i18n="d2d">Desain UI/UX aplikasi pemesanan food court yang intuitif dan mudah digunakan.</div></div></div>
+      <div class="pf-item rv d2" data-cat="design"><span class="pf-cat">Figma · UI/UX</span><img src="image/E-Trashure.jpg"         alt="E-Trashure"           class="pf-thumb"><div class="pf-ov"><div class="pf-tags"><span class="ptg">Figma</span><span class="ptg">Eco</span></div><div class="pf-name">E-Trashure</div><div class="pf-desc" data-i18n="d3d">Desain aplikasi bank sampah digital untuk meningkatkan kesadaran lingkungan.</div></div></div>
+      <div class="pf-item rv"    data-cat="design"><span class="pf-cat">Figma · UI/UX</span><img src="image/GreenGlam.jpg"          alt="GreenGlam"            class="pf-thumb"><div class="pf-ov"><div class="pf-tags"><span class="ptg">Figma</span><span class="ptg">UI/UX</span></div><div class="pf-name">GreenGlam</div><div class="pf-desc" data-i18n="d4d">Aplikasi daur ulang kosmetik dengan pendekatan sustainable beauty.</div></div></div>
+      <div class="pf-item rv d1" data-cat="design"><span class="pf-cat">Figma · UI/UX</span><img src="image/Parkopedia.jpg"         alt="Parkopedia"           class="pf-thumb"><div class="pf-ov"><div class="pf-tags"><span class="ptg">Figma</span><span class="ptg">Smart City</span></div><div class="pf-name">Parkopedia</div><div class="pf-desc" data-i18n="d5d">Antarmuka aplikasi parkir digital untuk manajemen parkir yang lebih modern.</div></div></div>
+      <div class="pf-item rv d2" data-cat="design"><span class="pf-cat">Canva · Print</span><img src="image/Dekan-Cup-Vokasi.jpg"   alt="Dekan Cup"            class="pf-thumb"><div class="pf-ov"><div class="pf-tags"><span class="ptg">Canva</span><span class="ptg">Print</span></div><div class="pf-name">Dekan Cup Vokasi</div><div class="pf-desc" data-i18n="d6d">Booklet dan guidebook kompetisi dengan layout yang bersih dan terstruktur.</div></div></div>
+    </div>
+    <div style="text-align:center;margin-top:2.2rem;" class="rv">
+      <a href="https://github.com/inassiperboi" target="_blank" class="btn btn-f">
+        <i class="fab fa-github"></i><span data-i18n="more_gh">Lebih Banyak di GitHub</span>
+      </a>
+    </div>
+  </div>
+</section>
 
-        function zoomOut() {
-            const image = document.getElementById('certImage');
-            if (zoomLevel > minZoom) {
-                zoomLevel -= zoomStep;
-                if (zoomLevel === 1) {
-                    image.classList.remove('zoomed');
-                }
-            }
-        }
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="container">
+    <div class="sl rv" data-i18n="cert_label">Kredensial</div>
+    <h2 class="stit rv d1" data-i18n="cert_title">Sertifikasi</h2>
+    <div class="cert-grid">
+      <div class="cert-card rv"    onclick="openMod('jw')"><div class="cert-img"><img src="image/JuniorWebSertif.jpg"  alt="Junior Web"></div><div class="cert-body"><div class="cert-iss">LSP Profesi</div><div class="cert-name" data-i18n="c1n">Junior Web Programmer</div><div class="cert-date"><i class="fas fa-calendar-alt" style="color:var(--pink);margin-right:4px;font-size:.7rem"></i>Juni 2024</div><div class="cert-peek"><i class="fas fa-eye"></i><span data-i18n="see_detail">Lihat Detail</span></div></div></div>
+      <div class="cert-card rv d1" onclick="openMod('ds')"><div class="cert-img"><img src="image/DataSciencSertif.jpg" alt="Data Science"></div><div class="cert-body"><div class="cert-iss">LSP Profesi</div><div class="cert-name" data-i18n="c2n">Associate Data Scientist</div><div class="cert-date"><i class="fas fa-calendar-alt" style="color:var(--pink);margin-right:4px;font-size:.7rem"></i>2025</div><div class="cert-peek"><i class="fas fa-eye"></i><span data-i18n="see_detail">Lihat Detail</span></div></div></div>
+      <div class="cert-card rv d2" onclick="openMod('vk')"><div class="cert-img"><img src="image/vokasi.jpeg"          alt="Vokasi"></div><div class="cert-body"><div class="cert-iss">Fakultas Vokasi Unair</div><div class="cert-name" data-i18n="c3n">Kontributor Branding Vokasi</div><div class="cert-date"><i class="fas fa-calendar-alt" style="color:var(--pink);margin-right:4px;font-size:.7rem"></i>2025</div><div class="cert-peek"><i class="fas fa-eye"></i><span data-i18n="see_detail">Lihat Detail</span></div></div></div>
+    </div>
+  </div>
+</section>
 
-        function resetZoom() {
-            const image = document.getElementById('certImage');
-            zoomLevel = 1;
-            image.classList.remove('zoomed');
-        }
+<!-- CV -->
+<section id="cv">
+  <div class="container">
+    <div class="sl rv" data-i18n="cv_label">Curriculum Vitae</div>
+    <h2 class="stit rv d1"><span data-i18n="cv_t1">Curriculum</span> <em>Vitae</em></h2>
+    <p class="ssub rv d1" data-i18n="cv_sub">Dokumen CV lengkap — klik untuk memperbesar atau unduh.</p>
+    <div class="cv-grid">
+      <div class="cv-card rv">
+        <div class="cv-img-wrap">
+          <img src="image/cv1.jpg" alt="CV Halaman 1" id="cv1img">
+        </div>
+        <div class="cv-label">
+          <div>
+            <div class="cv-label-txt" data-i18n="cv_p1">Halaman 1</div>
+            <div class="cv-label-sub" data-i18n="cv_p1s">Profil, Pendidikan, Keahlian</div>
+          </div>
+          <a href="image/cv1.jpg" download class="cv-download"><i class="fas fa-download"></i><span data-i18n="cv_dl">Unduh</span></a>
+        </div>
+      </div>
+      <div class="cv-card rv d1">
+        <div class="cv-img-wrap">
+          <img src="image/cv2.jpg" alt="CV Halaman 2" id="cv2img">
+        </div>
+        <div class="cv-label">
+          <div>
+            <div class="cv-label-txt" data-i18n="cv_p2">Halaman 2</div>
+            <div class="cv-label-sub" data-i18n="cv_p2s">Pengalaman, Portofolio</div>
+          </div>
+          <a href="image/cv2.jpg" download class="cv-download"><i class="fas fa-download"></i><span data-i18n="cv_dl">Unduh</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        // Close popup when clicking outside the card
-        document.getElementById('certificatePopup').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeCertificatePopup();
-            }
-        });
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="ct-wrap rv">
+      <h2 class="ct-title"><span data-i18n="ct_title">Ayo</span> <em data-i18n="ct_em">Berkolaborasi!</em></h2>
+      <p class="ct-sub" data-i18n="ct_sub">Selalu terbuka untuk project baru, ide kreatif, dan kolaborasi seru. Jangan ragu untuk menghubungi!</p>
+      <div class="ct-cards">
+        <a href="/cdn-cgi/l/email-protection#f0999e91839e919a91988ab0979d91999cde939f9d" class="cc"><div class="cc-icon"><i class="fas fa-envelope"></i></div><div><div class="cc-lbl" data-i18n="cc_email">Email</div><div class="cc-val"><span class="__cf_email__" data-cfemail="1c75727d6f727d767d74665c7b717d7570327f7371">[email&#160;protected]</span></div></div></a>
+        <a href="tel:+6289580535185"                         class="cc"><div class="cc-icon"><i class="fas fa-phone"></i></div><div><div class="cc-lbl">WhatsApp</div><div class="cc-val">+62 895 8053 5185</div></div></a>
+        <a href="https://github.com/inassiperboi" target="_blank" class="cc"><div class="cc-icon" style="background:var(--skydk)"><i class="fab fa-github"></i></div><div><div class="cc-lbl">GitHub</div><div class="cc-val">inassiperboi</div></div></a>
+        <a href="https://instagram.com/inas.nais"  target="_blank" class="cc"><div class="cc-icon" style="background:var(--skydk)"><i class="fab fa-instagram"></i></div><div><div class="cc-lbl">Instagram</div><div class="cc-val">@inas.nais</div></div></a>
+        <a href="https://www.linkedin.com/in/inas-najah-zhahirah/" target="_blank" class="cc"><div class="cc-icon" style="background:#0077b5"><i class="fab fa-linkedin-in"></i></div><div><div class="cc-lbl">LinkedIn</div><div class="cc-val">inas-najah-zhahirah</div></div></a>
+      </div>
+      <div class="ct-btns">
+        <a href="/cdn-cgi/l/email-protection#731a1d12001d1219121b0933141e121a1f5d101c1e" class="btn btn-f"><i class="fas fa-paper-plane"></i><span data-i18n="send_email">Kirim Email</span></a>
+        <a href="https://github.com/inassiperboi" target="_blank" class="btn btn-o"><i class="fab fa-github"></i><span data-i18n="view_gh">Lihat GitHub</span></a>
+      </div>
+    </div>
+  </div>
+</section>
 
-        // Keyboard controls
-        document.addEventListener('keydown', function(e) {
-            const popup = document.getElementById('certificatePopup');
-            if (popup.style.display === 'flex') {
-                if (e.key === 'Escape') closeCertificatePopup();
-                if (e.key === '+' || e.key === '=') zoomIn();
-                if (e.key === '-' || e.key === '_') zoomOut();
-                if (e.key === '0') resetZoom();
-            }
-        });
-    </script>
+<!-- FOOTER -->
+<footer>
+  <div class="ft-logo">inas<span>.nais</span></div>
+  <div class="ft-copy">© 2025 Inas Najah Zhahirah · <span data-i18n="ft_made">Dibuat dengan</span> <span>♥</span></div>
+  <div class="ft-soc">
+    <a href="/cdn-cgi/l/email-protection#365f58574558575c575e4c76515b575f5a1855595b" class="ft-s"><i class="fas fa-envelope"></i></a>
+    <a href="https://github.com/inassiperboi" target="_blank" class="ft-s"><i class="fab fa-github"></i></a>
+    <a href="https://www.linkedin.com/in/inas-najah-zhahirah/" target="_blank" class="ft-s"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://instagram.com/inas.nais"  target="_blank" class="ft-s"><i class="fab fa-instagram"></i></a>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <div class="modal-box">
+    <div class="modal-head"><span class="modal-title" id="modT"></span><button class="modal-close" onclick="closeMod()"><i class="fas fa-times"></i></button></div>
+    <div class="modal-body" id="modB"></div>
+  </div>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+/* ═══════════════════════════════════
+   i18n
+═══════════════════════════════════ */
+const T = {
+  id:{
+    loading:"Memuat portfolio...",
+    nav_about:"Tentang",nav_skills:"Keahlian",nav_edu:"Pendidikan",nav_exp:"Pengalaman",
+    nav_port:"Portofolio",nav_cert:"Sertifikat",nav_cv:"CV",nav_contact:"Kontak",
+    hero_tag:"Terbuka untuk Kolaborasi",hero_hello:"Halo, aku",
+    hero_role:"Creative Designer & Full Stack Developer",
+    hero_desc:"Mahasiswa D-IV Teknik Informatika Universitas Airlangga yang suka design, suka coding, dan suka explore hal-hal baru!",
+    btn_portfolio:"Lihat Portofolio",btn_contact:"Hubungi Aku",scroll:"scroll",
+    chip_design:"Designer & Dev",badge_years:"Tahun Aktif",
+    about_label:"Tentang Aku",about_t1:"Pemikir kreatif,",about_t2:"pemecah masalah!",
+    about_desc:"Aku mahasiswa D-IV Teknik Informatika di Universitas Airlangga yang punya passion di design dan programming. Percaya bahwa good design bukan cuma soal estetika — tapi juga logika yang kuat!",
+    pill_ct:"Berpikir Kritis",pill_dl:"Bukan Deadliner!",
+    open_collab:"Terbuka untuk Kolaborasi Baru!",
+    skills_label:"Tech Stack",skills_t1:"Keahlian",skills_t2:"Alat",
+    skills_sub:"Tools dan teknologi yang digunakan sehari-hari.",
+    lv_int:"Menengah",lv_beg:"Pemula",lv_pro:"Mahir",
+    tk_uiux:"Desain UI/UX",tk_brand:"Branding",tk_ds:"Ilmu Data",tk_ml:"Pembelajaran Mesin",
+    tk_info:"Infografis",tk_be:"Pengembangan Backend",tk_ct:"Berpikir Kreatif",tk_tp:"Tim yang Solid",
+    pill_ld:"Desain Layout",pill_ig:"Infografis",pill_md:"Pengembangan Mobile",
+    edu_label:"Latar Belakang",edu_title:"Pendidikan",now:"Sekarang",edu_status:"Mahasiswa Aktif",
+    exp_label:"Rekam Jejak",exp_t1:"Pengalaman",exp_t2:"Aktivitas",
+    tab_org:"Organisasi",tab_work:"Pekerjaan",
+    o1r:"Staf Desain Kreatif",o1d:"Membuat desain visual dan mendukung inisiatif kreatif untuk acara dan kegiatan fakultas.",
+    o2r:"Divisi PDD",o2d:"Menangani Publikasi, Dokumentasi, dan Desain untuk kompetisi Dekan Cup — termasuk booklet dan guidebook.",
+    o3r:"Advokasi & Kesejahteraan Mahasiswa, Bendahara",o3d:"Mengelola keuangan dan mendukung inisiatif kesejahteraan mahasiswa di divisi Advokasi dan Kesejahteraan.",
+    o4r:"Penulis",o4d:"Berkontribusi sebagai penulis — membuat konten dan dokumentasi untuk konferensi nasional.",
+    w1r:"Staf Desain Kreatif",w1d:"Berkontribusi pada branding fakultas melalui desain grafis — layout, infografis, flyer, banner, dan banyak lagi!",
+    w2r:"Asisten Entri Data (Freelance/By Project)",w2d:"Melakukan entri data Kartu Rencana Studi (KRS) untuk sekitar 30 mata kuliah per hari, mencakup seluruh program studi di universitas. Memastikan akurasi dan kelengkapan data dalam sistem akademik, dengan fokus menyelesaikan 20% dari total data dalam batas waktu 8 jam per hari.",
+    w3r:"Tim Desain — Branding",w3d:"Bertanggung jawab atas desain visual untuk branding Fakultas Vokasi di Airlangga Education Expo 2025. Membuat flyer, banner, dan materi promosi menggunakan Canva dan Figma sesuai identitas visual dan tema acara.",
+    w4r:"Product Management — Web & Mobile Developer (Magang)",w4d:"Menyelesaikan 100% desain dan implementasi chatbot penerimaan berbasis machine learning menggunakan Streamlit. Menyelesaikan 100% pengembangan sistem absensi karyawan berbasis Flutter. Merancang dan mengimplementasikan Faskes Implementation Tracker System menggunakan Laravel.",
+    w5r:"Fullstack Web Developer (Magang)",w5d:"Membangun ulang website resmi pemerintah provinsi secara mandiri (100% ownership). Merancang arsitektur database relasional SQL, mengembangkan backend dengan Laravel + Laravel Breeze, dan mengimplementasikan Role-Based Access Control 4 level. Mengurangi proses administrasi manual sebesar 60% melalui otomasi sistem.",
+    w_knv_r:"Penulis — Konferensi Nasional Vokasional",w_knv_d:"Menyelesaikan dan mempresentasikan paper 'Decision Support System for Beginner Workouts Using Machine Learning Methods, K-Means Clustering, and Decision Tree' dalam 5 hari. Mengeksplorasi rekomendasi workout berbasis machine learning untuk pemula.",
+    port_label:"Showcase",port_t1:"Karya",port_t2:"Pilihan",
+    port_sub:"Kumpulan proyek programming dan karya desain.",
+    f_all:"Semua",f_code:"Programming",f_design:"Desain",
+    p1d:"Platform belanja online wanita terinspirasi dari This Is April, dibangun dengan Laravel & MySQL.",
+    p2d:"Website kepuasan pelanggan berbasis AI menggunakan metode Forward Chaining.",
+    p3d:"E-commerce fashion pria dengan desain responsif modern dan animasi yang halus.",
+    p4d:"Aplikasi mobile menu restoran dengan Flutter & CodeIgniter 4 API.",
+    p5d:"Sistem pemantauan kinerja fasilitas kesehatan secara real-time berbasis web.",
+    p6d:"Prototipe chatbot RME berbasis Logistic Regression untuk informasi medis dasar.",
+    p7d:"Aplikasi tracking Posyandu dengan antarmuka ganda (admin & pengguna).",
+    p8d:"Website peminjaman buku perpustakaan dengan sistem manajemen yang efisien.",
+    d1d:"Materi branding Fakultas Vokasi — layout, infografis, flyer, dan banner.",
+    d2d:"Desain UI/UX aplikasi pemesanan food court yang intuitif dan mudah digunakan.",
+    d3d:"Desain aplikasi bank sampah digital untuk meningkatkan kesadaran lingkungan.",
+    d4d:"Aplikasi daur ulang kosmetik dengan pendekatan sustainable beauty.",
+    d5d:"Antarmuka aplikasi parkir digital untuk manajemen parkir yang lebih modern.",
+    d6d:"Booklet dan guidebook kompetisi dengan layout yang bersih dan terstruktur.",
+    more_gh:"Lebih Banyak di GitHub",
+    cert_label:"Kredensial",cert_title:"Sertifikasi",
+    c1n:"Junior Web Programmer",c2n:"Associate Data Scientist",c3n:"Kontributor Branding Vokasi",
+    see_detail:"Lihat Detail",
+    cv_label:"Curriculum Vitae",cv_t1:"Curriculum",
+    cv_sub:"Dokumen CV lengkap — klik untuk memperbesar atau unduh.",
+    cv_p1:"Halaman 1",cv_p1s:"Profil, Pendidikan, Keahlian",
+    cv_p2:"Halaman 2",cv_p2s:"Pengalaman, Portofolio",
+    cv_dl:"Unduh",
+    ct_title:"Ayo",ct_em:"Berkolaborasi!",
+    ct_sub:"Selalu terbuka untuk project baru, ide kreatif, dan kolaborasi seru. Jangan ragu untuk menghubungi!",
+    cc_email:"Email",send_email:"Kirim Email",view_gh:"Lihat GitHub",
+    ft_made:"Dibuat dengan",
+    m_issuer:"Lembaga Penerbit",m_date:"Tanggal",m_desc:"Deskripsi",m_comp:"Kompetensi",
+    jw_desc:"Sertifikasi yang memvalidasi kemampuan web development — frontend & backend, manajemen database, dan deployment aplikasi web.",
+    ds_desc:"Sertifikasi yang menunjukkan kemampuan dalam analisis data, machine learning, statistical modeling, dan visualisasi data.",
+    vk_desc:"Pengakuan atas kontribusi aktif dalam tim branding Fakultas Vokasi Universitas Airlangga.",
+    jw_comps:["Menerapkan struktur data","Mengimplementasikan desain UI","Menginstal tools programming","Menulis clean code","Mengembangkan program terstruktur","Memanfaatkan libraries & components","Dokumentasi kode","Debugging & testing"],
+    ds_comps:["Preprocessing & pembersihan data","Exploratory data analysis","Feature engineering","Pemilihan & evaluasi model","Analisis statistik","Visualisasi data","Tools Python/R & libraries","Dasar deployment model"],
+    vk_comps:["Desain layout","Infografis","Grafis media sosial","Desain banner & flyer","Konsistensi brand","Kemahiran Canva","Komunikasi visual","Desain digital & cetak"]
+  },
+  en:{
+    loading:"Loading portfolio...",
+    nav_about:"About",nav_skills:"Skills",nav_edu:"Education",nav_exp:"Experience",
+    nav_port:"Portfolio",nav_cert:"Certs",nav_cv:"CV",nav_contact:"Contact",
+    hero_tag:"Open to Collaborations",hero_hello:"Hello, I'm",
+    hero_role:"Creative Designer & Full Stack Developer",
+    hero_desc:"D-IV Informatics Engineering student at Universitas Airlangga who loves design, coding, and exploring new things!",
+    btn_portfolio:"View Portfolio",btn_contact:"Contact Me",scroll:"scroll",
+    chip_design:"Designer & Dev",badge_years:"Years Active",
+    about_label:"About Me",about_t1:"Creative thinker,",about_t2:"problem solver!",
+    about_desc:"I'm a D-IV Informatics Engineering student at Universitas Airlangga with a passion for design and programming. I believe good design isn't just about aesthetics — it's also about solid logic!",
+    pill_ct:"Critical Thinking",pill_dl:"Not A Deadliner!",
+    open_collab:"Open to New Collaborations!",
+    skills_label:"Tech Stack",skills_t1:"Skills",skills_t2:"Tools",
+    skills_sub:"Tools and technologies I use on a daily basis.",
+    lv_int:"Intermediate",lv_beg:"Beginner",lv_pro:"Proficient",
+    tk_uiux:"UI/UX Design",tk_brand:"Branding",tk_ds:"Data Science",tk_ml:"Machine Learning",
+    tk_info:"Infographics",tk_be:"Backend Dev",tk_ct:"Creative Thinking",tk_tp:"Team Player",
+    pill_ld:"Layout Design",pill_ig:"Infographics",pill_md:"Mobile Dev",
+    edu_label:"Background",edu_title:"Education",now:"Present",edu_status:"Active Student",
+    exp_label:"Track Record",exp_t1:"Experience",exp_t2:"Activities",
+    tab_org:"Organization",tab_work:"Work",
+    o1r:"Creative Design Staff",o1d:"Created visual designs and supported creative initiatives for faculty events and activities.",
+    o2r:"PDD Division",o2d:"Handled Publication, Documentation, and Design for the Dekan Cup competition — including booklets and guidebooks.",
+    o3r:"Student Advocacy & Welfare, Treasurer",o3d:"Managed finances and supported student welfare initiatives in the Advocacy and Welfare division.",
+    o4r:"Writer",o4d:"Contributed as a writer — creating content and documentation for the national conference.",
+    w1r:"Design Team — Branding",w1d:"Contributed to faculty branding through graphic design — layouts, infographics, flyers, banners, and more!",
+    w2r:"Data Entry Assistant (Freelance/By Project)",w2d:"Performed data entry for Course Registration Cards (KRS) for approximately 30 courses per day, covering all programs of study at the university. Ensured accuracy and completeness of data within the academic system, focusing on finalizing 20% of the data within an 8-hour daily timeframe.",
+    w3r:"Design Team — Branding",w3d:"Responsible for visual design supporting the branding of the Faculty of Vocational Studies at Airlangga Education Expo 2025. Utilized Canva and Figma to create flyers, banners, and promotional materials aligned with the faculty's visual identity.",
+    w4r:"Product Management — Web & Mobile Developer (Internship)",w4d:"Successfully completed 100% design and implementation of a machine-learning–based admission chatbot using Streamlit. Completed 100% development of a Flutter-based employee attendance system. Designed and implemented the Faskes Implementation Tracker System using Laravel.",
+    w5r:"Fullstack Web Developer (Internship)",w5d:"Rebuilt the official provincial government website independently (100% ownership). Designed relational SQL database architecture, developed backend using Laravel + Laravel Breeze, and implemented 4-level Role-Based Access Control. Reduced manual administrative processes by 60% through system automation.",
+    w_knv_r:"Writer — National Vocational Conference",w_knv_d:"Completed and presented the paper 'Decision Support System for Beginner Workouts Using Machine Learning Methods, K-Means Clustering, and Decision Tree' within 5 days. Explored machine learning-based workout recommendations for beginners.",
+    port_label:"Showcase",port_t1:"Selected",port_t2:"Works",
+    port_sub:"A collection of programming projects and design works.",
+    f_all:"All",f_code:"Programming",f_design:"Design",
+    p1d:"Women's online shopping platform inspired by This Is April, built with Laravel & MySQL.",
+    p2d:"AI-powered customer satisfaction website using the Forward Chaining method.",
+    p3d:"Men's fashion e-commerce with modern responsive design and smooth animations.",
+    p4d:"Restaurant menu mobile app built with Flutter & CodeIgniter 4 API.",
+    p5d:"Real-time web-based health facility performance monitoring system.",
+    p6d:"RME chatbot prototype based on Logistic Regression for basic medical information.",
+    p7d:"Posyandu tracking application with dual interfaces (admin & user).",
+    p8d:"Library book lending website with an efficient management system.",
+    d1d:"Faculty Vokasi branding materials — layouts, infographics, flyers, and banners.",
+    d2d:"Intuitive and user-friendly UI/UX design for a food court ordering app.",
+    d3d:"Digital waste bank application design to promote environmental awareness.",
+    d4d:"Cosmetic recycling application with a sustainable beauty approach.",
+    d5d:"Digital parking application interface for smarter parking management.",
+    d6d:"Competition booklet and guidebook with a clean, structured layout.",
+    more_gh:"More on GitHub",
+    cert_label:"Credentials",cert_title:"Certifications",
+    c1n:"Junior Web Programmer",c2n:"Associate Data Scientist",c3n:"Vokasi Branding Contributor",
+    see_detail:"View Details",
+    cv_label:"Curriculum Vitae",cv_t1:"Curriculum",
+    cv_sub:"Full CV document — click to zoom or download.",
+    cv_p1:"Page 1",cv_p1s:"Profile, Education, Skills",
+    cv_p2:"Page 2",cv_p2s:"Experience, Portfolio",
+    cv_dl:"Download",
+    ct_title:"Let's",ct_em:"Collaborate!",
+    ct_sub:"Always open to new projects, creative ideas, and fun collaborations. Don't hesitate to reach out!",
+    cc_email:"Email",send_email:"Send Email",view_gh:"View GitHub",
+    ft_made:"Made with",
+    m_issuer:"Issuing Body",m_date:"Date",m_desc:"Description",m_comp:"Competencies",
+    jw_desc:"Certification validating web development skills — frontend & backend programming, database management, and web app deployment.",
+    ds_desc:"Certification demonstrating proficiency in data analysis, machine learning, statistical modeling, and data visualization.",
+    vk_desc:"Recognition for active contribution to the Faculty of Vokasi Universitas Airlangga branding team.",
+    jw_comps:["Applying data structures","Implementing UI design","Installing programming tools","Writing clean code","Developing structured programs","Utilizing libraries & components","Code documentation","Debugging & testing"],
+    ds_comps:["Data preprocessing & cleaning","Exploratory data analysis","Feature engineering","Model selection & evaluation","Statistical analysis","Data visualization","Python/R tools & libraries","Model deployment basics"],
+    vk_comps:["Layout design","Infographics","Social media graphics","Banner & flyer design","Brand consistency","Canva proficiency","Visual communication","Digital & print design"]
+  }
+};
+
+const certMeta = {
+  jw:{img:'image/JuniorWebSertif.jpg', issuer_id:'LSP (Lembaga Sertifikasi Profesi)', issuer_en:'LSP (Lembaga Sertifikasi Profesi)', date:'Juni 2024 / June 2024'},
+  ds:{img:'image/DataSciencSertif.jpg',issuer_id:'LSP (Lembaga Sertifikasi Profesi)', issuer_en:'LSP (Lembaga Sertifikasi Profesi)', date:'2025'},
+  vk:{img:'image/vokasi.jpeg',          issuer_id:'Fakultas Vokasi Universitas Airlangga', issuer_en:'Faculty of Vokasi, Universitas Airlangga', date:'2025'}
+};
+
+/* ── state ── */
+let lang = localStorage.getItem('lang') || 'id';
+let dark = localStorage.getItem('theme') === 'dark';
+
+/* ── theme ── */
+function applyTheme(d, anim=false){
+  dark = d;
+  document.documentElement.setAttribute('data-theme', d ? 'dark' : 'light');
+  document.getElementById('dkTgl').classList.toggle('on', d);
+  document.getElementById('dkBall').textContent = d ? '🌙' : '☀️';
+  localStorage.setItem('theme', d ? 'dark' : 'light');
+  if(anim){ const f=document.getElementById('tfl'); f.classList.add('go'); setTimeout(()=>f.classList.remove('go'),280); }
+}
+function toggleDark(){ applyTheme(!dark, true); }
+
+/* ── lang ── */
+function applyLang(l){
+  lang = l;
+  const t = T[l];
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const k = el.getAttribute('data-i18n');
+    if(t[k] !== undefined) el.innerHTML = t[k];
+  });
+  document.getElementById('btnID').classList.toggle('on', l==='id');
+  document.getElementById('btnEN').classList.toggle('on', l==='en');
+  document.documentElement.setAttribute('lang', l);
+  localStorage.setItem('lang', l);
+}
+function setLang(l){
+  const b = l==='id' ? document.getElementById('btnID') : document.getElementById('btnEN');
+  b.style.transform='scale(1.18)'; setTimeout(()=>b.style.transform='',200);
+  applyLang(l);
+}
+
+/* ── LOADER ── */
+window.addEventListener('load',()=>{
+  document.getElementById('lf').style.width='100%';
+  setTimeout(()=>document.getElementById('loader').classList.add('out'),1300);
+});
+/* ── INIT ── */
+applyTheme(dark, false);
+applyLang(lang);
+
+/* ── CURSOR ── */
+const cur=document.getElementById('cur'), cur2=document.getElementById('cur2');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{ mx=e.clientX; my=e.clientY; cur.style.left=mx+'px'; cur.style.top=my+'px'; });
+(function lp(){ rx+=(mx-rx)*.12; ry+=(my-ry)*.12; cur2.style.left=rx+'px'; cur2.style.top=ry+'px'; requestAnimationFrame(lp); })();
+document.querySelectorAll('a,button,.cert-card,.sk-card,.pf-item,.cv-card').forEach(el=>{
+  el.addEventListener('mouseenter',()=>cur2.classList.add('big'));
+  el.addEventListener('mouseleave',()=>cur2.classList.remove('big'));
+});
+
+/* ── BUBBLES ── */
+const cv=document.getElementById('bc'), cx=cv.getContext('2d');
+let W,H,bubs=[];
+function rsz(){ W=cv.width=window.innerWidth; H=cv.height=window.innerHeight; }
+rsz(); window.addEventListener('resize',rsz);
+function mkB(){ return{x:Math.random()*W,y:H+50+Math.random()*200,r:7+Math.random()*24,vx:(Math.random()-.5)*.4,vy:-.3-.7*Math.random(),col:Math.random()>.5?'rgba(174,222,252,':'rgba(248,117,170,',a:.1+Math.random()*.28,ph:Math.random()*Math.PI*2}; }
+for(let i=0;i<42;i++){const b=mkB();b.y=Math.random()*H;bubs.push(b);}
+let tt=0;
+(function loop(){
+  cx.clearRect(0,0,W,H); tt+=.011;
+  bubs.forEach(b=>{
+    b.x+=b.vx+Math.sin(tt+b.ph)*.25; b.y+=b.vy;
+    if(b.y<-60) Object.assign(b,mkB());
+    cx.save(); cx.shadowBlur=9; cx.shadowColor=b.col+'0.22)';
+    cx.beginPath(); cx.arc(b.x,b.y,b.r,0,Math.PI*2);
+    cx.fillStyle=b.col+b.a+')'; cx.fill();
+    cx.strokeStyle=b.col+'0.48)'; cx.lineWidth=1.4; cx.stroke();
+    cx.beginPath(); cx.arc(b.x-b.r*.27,b.y-b.r*.29,b.r*.18,0,Math.PI*2);
+    cx.fillStyle='rgba(255,255,255,.48)'; cx.fill();
+    cx.restore();
+  });
+  requestAnimationFrame(loop);
+})();
+
+/* ── REVEAL ── */
+const rOb = new IntersectionObserver(es=>{ es.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('on'); }); },{threshold:.1,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.rv').forEach(el=>rOb.observe(el));
+const eOb = new IntersectionObserver(es=>{ es.forEach(e=>{ if(e.isIntersecting){ const its=e.target.querySelectorAll('.exp-item'); its.forEach((it,i)=>setTimeout(()=>it.classList.add('on'),i*110)); } }); },{threshold:.05});
+document.querySelectorAll('.exp-pane').forEach(p=>eOb.observe(p));
+
+/* ── NAV ── */
+window.addEventListener('scroll',()=>{
+  const n=document.getElementById('nav');
+  n.style.boxShadow = window.scrollY>60 ? '0 6px 28px rgba(248,117,170,.16)' : '0 4px 24px rgba(248,117,170,.12)';
+});
+document.getElementById('nHam').addEventListener('click',()=>{
+  const nl=document.getElementById('nLinks');
+  if(nl.style.display==='flex'){ nl.style.display='none'; }
+  else { nl.style.cssText='display:flex;flex-direction:column;position:absolute;top:3.1rem;left:0;right:0;background:var(--nav-bg);padding:1rem 1.6rem;gap:.9rem;border-top:2px solid var(--nav-bdr);z-index:99;backdrop-filter:blur(18px);'; }
+});
+
+/* ── EXP TABS ── */
+function swTab(id,btn){
+  document.querySelectorAll('.exp-tab').forEach(b=>b.classList.remove('on'));
+  document.querySelectorAll('.exp-pane').forEach(p=>p.classList.remove('on'));
+  btn.classList.add('on');
+  const pane=document.getElementById('pane-'+id);
+  pane.classList.add('on');
+  pane.querySelectorAll('.exp-item').forEach(it=>it.classList.remove('on'));
+  setTimeout(()=>pane.querySelectorAll('.exp-item').forEach((it,i)=>setTimeout(()=>it.classList.add('on'),i*110)),55);
+}
+
+/* ── PORTFOLIO FILTER ── */
+function pfF(cat,btn){
+  document.querySelectorAll('.pf-btn').forEach(b=>b.classList.remove('on')); btn.classList.add('on');
+  document.querySelectorAll('.pf-item').forEach(i=>(cat==='all'||i.dataset.cat===cat)?i.classList.remove('hide'):i.classList.add('hide'));
+}
+
+/* ── MODAL ── */
+function openMod(id){
+  const t=T[lang], m=certMeta[id];
+  const names={jw:t.c1n, ds:t.c2n, vk:t.c3n};
+  const descs={jw:t.jw_desc, ds:t.ds_desc, vk:t.vk_desc};
+  const comps={jw:t.jw_comps, ds:t.ds_comps, vk:t.vk_comps};
+  const issuer = lang==='id' ? m.issuer_id : m.issuer_en;
+  document.getElementById('modT').textContent = names[id];
+  document.getElementById('modB').innerHTML = `
+    <img src="${m.img}" class="modal-img" alt="${names[id]}">
+    <div class="modal-meta">
+      <div><div class="mm-lbl">${t.m_issuer}</div><div class="mm-val">${issuer}</div></div>
+      <div><div class="mm-lbl">${t.m_date}</div><div class="mm-val">${m.date}</div></div>
+    </div>
+    <div class="mm-lbl" style="margin-bottom:.45rem">${t.m_desc}</div>
+    <div class="modal-desc">${descs[id]}</div>
+    <div class="mm-lbl" style="margin-bottom:.6rem">${t.m_comp}</div>
+    <div class="comp-list">${comps[id].map(c=>`<span class="ctag"><i class="fas fa-check"></i>${c}</span>`).join('')}</div>
+  `;
+  document.getElementById('modal').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeMod(){ document.getElementById('modal').classList.remove('open'); document.body.style.overflow=''; }
+document.getElementById('modal').addEventListener('click',e=>{ if(e.target===e.currentTarget) closeMod(); });
+document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeMod(); });
+
+/* ── FLOATING STARS ── */
+const ems=['✦','✿','⋆','◇','✩','·'];
+function addStar(){
+  const s=document.createElement('div'); s.className='star';
+  s.textContent=ems[Math.floor(Math.random()*ems.length)];
+  s.style.cssText=`left:${Math.random()*100}vw;animation-duration:${9+Math.random()*13}s;animation-delay:${Math.random()*3}s;font-size:${.5+Math.random()*.7}rem;color:${Math.random()>.5?'rgba(248,117,170,.35)':'rgba(174,222,252,.48)'}`;
+  document.body.appendChild(s); setTimeout(()=>s.remove(),25000);
+}
+setInterval(addStar,1100); for(let i=0;i<8;i++) addStar();
+</script>
 </body>
 </html>
