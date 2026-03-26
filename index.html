@@ -7,9 +7,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <style>
-    /* ═══════════════════════════════════
-       TOKENS — LIGHT
-    ═══════════════════════════════════ */
     :root {
       --sky:        #AEDEFC;
       --pink:       #F875AA;
@@ -39,9 +36,6 @@
       --shad:       0 4px 20px rgba(174,222,252,.22);
       --shad-pink:  0 14px 36px rgba(248,117,170,.2);
     }
-    /* ═══════════════════════════════════
-       TOKENS — DARK
-    ═══════════════════════════════════ */
     [data-theme="dark"] {
       --sky:        #7ec8f8;
       --pink:       #f875aa;
@@ -72,27 +66,22 @@
       --shad-pink:  0 14px 36px rgba(0,0,0,.4);
     }
 
-    /* ═══════════════════════════════════  BASE  ═══ */
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
     html{scroll-behavior:smooth;}
     body{font-family:'Poppins',sans-serif;background:var(--cream);color:var(--txt);overflow-x:hidden;cursor:none;transition:background .4s,color .4s;}
 
-    /* ═══ CURSOR ═══ */
     #cur{position:fixed;width:12px;height:12px;background:var(--pink);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);}
     #cur2{position:fixed;width:32px;height:32px;border:2px solid var(--pink);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:all .22s ease;opacity:.5;}
     #cur2.big{transform:translate(-50%,-50%) scale(2.2);opacity:.15;}
 
-    /* ═══ BUBBLE CANVAS ═══ */
     #bc{position:fixed;inset:0;pointer-events:none;z-index:0;}
 
-    /* ═══ LOADER ═══ */
     #loader{position:fixed;inset:0;background:var(--cream);z-index:10000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.2rem;transition:opacity .7s;}
     #loader.out{opacity:0;pointer-events:none;}
     .ld-txt{font-size:.9rem;font-weight:700;color:var(--pink);letter-spacing:.1em;}
     .ld-bar{width:160px;height:4px;background:rgba(248,117,170,.15);border-radius:99px;overflow:hidden;}
     .ld-fill{height:100%;background:linear-gradient(90deg,var(--sky),var(--pink));border-radius:99px;width:0%;transition:width 1.2s cubic-bezier(.16,1,.3,1);}
 
-    /* ═══ NAV ═══ */
     nav{position:fixed;top:.9rem;left:50%;transform:translateX(-50%);z-index:100;background:var(--nav-bg);backdrop-filter:blur(18px);border:2px solid var(--nav-bdr);border-radius:99px;padding:.6rem 1.5rem;display:flex;align-items:center;gap:1.4rem;box-shadow:0 4px 24px rgba(248,117,170,.12);transition:all .35s;}
     .nav-logo{font-weight:800;font-size:.9rem;color:var(--pink);text-decoration:none;white-space:nowrap;}
     .nav-logo span{color:var(--skydk);}
@@ -100,18 +89,15 @@
     .nav-links a{font-size:.7rem;font-weight:600;color:var(--txtm);text-decoration:none;letter-spacing:.04em;transition:color .2s;}
     .nav-links a:hover{color:var(--pink);}
     .nav-ctrls{display:flex;align-items:center;gap:.5rem;}
-    /* lang */
     .lang-tgl{display:flex;align-items:center;background:rgba(248,117,170,.1);border:1.5px solid rgba(248,117,170,.25);border-radius:99px;overflow:hidden;padding:2px;cursor:none;}
     .lang-btn{padding:.26rem .6rem;border-radius:99px;font-size:.66rem;font-weight:700;font-family:'Poppins',sans-serif;border:none;background:transparent;color:var(--txtm);cursor:none;transition:all .22s;letter-spacing:.04em;}
     .lang-btn.on{background:var(--pink);color:#fff;box-shadow:0 2px 8px rgba(248,117,170,.32);}
-    /* dark toggle */
     .dk-tgl{width:40px;height:21px;border-radius:99px;background:rgba(248,117,170,.14);border:1.5px solid rgba(248,117,170,.25);position:relative;cursor:none;transition:background .3s;flex-shrink:0;}
     .dk-tgl.on{background:rgba(126,200,248,.2);border-color:rgba(126,200,248,.38);}
     .dk-ball{position:absolute;top:2px;left:2px;width:13px;height:13px;border-radius:50%;background:var(--pink);transition:all .3s cubic-bezier(.34,1.56,.64,1);display:flex;align-items:center;justify-content:center;font-size:.55rem;}
     .dk-tgl.on .dk-ball{transform:translateX(19px);background:var(--sky);}
     .nav-ham{display:none;background:none;border:none;cursor:none;font-size:1.1rem;color:var(--pink);}
 
-    /* ═══ HERO ═══ */
     #home{min-height:100vh;background:var(--hero-g);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:6rem 2rem 4rem;transition:background .4s;}
     .deco{position:absolute;border-radius:50%;filter:blur(60px);pointer-events:none;}
     .dc1{width:480px;height:480px;background:rgba(174,222,252,.38);top:-110px;left:-140px;animation:dcF 9s ease-in-out infinite;}
@@ -149,7 +135,6 @@
     @keyframes fUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
     @keyframes fIn{from{opacity:0;}to{opacity:1;}}
 
-    /* ═══ SECTIONS BASE ═══ */
     section{padding:5.5rem 0;position:relative;z-index:1;transition:background .4s;}
     .container{max-width:1080px;margin:0 auto;padding:0 2rem;}
     .sl{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--pink);margin-bottom:.85rem;}
@@ -157,12 +142,10 @@
     .stit{font-size:clamp(1.7rem,3.5vw,2.5rem);font-weight:800;line-height:1.15;color:var(--txt);margin-bottom:.4rem;}
     .stit em{font-style:italic;color:var(--pink);}
     .ssub{font-size:.87rem;color:var(--txtm);font-weight:400;line-height:1.72;margin-bottom:2rem;}
-    /* reveal */
     .rv{opacity:0;transform:translateY(26px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1);}
     .rv.on{opacity:1;transform:none;}
     .rv.d1{transition-delay:.1s;}.rv.d2{transition-delay:.2s;}.rv.d3{transition-delay:.3s;}
 
-    /* ═══ ABOUT ═══ */
     #about{background:var(--white);}
     .ab-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:3.5rem;align-items:center;}
     .ab-iw{position:relative;max-width:310px;}
@@ -182,7 +165,6 @@
     .ab-open{display:inline-flex;align-items:center;gap:.6rem;background:linear-gradient(135deg,var(--pink),var(--pinkl));color:#fff;padding:.82rem 1.65rem;border-radius:99px;font-weight:700;font-size:.8rem;margin-top:.65rem;box-shadow:0 8px 20px rgba(248,117,170,.28);transition:transform .22s;}
     .ab-open:hover{transform:translateY(-3px);}
 
-    /* ═══ SKILLS ═══ */
     #skills{background:var(--sec-alt);}
     .sk-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;margin-top:1.6rem;}
     .sk-card{background:var(--card-bg);border:1.5px solid var(--card-bdr);border-radius:1.3rem;padding:1.6rem .9rem;text-align:center;transition:all .3s cubic-bezier(.34,1.56,.64,1);box-shadow:var(--shad);cursor:default;position:relative;overflow:hidden;}
@@ -200,17 +182,14 @@
     .tp:hover{border-color:var(--pink);color:var(--pink);transform:translateY(-3px);}
     .tp i{color:var(--pink);}
 
-    /* ═══ EDUCATION ═══ */
     #education{background:var(--white);}
     .edu-card{background:var(--edu-g);border:2px solid var(--card-bdr);border-radius:1.8rem;padding:2.4rem;display:flex;gap:2rem;align-items:flex-start;box-shadow:var(--shad);position:relative;overflow:hidden;}
-    .edu-card::after{content:'';position:absolute;right:2rem;bottom:1rem;font-size:5rem;opacity:.06;line-height:1;pointer-events:none;}
     .edu-icon{background:var(--pink);color:#fff;width:56px;height:56px;border-radius:1rem;display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0;box-shadow:0 8px 18px rgba(248,117,170,.32);}
     .edu-school{font-size:1.15rem;font-weight:800;color:var(--txt);}
     .edu-major{font-size:.9rem;font-weight:600;color:var(--pink);margin:.16rem 0;}
     .edu-year{font-size:.76rem;color:var(--txtm);}
     .edu-badge{display:inline-block;background:rgba(248,117,170,.11);color:var(--pink);font-size:.66rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.26rem .82rem;border-radius:99px;border:1.5px solid rgba(248,117,170,.24);margin-top:.6rem;}
 
-    /* ═══ EXPERIENCE ═══ */
     #experience{background:var(--sec-alt);}
     .exp-tabs{display:flex;gap:.5rem;margin-bottom:2rem;flex-wrap:wrap;}
     .exp-tab{padding:.52rem 1.3rem;border-radius:99px;font-size:.76rem;font-weight:700;font-family:'Poppins',sans-serif;cursor:none;background:var(--card-bg);border:2px solid var(--card-bdr);color:var(--txtm);transition:all .22s;}
@@ -227,29 +206,72 @@
     .exp-org{font-size:.8rem;font-weight:600;color:var(--pink);margin-bottom:.42rem;}
     .exp-desc{font-size:.83rem;color:var(--txtm);line-height:1.68;}
 
-    /* ═══ PORTFOLIO — uniform grid ═══ */
+    /* ═══ PORTFOLIO ═══ */
     #portfolio{background:var(--white);}
     .pf-filter{display:flex;gap:.5rem;margin-bottom:1.6rem;flex-wrap:wrap;}
     .pf-btn{padding:.45rem 1.1rem;border-radius:99px;font-size:.74rem;font-weight:700;font-family:'Poppins',sans-serif;cursor:none;background:var(--card-bg);border:2px solid var(--card-bdr);color:var(--txtm);transition:all .22s;}
     .pf-btn.on,.pf-btn:hover{background:rgba(174,222,252,.28);border-color:var(--skydk);color:var(--txt);}
-
-    /* strict 3-col equal cards */
     .pf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem;}
-    .pf-item{border-radius:1.3rem;overflow:hidden;position:relative;aspect-ratio:4/3;background:var(--sec-alt);box-shadow:var(--shad);transition:all .3s cubic-bezier(.34,1.56,.64,1);}
-    .pf-item.hide{display:none;}
-    .pf-item:hover{transform:translateY(-6px);box-shadow:var(--shad-pink);}
-    .pf-thumb{width:100%;height:100%;object-fit:cover;transition:all .5s;}
-    .pf-item:hover .pf-thumb{transform:scale(1.05);filter:brightness(.5);}
-    .pf-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(30,10,40,.9) 0%,transparent 55%);display:flex;flex-direction:column;justify-content:flex-end;padding:1.2rem;opacity:0;transform:translateY(6px);transition:all .3s ease;}
-    .pf-item:hover .pf-ov{opacity:1;transform:none;}
-    .pf-tags{display:flex;gap:.3rem;flex-wrap:wrap;margin-bottom:.4rem;}
-    .ptg{font-size:.58rem;font-family:'Poppins',sans-serif;font-weight:600;padding:.18rem .6rem;border-radius:99px;background:rgba(174,222,252,.2);border:1px solid rgba(174,222,252,.32);color:#c5e8ff;}
-    .pf-name{font-size:.98rem;font-weight:800;color:#fff;margin-bottom:.16rem;}
-    .pf-desc{font-size:.73rem;color:rgba(255,255,255,.6);line-height:1.45;}
-    .pf-cat{position:absolute;top:.8rem;right:.8rem;z-index:2;background:rgba(255,247,252,.88);backdrop-filter:blur(8px);color:var(--pink);font-size:.6rem;font-weight:700;letter-spacing:.06em;padding:.2rem .6rem;border-radius:99px;border:1px solid rgba(248,117,170,.18);}
-    [data-theme="dark"] .pf-cat{background:rgba(26,15,30,.85);color:var(--pinkl);}
 
-    /* ═══ CERTIFICATIONS ═══ */
+    /* card redesign */
+    .pf-item{
+      border-radius:1.3rem;overflow:hidden;position:relative;
+      background:var(--card-bg);border:1.5px solid var(--card-bdr);
+      box-shadow:var(--shad);
+      transition:all .32s cubic-bezier(.34,1.56,.64,1);
+      cursor:none;display:flex;flex-direction:column;
+    }
+    .pf-item.hide{display:none;}
+    .pf-item:hover{transform:translateY(-7px) scale(1.02);box-shadow:var(--shad-pink);border-color:rgba(248,117,170,.35);}
+
+    .pf-thumb-wrap{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--sec-alt);}
+    .pf-thumb-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;display:block;}
+    .pf-item:hover .pf-thumb-wrap img{transform:scale(1.06);}
+
+    /* subtle click hint */
+    .pf-click-hint{
+      position:absolute;inset:0;
+      background:linear-gradient(to top,rgba(20,5,30,.6) 0%,transparent 50%);
+      display:flex;align-items:flex-end;padding:.7rem .85rem;
+      opacity:0;transition:opacity .28s;
+    }
+    .pf-item:hover .pf-click-hint{opacity:1;}
+    .pf-click-hint span{
+      display:inline-flex;align-items:center;gap:.32rem;
+      font-size:.65rem;font-weight:700;color:#fff;letter-spacing:.05em;
+      background:rgba(248,117,170,.5);backdrop-filter:blur(6px);
+      border:1px solid rgba(255,255,255,.2);
+      padding:.24rem .7rem;border-radius:99px;
+    }
+
+    /* photo count badge (disbud) */
+    .pf-photo-count{
+      position:absolute;top:.6rem;right:.7rem;z-index:3;
+      display:inline-flex;align-items:center;gap:.28rem;
+      background:rgba(10,3,18,.52);backdrop-filter:blur(6px);
+      border:1px solid rgba(255,255,255,.16);
+      color:#fff;font-size:.6rem;font-weight:700;
+      padding:.2rem .58rem;border-radius:99px;letter-spacing:.04em;
+    }
+
+    /* card body below thumbnail */
+    .pf-body{padding:.9rem 1.05rem 1rem;display:flex;flex-direction:column;gap:.28rem;flex:1;}
+    .pf-body-top{display:flex;align-items:flex-start;justify-content:space-between;gap:.5rem;}
+    .pf-body-name{font-size:.9rem;font-weight:800;color:var(--txt);line-height:1.25;}
+    .pf-body-cat{
+      flex-shrink:0;font-size:.57rem;font-weight:700;letter-spacing:.05em;
+      color:var(--pink);background:rgba(248,117,170,.1);
+      border:1px solid rgba(248,117,170,.22);
+      padding:.16rem .55rem;border-radius:99px;white-space:nowrap;margin-top:.1rem;
+    }
+    .pf-body-desc{font-size:.75rem;color:var(--txtm);line-height:1.55;}
+    .pf-body-tags{display:flex;gap:.28rem;flex-wrap:wrap;margin-top:.14rem;}
+    .ptg{
+      font-size:.59rem;font-family:'Poppins',sans-serif;font-weight:600;
+      padding:.15rem .52rem;border-radius:99px;
+      background:var(--ps-bg);border:1px solid rgba(174,222,252,.35);color:var(--ps-c);
+    }
+
     #certifications{background:var(--sec-alt);}
     .cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem;}
     .cert-card{background:var(--card-bg);border:1.5px solid var(--card-bdr);border-radius:1.6rem;overflow:hidden;cursor:none;box-shadow:var(--shad);transition:all .3s cubic-bezier(.34,1.56,.64,1);}
@@ -264,7 +286,6 @@
     .cert-peek{display:flex;align-items:center;gap:.32rem;font-size:.73rem;font-weight:700;color:var(--pink);margin-top:.65rem;opacity:0;transition:opacity .25s;}
     .cert-card:hover .cert-peek{opacity:1;}
 
-    /* ═══ CV SECTION ═══ */
     #cv{background:var(--white);}
     .cv-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.8rem;margin-top:2rem;}
     .cv-card{border-radius:1.6rem;overflow:hidden;border:2px solid var(--card-bdr);box-shadow:var(--shad);transition:all .3s cubic-bezier(.34,1.56,.64,1);background:var(--card-bg);cursor:none;}
@@ -278,7 +299,7 @@
     .cv-download{display:inline-flex;align-items:center;gap:.4rem;font-size:.72rem;font-weight:700;color:var(--pink);text-decoration:none;background:rgba(248,117,170,.1);border:1.5px solid rgba(248,117,170,.25);padding:.38rem .9rem;border-radius:99px;transition:all .22s;}
     .cv-download:hover{background:var(--pink);color:#fff;transform:translateY(-2px);}
 
-    /* ═══ MODAL ═══ */
+    /* ═══ CERT MODAL (existing) ═══ */
     .modal{position:fixed;inset:0;background:var(--modal-ov);backdrop-filter:blur(16px);z-index:2000;display:flex;align-items:center;justify-content:center;padding:1.5rem;opacity:0;visibility:hidden;transition:all .3s ease;}
     .modal.open{opacity:1;visibility:visible;}
     .modal-box{background:var(--modal-bg);border-radius:1.7rem;width:100%;max-width:740px;max-height:90vh;overflow-y:auto;transform:scale(.9) translateY(16px);transition:all .3s cubic-bezier(.34,1.56,.64,1);box-shadow:0 24px 60px rgba(248,117,170,.22);}
@@ -297,10 +318,92 @@
     .ctag{display:inline-flex;align-items:center;gap:.3rem;background:var(--ps-bg);color:var(--ps-c);border:1.5px solid rgba(174,222,252,.32);font-size:.7rem;font-weight:600;padding:.3rem .72rem;border-radius:99px;}
     .ctag i{font-size:.6rem;color:var(--pink);}
 
-    /* ═══ CONTACT ═══ */
+    /* ═══ PORTFOLIO LIGHTBOX MODAL ═══ */
+    #pf-modal{
+      position:fixed;inset:0;
+      background:rgba(10,3,18,.9);backdrop-filter:blur(20px);
+      z-index:3000;
+      display:flex;align-items:center;justify-content:center;
+      padding:1.2rem;
+      opacity:0;visibility:hidden;transition:all .3s ease;
+    }
+    #pf-modal.open{opacity:1;visibility:visible;}
+    .pfm-box{
+      background:var(--modal-bg);border-radius:1.8rem;
+      width:100%;max-width:820px;max-height:92vh;overflow-y:auto;
+      transform:scale(.92) translateY(20px);
+      transition:all .32s cubic-bezier(.34,1.56,.64,1);
+      box-shadow:0 30px 80px rgba(0,0,0,.45);
+    }
+    #pf-modal.open .pfm-box{transform:scale(1) translateY(0);}
+
+    .pfm-close{
+      position:sticky;top:0;z-index:10;
+      display:flex;justify-content:flex-end;
+      padding:.75rem .85rem .2rem;
+      background:var(--modal-bg);
+    }
+    .pfm-close button{
+      width:34px;height:34px;border-radius:50%;
+      background:rgba(248,117,170,.1);
+      border:1.5px solid rgba(248,117,170,.25);
+      color:var(--pink);font-size:.88rem;font-family:'Poppins',sans-serif;
+      cursor:none;display:flex;align-items:center;justify-content:center;
+      transition:all .22s;
+    }
+    .pfm-close button:hover{background:var(--pink);color:#fff;transform:rotate(90deg);}
+
+    .pfm-img-area{padding:0 1.3rem .4rem;}
+    .pfm-img-main{width:100%;border-radius:1rem;aspect-ratio:16/10;object-fit:cover;box-shadow:0 8px 32px rgba(0,0,0,.18);display:block;}
+
+    /* slideshow for multi-photo */
+    .pfm-slide-wrap{position:relative;width:100%;border-radius:1rem;aspect-ratio:16/10;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.18);}
+    .pfm-slides{display:flex;height:100%;transition:transform .5s cubic-bezier(.4,0,.2,1);}
+    .pfm-slide{min-width:100%;height:100%;flex-shrink:0;}
+    .pfm-slide img{width:100%;height:100%;object-fit:cover;display:block;}
+    .pfm-nav{
+      position:absolute;top:50%;transform:translateY(-50%);z-index:5;
+      background:rgba(255,255,255,.14);backdrop-filter:blur(8px);
+      border:1.5px solid rgba(255,255,255,.26);color:#fff;
+      width:36px;height:36px;border-radius:50%;
+      display:flex;align-items:center;justify-content:center;
+      font-size:.72rem;cursor:pointer;transition:background .22s;font-family:'Poppins',sans-serif;
+    }
+    .pfm-nav:hover{background:rgba(248,117,170,.48);}
+    .pfm-nav.prev{left:.65rem;}.pfm-nav.next{right:.65rem;}
+
+    .pfm-dot-row{display:flex;gap:.35rem;justify-content:center;padding:.65rem 0 0;flex-wrap:wrap;}
+    .pfm-dot{width:7px;height:7px;border-radius:50%;background:rgba(248,117,170,.28);border:none;cursor:pointer;transition:all .22s;padding:0;}
+    .pfm-dot.on{background:var(--pink);width:20px;border-radius:99px;}
+
+    .pfm-strip{
+      display:flex;gap:.4rem;overflow-x:auto;
+      padding:.55rem 0 .15rem;margin-top:.8rem;
+      scrollbar-width:thin;scrollbar-color:rgba(248,117,170,.3) transparent;
+    }
+    .pfm-thumb-sm{
+      min-width:68px;height:46px;border-radius:.45rem;
+      object-fit:cover;cursor:pointer;opacity:.5;
+      border:2px solid transparent;transition:all .22s;flex-shrink:0;
+    }
+    .pfm-thumb-sm.on{opacity:1;border-color:var(--pink);}
+    .pfm-thumb-sm:hover{opacity:.8;}
+
+    .pfm-info{padding:1.1rem 1.6rem 1.7rem;}
+    .pfm-header{display:flex;align-items:flex-start;justify-content:space-between;gap:.8rem;margin-bottom:.6rem;}
+    .pfm-name{font-size:1.25rem;font-weight:900;color:var(--txt);}
+    .pfm-cat-badge{
+      flex-shrink:0;font-size:.62rem;font-weight:700;letter-spacing:.07em;
+      color:var(--pink);background:rgba(248,117,170,.1);
+      border:1.5px solid rgba(248,117,170,.25);
+      padding:.28rem .82rem;border-radius:99px;margin-top:.16rem;
+    }
+    .pfm-tags{display:flex;gap:.35rem;flex-wrap:wrap;margin-bottom:.7rem;}
+    .pfm-tags .ptg{font-size:.67rem;}
+    .pfm-desc{font-size:.84rem;color:var(--txtm);line-height:1.72;}
+
     #contact{background:var(--sec-alt);}
     .ct-wrap{background:var(--ct-wrap);border-radius:2rem;padding:3.2rem;box-shadow:0 10px 40px rgba(248,117,170,.1);text-align:center;max-width:760px;margin:0 auto;position:relative;overflow:hidden;transition:background .4s;}
-    .ct-wrap::before{content:'';position:absolute;top:-1.5rem;right:1.5rem;font-size:6.5rem;color:rgba(248,117,170,.04);pointer-events:none;line-height:1;}
     .ct-title{font-size:1.8rem;font-weight:900;color:var(--txt);margin-bottom:.4rem;}
     .ct-title em{color:var(--pink);font-style:italic;}
     .ct-sub{font-size:.88rem;color:var(--txtm);max-width:460px;margin:0 auto 2rem;}
@@ -313,7 +416,6 @@
     .cc-val{font-size:.8rem;font-weight:700;color:var(--txt);}
     .ct-btns{display:flex;gap:.85rem;justify-content:center;flex-wrap:wrap;}
 
-    /* ═══ FOOTER ═══ */
     footer{background:var(--foot-bg);padding:1.6rem 2.4rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.85rem;transition:background .4s;}
     .ft-logo{font-size:.88rem;font-weight:800;color:var(--pinkl);}
     .ft-logo span{color:var(--sky);}
@@ -323,22 +425,23 @@
     .ft-s{width:30px;height:30px;border-radius:50%;border:1.5px solid rgba(248,117,170,.2);color:rgba(255,255,255,.35);display:flex;align-items:center;justify-content:center;font-size:.78rem;text-decoration:none;transition:all .22s;}
     .ft-s:hover{border-color:var(--pink);color:var(--pinkl);transform:translateY(-3px);}
 
-    /* ═══ FLOATING STARS ═══ */
     .star{position:fixed;pointer-events:none;animation:sf linear infinite;z-index:0;}
     @keyframes sf{0%{transform:translateY(100vh) rotate(0deg) scale(1);opacity:0;}10%{opacity:.4;}90%{opacity:.25;}100%{transform:translateY(-10vh) rotate(700deg) scale(.4);opacity:0;}}
-
-    /* ═══ THEME FLASH ═══ */
     .tfl{position:fixed;inset:0;background:var(--pink);z-index:9997;pointer-events:none;opacity:0;transition:opacity .18s;}
     .tfl.go{opacity:.1;}
 
     /* ═══ RESPONSIVE ═══ */
+    @media(max-width:1024px){
+      .sk-grid{grid-template-columns:repeat(4,1fr);}
+      .pf-grid{grid-template-columns:repeat(2,1fr);}
+    }
     @media(max-width:920px){
-      nav{padding:.55rem 1rem;gap:.7rem;}
+      nav{padding:.55rem 1rem;gap:.7rem;width:calc(100% - 2rem);max-width:520px;}
       .nav-links{display:none;}
       .nav-ham{display:block;}
       .ab-grid{grid-template-columns:1fr;gap:2rem;}
       .ab-iw{max-width:260px;margin:0 auto;}
-      .sk-grid{grid-template-columns:repeat(2,1fr);}
+      .sk-grid{grid-template-columns:repeat(3,1fr);}
       .pf-grid{grid-template-columns:repeat(2,1fr);}
       .cert-grid{grid-template-columns:1fr 1fr;}
       .cv-grid{grid-template-columns:1fr;}
@@ -347,9 +450,34 @@
       footer{flex-direction:column;text-align:center;}
       .modal-meta{grid-template-columns:1fr;}
     }
-    @media(max-width:560px){
+    @media(max-width:680px){
+      nav{padding:.5rem .85rem;gap:.45rem;}
+      .nav-logo{font-size:.8rem;}
+      .lang-btn{padding:.2rem .45rem;font-size:.6rem;}
+      .dk-tgl{width:34px;height:18px;}
+      .dk-ball{width:11px;height:11px;}
+      .dk-tgl.on .dk-ball{transform:translateX(16px);}
+      section{padding:4rem 0;}
+      .container{padding:0 1.2rem;}
+      .h-name{font-size:clamp(1.8rem,9vw,3rem);}
+      .h-desc{font-size:.8rem;}
+      .btn{padding:.65rem 1.3rem;font-size:.74rem;}
+      .sk-grid{grid-template-columns:repeat(2,1fr);}
       .pf-grid{grid-template-columns:1fr;}
       .cert-grid{grid-template-columns:1fr;}
+      .cv-grid{grid-template-columns:1fr;}
+      .ct-cards{grid-template-columns:1fr;}
+      .ab-grid{gap:1.5rem;}
+      .edu-card{flex-direction:column;gap:1rem;padding:1.5rem;}
+      .stit{font-size:clamp(1.4rem,5vw,2rem);}
+      footer{padding:1.2rem;}
+      .pfm-info{padding:.9rem 1.1rem 1.4rem;}
+      .pfm-name{font-size:1.05rem;}
+    }
+    @media(max-width:400px){
+      .sk-grid{grid-template-columns:repeat(2,1fr);}
+      .h-av{width:110px;height:110px;}
+      .nav-ctrls{gap:.3rem;}
     }
   </style>
 </head>
@@ -357,7 +485,6 @@
 
 <div class="tfl" id="tfl"></div>
 
-<!-- Loader -->
 <div id="loader">
   <div class="ld-txt" data-i18n="loading">Memuat portfolio...</div>
   <div class="ld-bar"><div class="ld-fill" id="lf"></div></div>
@@ -396,8 +523,7 @@
 <section id="home">
   <div class="deco dc1"></div><div class="deco dc2"></div><div class="deco dc3"></div>
   <div class="hero-inner">
-    <div class="h-av"><img src="image/profile.jpeg" alt="Inas Najah Zhahirah"></div>
-    <div class="h-tag"><div class="h-dot"></div><span data-i18n="hero_tag">Terbuka untuk Kolaborasi</span></div>
+    <div class="h-tag"><div class="h-dot"></div><span data-i18n="hero_tag">Open To Work!</span></div>
     <h1 class="h-name">
       <div class="l1" data-i18n="hero_hello">Halo, aku</div>
       <div class="l2">Inas Najah Zhahirah</div>
@@ -429,7 +555,7 @@
         <div class="ab-pills rv d2">
           <span class="pill ps"><i class="fas fa-palette"></i><span data-i18n="pill_ld">Desain Layout</span></span>
           <span class="pill pp"><i class="fas fa-chart-pie"></i><span data-i18n="pill_ig">Infografis</span></span>
-          <span class="pill ps"><i class="fas fa-mobile-alt"></i><span data-i18n="pill_md">Pengembangan Mobile</span></span>
+          <span class="pill ps"><i class="fas fa-mobile-alt"></i><span data-i18n="pill_md">Pengembangan Web</span></span>
           <span class="pill pp"><i class="fab fa-laravel"></i> Laravel</span>
           <span class="pill ps"><i class="fab fa-figma"></i> Figma</span>
           <span class="pill pp"><i class="fas fa-paint-brush"></i> Canva Pro</span>
@@ -520,42 +646,36 @@
     </div>
     <div class="exp-pane on" id="pane-work">
       <div class="exp-tl">
-
         <div class="exp-item">
           <div class="exp-date">Jan 2026 – <span data-i18n="now">Sekarang</span></div>
           <div class="exp-role" data-i18n="w5r">Fullstack Web Developer (Magang)</div>
           <div class="exp-org">Dinas Kebudayaan dan Pariwisata Provinsi Jawa Timur</div>
-          <div class="exp-desc" data-i18n="w5d">Membangun ulang website resmi pemerintah provinsi secara mandiri (100% ownership). Merancang arsitektur database relasional SQL, mengembangkan backend dengan Laravel + Laravel Breeze, dan mengimplementasikan Role-Based Access Control 4 level. Mengurangi proses administrasi manual sebesar 60% melalui otomasi sistem.</div>
+          <div class="exp-desc" data-i18n="w5d">Membangun ulang website resmi pemerintah provinsi secara mandiri (100% ownership). Merancang arsitektur database relasional SQL, mengembangkan backend dengan Laravel + Laravel Breeze, dan mengimplementasikan Role-Based Access Control 4 level. Mengurangi proses administrasi manual sebesar 80% melalui otomasi sistem.</div>
         </div>
-
         <div class="exp-item">
           <div class="exp-date">Sep 2025 – Nov 2025</div>
           <div class="exp-role" data-i18n="w4r">Product Management — Web &amp; Mobile Developer (Magang)</div>
           <div class="exp-org">PT Inovasi Teknologi Solusindo (TrustMedis)</div>
           <div class="exp-desc" data-i18n="w4d">Menyelesaikan 100% desain dan implementasi chatbot penerimaan berbasis machine learning menggunakan Streamlit. Menyelesaikan 100% pengembangan sistem absensi karyawan berbasis Flutter. Merancang dan mengimplementasikan Faskes Implementation Tracker System menggunakan Laravel.</div>
         </div>
-
         <div class="exp-item">
           <div class="exp-date">Jan 2025 – Jan 2026</div>
           <div class="exp-role" data-i18n="w3r">Tim Desain — Branding</div>
           <div class="exp-org">Fakultas Vokasi Universitas Airlangga</div>
           <div class="exp-desc" data-i18n="w3d">Bertanggung jawab atas desain visual untuk branding Fakultas Vokasi di Airlangga Education Expo 2025. Membuat flyer, banner, dan materi promosi menggunakan Canva dan Figma sesuai identitas visual dan tema acara.</div>
         </div>
-
         <div class="exp-item">
           <div class="exp-date">Sep 2024</div>
           <div class="exp-role" data-i18n="w_knv_r">Penulis — Konferensi Nasional Vokasional</div>
           <div class="exp-org">Konferensi Nasional Vokasional 2024</div>
-          <div class="exp-desc" data-i18n="w_knv_d">Menyelesaikan dan mempresentasikan paper 'Decision Support System for Beginner Workouts Using Machine Learning Methods, K-Means Clustering, and Decision Tree' dalam 5 hari. Mengeksplorasi rekomendasi workout berbasis machine learning untuk pemula.</div>
+          <div class="exp-desc" data-i18n="w_knv_d">Menyelesaikan dan mempresentasikan paper 'Decision Support System for Beginner Workouts Using Machine Learning Methods, K-Means Clustering, and Decision Tree' dalam 5 hari.</div>
         </div>
-
         <div class="exp-item">
           <div class="exp-date">Jan 2024 – Feb 2024</div>
           <div class="exp-role" data-i18n="w2r">Asisten Entri Data (Freelance/By Project)</div>
           <div class="exp-org">Direktorat Perencanaan dan Pengembangan (DIPP) Universitas Airlangga</div>
-          <div class="exp-desc" data-i18n="w2d">Melakukan entri data Kartu Rencana Studi (KRS) untuk sekitar 30 mata kuliah per hari, mencakup seluruh program studi di universitas. Memastikan akurasi dan kelengkapan data dalam sistem akademik, dengan fokus menyelesaikan 20% dari total data dalam batas waktu 8 jam per hari.</div>
+          <div class="exp-desc" data-i18n="w2d">Melakukan entri data Kartu Rencana Studi (KRS) untuk sekitar 30 mata kuliah per hari, mencakup seluruh program studi di universitas.</div>
         </div>
-
       </div>
     </div>
     <div class="exp-pane" id="pane-org">
@@ -581,22 +701,161 @@
       <button class="pf-btn"    onclick="pfF('design',this)"><i class="fas fa-paint-brush" style="font-size:.7rem"></i> <span data-i18n="f_design">Desain</span></button>
     </div>
     <div class="pf-grid">
-      <!-- code -->
-      <div class="pf-item rv"    data-cat="code"><span class="pf-cat">Laravel</span><img src="image/This-Is-July.jpg"       alt="This Is July"         class="pf-thumb"><div class="pf-ov"><div class="pf-tags"><span class="ptg">Laravel</span><span class="ptg">MySQL</span><span class="ptg">E-Commerce</span></div><div class="pf-name">This Is July</div><div class="pf-desc" data-i18n="p1d">Platform belanja online wanita terinspirasi dari This Is April, dibangun dengan Laravel & MySQL.</div></div></div>
-      <div class="pf-item rv d1" data-cat="code"><span class="pf-cat">Flask · AI</span><img src="image/HiddenGame.jpg"         alt="HiddenGame"           class="pf-thumb"><div class="pf-ov"><div class="pf-tags"><span class="ptg">Flask</span><span class="ptg">AI</span></div><div class="pf-name">HiddenGame</div><div class="pf-desc" data-i18n="p2d">Website kepuasan pelanggan berbasis AI menggunakan metode Forward Chaining.</div></div></div>
-      <div class="pf-item rv d2" data-cat="code"><span class="pf-cat">Bootstrap</span><img src="image/Dobujack.jpg"           alt="Dobujack Indonesia"   class="pf-thumb"><div class="pf-ov"><div class="pf-tags"><span class="ptg">Bootstrap</span><span class="ptg">jQuery</span></div><div class="pf-name">Dobujack Indonesia</div><div class="pf-desc" data-i18n="p3d">E-commerce fashion pria dengan desain responsif modern dan animasi yang halus.</div></div></div>
-      <div class="pf-item rv"    data-cat="code"><span class="pf-cat">Flutter</span><img src="image/Oemah-Ibu.jpg"           alt="Oemah Ibu"            class="pf-thumb"><div class="pf-ov"><div class="pf-tags"><span class="ptg">Flutter</span><span class="ptg">Dart</span><span class="ptg">API</span></div><div class="pf-name">Oemah Ibu</div><div class="pf-desc" data-i18n="p4d">Aplikasi mobile menu restoran dengan Flutter & CodeIgniter 4 API.</div></div></div>
-      <div class="pf-item rv d1" data-cat="code"><span class="pf-cat">Laravel</span><img src="image/TrustMedisTracker.jpg"   alt="TrustMedis Tracker"  class="pf-thumb"><div class="pf-ov"><div class="pf-tags"><span class="ptg">Laravel</span><span class="ptg">MySQL</span><span class="ptg">Healthcare</span></div><div class="pf-name">TrustMedis Tracker</div><div class="pf-desc" data-i18n="p5d">Sistem pemantauan kinerja fasilitas kesehatan secara real-time berbasis web.</div></div></div>
-      <div class="pf-item rv d2" data-cat="code"><span class="pf-cat">Streamlit · AI</span><img src="image/TrustMedisChatBot.jpg" alt="TrustMedis Chatbot" class="pf-thumb"><div class="pf-ov"><div class="pf-tags"><span class="ptg">Python</span><span class="ptg">Streamlit</span><span class="ptg">AI</span></div><div class="pf-name">TrustMedis Chatbot</div><div class="pf-desc" data-i18n="p6d">Prototipe chatbot RME berbasis Logistic Regression untuk informasi medis dasar.</div></div></div>
-      <div class="pf-item rv d1" data-cat="code"><span class="pf-cat">HTML/CSS</span><img src="image/CareNest.jpg"            alt="CareNest"             class="pf-thumb"><div class="pf-ov"><div class="pf-tags"><span class="ptg">HTML/CSS</span><span class="ptg">Figma</span></div><div class="pf-name">CareNest</div><div class="pf-desc" data-i18n="p7d">Aplikasi tracking Posyandu dengan antarmuka ganda (admin & pengguna).</div></div></div>
-      <div class="pf-item rv d2" data-cat="code"><span class="pf-cat">Laravel</span><img src="image/Arcadia.jpg"             alt="Arcadia"              class="pf-thumb"><div class="pf-ov"><div class="pf-tags"><span class="ptg">Laravel</span><span class="ptg">MySQL</span><span class="ptg">Figma</span></div><div class="pf-name">Arcadia</div><div class="pf-desc" data-i18n="p8d">Website peminjaman buku perpustakaan dengan sistem manajemen yang efisien.</div></div></div>
-      <!-- design -->
-      <div class="pf-item rv"    data-cat="design"><span class="pf-cat">Canva · Branding</span><img src="image/BrandingVokasi.jpg"    alt="Branding Vokasi"     class="pf-thumb"><div class="pf-ov"><div class="pf-tags"><span class="ptg">Canva</span><span class="ptg">Branding</span></div><div class="pf-name">Branding Vokasi</div><div class="pf-desc" data-i18n="d1d">Materi branding Fakultas Vokasi — layout, infografis, flyer, dan banner.</div></div></div>
-      <div class="pf-item rv d1" data-cat="design"><span class="pf-cat">Figma · UI/UX</span><img src="image/PujaseraApp.jpg"        alt="Pujasera App"         class="pf-thumb"><div class="pf-ov"><div class="pf-tags"><span class="ptg">Figma</span><span class="ptg">UI/UX</span></div><div class="pf-name">Pujasera App</div><div class="pf-desc" data-i18n="d2d">Desain UI/UX aplikasi pemesanan food court yang intuitif dan mudah digunakan.</div></div></div>
-      <div class="pf-item rv d2" data-cat="design"><span class="pf-cat">Figma · UI/UX</span><img src="image/E-Trashure.jpg"         alt="E-Trashure"           class="pf-thumb"><div class="pf-ov"><div class="pf-tags"><span class="ptg">Figma</span><span class="ptg">Eco</span></div><div class="pf-name">E-Trashure</div><div class="pf-desc" data-i18n="d3d">Desain aplikasi bank sampah digital untuk meningkatkan kesadaran lingkungan.</div></div></div>
-      <div class="pf-item rv"    data-cat="design"><span class="pf-cat">Figma · UI/UX</span><img src="image/GreenGlam.jpg"          alt="GreenGlam"            class="pf-thumb"><div class="pf-ov"><div class="pf-tags"><span class="ptg">Figma</span><span class="ptg">UI/UX</span></div><div class="pf-name">GreenGlam</div><div class="pf-desc" data-i18n="d4d">Aplikasi daur ulang kosmetik dengan pendekatan sustainable beauty.</div></div></div>
-      <div class="pf-item rv d1" data-cat="design"><span class="pf-cat">Figma · UI/UX</span><img src="image/Parkopedia.jpg"         alt="Parkopedia"           class="pf-thumb"><div class="pf-ov"><div class="pf-tags"><span class="ptg">Figma</span><span class="ptg">Smart City</span></div><div class="pf-name">Parkopedia</div><div class="pf-desc" data-i18n="d5d">Antarmuka aplikasi parkir digital untuk manajemen parkir yang lebih modern.</div></div></div>
-      <div class="pf-item rv d2" data-cat="design"><span class="pf-cat">Canva · Print</span><img src="image/Dekan-Cup-Vokasi.jpg"   alt="Dekan Cup"            class="pf-thumb"><div class="pf-ov"><div class="pf-tags"><span class="ptg">Canva</span><span class="ptg">Print</span></div><div class="pf-name">Dekan Cup Vokasi</div><div class="pf-desc" data-i18n="d6d">Booklet dan guidebook kompetisi dengan layout yang bersih dan terstruktur.</div></div></div>
+
+      <!-- DisBud -->
+      <div class="pf-item rv" data-cat="code" onclick="openPfModal('disbud')">
+        <div class="pf-thumb-wrap">
+          <img src="image/disbud/dashboardadmin.png" alt="Website DisBud Jatim">
+          <div class="pf-photo-count"><i class="fas fa-images"></i> 10 foto</div>
+          <div class="pf-click-hint"><span><i class="fas fa-expand"></i> Lihat Semua Foto</span></div>
+        </div>
+        <div class="pf-body">
+          <div class="pf-body-top"><div class="pf-body-name" data-i18n="p_db_name">Website DisBud Jatim</div><span class="pf-body-cat">Gov · Fullstack</span></div>
+          <div class="pf-body-desc" data-i18n="p_db_d">Website resmi Dinas Kebudayaan & Pariwisata Jawa Timur — fullstack Laravel + MySQL dengan 4-level RBAC.</div>
+          <div class="pf-body-tags"><span class="ptg">Laravel</span><span class="ptg">MySQL</span><span class="ptg">RBAC</span><span class="ptg">Bootstrap</span></div>
+        </div>
+      </div>
+
+      <!-- This Is July -->
+      <div class="pf-item rv" data-cat="code" onclick="openPfModal('tij')">
+        <div class="pf-thumb-wrap"><img src="image/This-Is-July.jpg" alt="This Is July"><div class="pf-click-hint"><span><i class="fas fa-eye"></i> Lihat Detail</span></div></div>
+        <div class="pf-body">
+          <div class="pf-body-top"><div class="pf-body-name">This Is July</div><span class="pf-body-cat">Laravel</span></div>
+          <div class="pf-body-desc" data-i18n="p1d">Platform belanja online wanita terinspirasi dari This Is April, dibangun dengan Laravel & MySQL.</div>
+          <div class="pf-body-tags"><span class="ptg">Laravel</span><span class="ptg">MySQL</span><span class="ptg">E-Commerce</span></div>
+        </div>
+      </div>
+
+      <!-- HiddenGame -->
+      <div class="pf-item rv d1" data-cat="code" onclick="openPfModal('hg')">
+        <div class="pf-thumb-wrap"><img src="image/HiddenGame.jpg" alt="HiddenGame"><div class="pf-click-hint"><span><i class="fas fa-eye"></i> Lihat Detail</span></div></div>
+        <div class="pf-body">
+          <div class="pf-body-top"><div class="pf-body-name">HiddenGame</div><span class="pf-body-cat">Flask · AI</span></div>
+          <div class="pf-body-desc" data-i18n="p2d">Website kepuasan pelanggan berbasis AI menggunakan metode Forward Chaining.</div>
+          <div class="pf-body-tags"><span class="ptg">Flask</span><span class="ptg">Python</span><span class="ptg">AI</span></div>
+        </div>
+      </div>
+
+      <!-- Dobujack -->
+      <div class="pf-item rv d2" data-cat="code" onclick="openPfModal('dob')">
+        <div class="pf-thumb-wrap"><img src="image/Dobujack.jpg" alt="Dobujack Indonesia"><div class="pf-click-hint"><span><i class="fas fa-eye"></i> Lihat Detail</span></div></div>
+        <div class="pf-body">
+          <div class="pf-body-top"><div class="pf-body-name">Dobujack Indonesia</div><span class="pf-body-cat">Bootstrap</span></div>
+          <div class="pf-body-desc" data-i18n="p3d">E-commerce fashion pria dengan desain responsif modern dan animasi yang halus.</div>
+          <div class="pf-body-tags"><span class="ptg">Bootstrap</span><span class="ptg">jQuery</span></div>
+        </div>
+      </div>
+
+      <!-- Oemah Ibu -->
+      <div class="pf-item rv" data-cat="code" onclick="openPfModal('oi')">
+        <div class="pf-thumb-wrap"><img src="image/Oemah-Ibu.jpg" alt="Oemah Ibu"><div class="pf-click-hint"><span><i class="fas fa-eye"></i> Lihat Detail</span></div></div>
+        <div class="pf-body">
+          <div class="pf-body-top"><div class="pf-body-name">Oemah Ibu</div><span class="pf-body-cat">Flutter</span></div>
+          <div class="pf-body-desc" data-i18n="p4d">Aplikasi mobile menu restoran dengan Flutter & CodeIgniter 4 API.</div>
+          <div class="pf-body-tags"><span class="ptg">Flutter</span><span class="ptg">Dart</span><span class="ptg">API</span></div>
+        </div>
+      </div>
+
+      <!-- TrustMedis Tracker -->
+      <div class="pf-item rv d1" data-cat="code" onclick="openPfModal('tmt')">
+        <div class="pf-thumb-wrap"><img src="image/TrustMedisTracker.jpg" alt="TrustMedis Tracker"><div class="pf-click-hint"><span><i class="fas fa-eye"></i> Lihat Detail</span></div></div>
+        <div class="pf-body">
+          <div class="pf-body-top"><div class="pf-body-name">TrustMedis Tracker</div><span class="pf-body-cat">Laravel</span></div>
+          <div class="pf-body-desc" data-i18n="p5d">Sistem pemantauan kinerja fasilitas kesehatan secara real-time berbasis web.</div>
+          <div class="pf-body-tags"><span class="ptg">Laravel</span><span class="ptg">MySQL</span><span class="ptg">Healthcare</span></div>
+        </div>
+      </div>
+
+      <!-- TrustMedis Chatbot -->
+      <div class="pf-item rv d2" data-cat="code" onclick="openPfModal('tmcb')">
+        <div class="pf-thumb-wrap"><img src="image/TrustMedisChatBot.jpg" alt="TrustMedis Chatbot"><div class="pf-click-hint"><span><i class="fas fa-eye"></i> Lihat Detail</span></div></div>
+        <div class="pf-body">
+          <div class="pf-body-top"><div class="pf-body-name">TrustMedis Chatbot</div><span class="pf-body-cat">Streamlit · AI</span></div>
+          <div class="pf-body-desc" data-i18n="p6d">Prototipe chatbot RME berbasis Logistic Regression untuk informasi medis dasar.</div>
+          <div class="pf-body-tags"><span class="ptg">Python</span><span class="ptg">Streamlit</span><span class="ptg">ML</span></div>
+        </div>
+      </div>
+
+      <!-- CareNest -->
+      <div class="pf-item rv d1" data-cat="code" onclick="openPfModal('cn')">
+        <div class="pf-thumb-wrap"><img src="image/CareNest.jpg" alt="CareNest"><div class="pf-click-hint"><span><i class="fas fa-eye"></i> Lihat Detail</span></div></div>
+        <div class="pf-body">
+          <div class="pf-body-top"><div class="pf-body-name">CareNest</div><span class="pf-body-cat">HTML/CSS</span></div>
+          <div class="pf-body-desc" data-i18n="p7d">Aplikasi tracking Posyandu dengan antarmuka ganda (admin & pengguna).</div>
+          <div class="pf-body-tags"><span class="ptg">HTML/CSS</span><span class="ptg">Figma</span></div>
+        </div>
+      </div>
+
+      <!-- Arcadia -->
+      <div class="pf-item rv d2" data-cat="code" onclick="openPfModal('arc')">
+        <div class="pf-thumb-wrap"><img src="image/Arcadia.jpg" alt="Arcadia"><div class="pf-click-hint"><span><i class="fas fa-eye"></i> Lihat Detail</span></div></div>
+        <div class="pf-body">
+          <div class="pf-body-top"><div class="pf-body-name">Arcadia</div><span class="pf-body-cat">Laravel</span></div>
+          <div class="pf-body-desc" data-i18n="p8d">Website peminjaman buku perpustakaan dengan sistem manajemen yang efisien.</div>
+          <div class="pf-body-tags"><span class="ptg">Laravel</span><span class="ptg">MySQL</span><span class="ptg">Figma</span></div>
+        </div>
+      </div>
+
+      <!-- Branding Vokasi -->
+      <div class="pf-item rv" data-cat="design" onclick="openPfModal('bv')">
+        <div class="pf-thumb-wrap"><img src="image/BrandingVokasi.jpg" alt="Branding Vokasi"><div class="pf-click-hint"><span><i class="fas fa-eye"></i> Lihat Detail</span></div></div>
+        <div class="pf-body">
+          <div class="pf-body-top"><div class="pf-body-name">Branding Vokasi</div><span class="pf-body-cat">Canva · Branding</span></div>
+          <div class="pf-body-desc" data-i18n="d1d">Materi branding Fakultas Vokasi — layout, infografis, flyer, dan banner.</div>
+          <div class="pf-body-tags"><span class="ptg">Canva</span><span class="ptg">Branding</span></div>
+        </div>
+      </div>
+
+      <!-- Pujasera App -->
+      <div class="pf-item rv d1" data-cat="design" onclick="openPfModal('puj')">
+        <div class="pf-thumb-wrap"><img src="image/PujaseraApp.jpg" alt="Pujasera App"><div class="pf-click-hint"><span><i class="fas fa-eye"></i> Lihat Detail</span></div></div>
+        <div class="pf-body">
+          <div class="pf-body-top"><div class="pf-body-name">Pujasera App</div><span class="pf-body-cat">Figma · UI/UX</span></div>
+          <div class="pf-body-desc" data-i18n="d2d">Desain UI/UX aplikasi pemesanan food court yang intuitif dan mudah digunakan.</div>
+          <div class="pf-body-tags"><span class="ptg">Figma</span><span class="ptg">UI/UX</span></div>
+        </div>
+      </div>
+
+      <!-- E-Trashure -->
+      <div class="pf-item rv d2" data-cat="design" onclick="openPfModal('et')">
+        <div class="pf-thumb-wrap"><img src="image/E-Trashure.jpg" alt="E-Trashure"><div class="pf-click-hint"><span><i class="fas fa-eye"></i> Lihat Detail</span></div></div>
+        <div class="pf-body">
+          <div class="pf-body-top"><div class="pf-body-name">E-Trashure</div><span class="pf-body-cat">Figma · UI/UX</span></div>
+          <div class="pf-body-desc" data-i18n="d3d">Desain aplikasi bank sampah digital untuk meningkatkan kesadaran lingkungan.</div>
+          <div class="pf-body-tags"><span class="ptg">Figma</span><span class="ptg">Eco</span></div>
+        </div>
+      </div>
+
+      <!-- GreenGlam -->
+      <div class="pf-item rv" data-cat="design" onclick="openPfModal('gg')">
+        <div class="pf-thumb-wrap"><img src="image/GreenGlam.jpg" alt="GreenGlam"><div class="pf-click-hint"><span><i class="fas fa-eye"></i> Lihat Detail</span></div></div>
+        <div class="pf-body">
+          <div class="pf-body-top"><div class="pf-body-name">GreenGlam</div><span class="pf-body-cat">Figma · UI/UX</span></div>
+          <div class="pf-body-desc" data-i18n="d4d">Aplikasi daur ulang kosmetik dengan pendekatan sustainable beauty.</div>
+          <div class="pf-body-tags"><span class="ptg">Figma</span><span class="ptg">Sustainable</span></div>
+        </div>
+      </div>
+
+      <!-- Parkopedia -->
+      <div class="pf-item rv d1" data-cat="design" onclick="openPfModal('park')">
+        <div class="pf-thumb-wrap"><img src="image/Parkopedia.jpg" alt="Parkopedia"><div class="pf-click-hint"><span><i class="fas fa-eye"></i> Lihat Detail</span></div></div>
+        <div class="pf-body">
+          <div class="pf-body-top"><div class="pf-body-name">Parkopedia</div><span class="pf-body-cat">Figma · UI/UX</span></div>
+          <div class="pf-body-desc" data-i18n="d5d">Antarmuka aplikasi parkir digital untuk manajemen parkir yang lebih modern.</div>
+          <div class="pf-body-tags"><span class="ptg">Figma</span><span class="ptg">Smart City</span></div>
+        </div>
+      </div>
+
+      <!-- Dekan Cup -->
+      <div class="pf-item rv d2" data-cat="design" onclick="openPfModal('dk')">
+        <div class="pf-thumb-wrap"><img src="image/Dekan-Cup-Vokasi.jpg" alt="Dekan Cup"><div class="pf-click-hint"><span><i class="fas fa-eye"></i> Lihat Detail</span></div></div>
+        <div class="pf-body">
+          <div class="pf-body-top"><div class="pf-body-name">Dekan Cup Vokasi</div><span class="pf-body-cat">Canva · Print</span></div>
+          <div class="pf-body-desc" data-i18n="d6d">Booklet dan guidebook kompetisi dengan layout yang bersih dan terstruktur.</div>
+          <div class="pf-body-tags"><span class="ptg">Canva</span><span class="ptg">Print</span></div>
+        </div>
+      </div>
+
     </div>
     <div style="text-align:center;margin-top:2.2rem;" class="rv">
       <a href="https://github.com/inassiperboi" target="_blank" class="btn btn-f">
@@ -612,9 +871,9 @@
     <div class="sl rv" data-i18n="cert_label">Kredensial</div>
     <h2 class="stit rv d1" data-i18n="cert_title">Sertifikasi</h2>
     <div class="cert-grid">
-      <div class="cert-card rv"    onclick="openMod('jw')"><div class="cert-img"><img src="image/JuniorWebSertif.jpg"  alt="Junior Web"></div><div class="cert-body"><div class="cert-iss">LSP Profesi</div><div class="cert-name" data-i18n="c1n">Junior Web Programmer</div><div class="cert-date"><i class="fas fa-calendar-alt" style="color:var(--pink);margin-right:4px;font-size:.7rem"></i>Juni 2024</div><div class="cert-peek"><i class="fas fa-eye"></i><span data-i18n="see_detail">Lihat Detail</span></div></div></div>
-      <div class="cert-card rv d1" onclick="openMod('ds')"><div class="cert-img"><img src="image/DataSciencSertif.jpg" alt="Data Science"></div><div class="cert-body"><div class="cert-iss">LSP Profesi</div><div class="cert-name" data-i18n="c2n">Associate Data Scientist</div><div class="cert-date"><i class="fas fa-calendar-alt" style="color:var(--pink);margin-right:4px;font-size:.7rem"></i>2025</div><div class="cert-peek"><i class="fas fa-eye"></i><span data-i18n="see_detail">Lihat Detail</span></div></div></div>
-      <div class="cert-card rv d2" onclick="openMod('vk')"><div class="cert-img"><img src="image/vokasi.jpeg"          alt="Vokasi"></div><div class="cert-body"><div class="cert-iss">Fakultas Vokasi Unair</div><div class="cert-name" data-i18n="c3n">Kontributor Branding Vokasi</div><div class="cert-date"><i class="fas fa-calendar-alt" style="color:var(--pink);margin-right:4px;font-size:.7rem"></i>2025</div><div class="cert-peek"><i class="fas fa-eye"></i><span data-i18n="see_detail">Lihat Detail</span></div></div></div>
+      <div class="cert-card rv"    onclick="openMod('jw')"><div class="cert-img"><img src="image/sertifikat/JuniorWebSertif.jpg"  alt="Junior Web"></div><div class="cert-body"><div class="cert-iss">LSP Profesi</div><div class="cert-name" data-i18n="c1n">Junior Web Programmer</div><div class="cert-date"><i class="fas fa-calendar-alt" style="color:var(--pink);margin-right:4px;font-size:.7rem"></i>Juni 2024</div><div class="cert-peek"><i class="fas fa-eye"></i><span data-i18n="see_detail">Lihat Detail</span></div></div></div>
+      <div class="cert-card rv d1" onclick="openMod('ds')"><div class="cert-img"><img src="image/sertifikat/DataSciencSertif.jpg" alt="Data Science"></div><div class="cert-body"><div class="cert-iss">LSP Profesi</div><div class="cert-name" data-i18n="c2n">Associate Data Scientist</div><div class="cert-date"><i class="fas fa-calendar-alt" style="color:var(--pink);margin-right:4px;font-size:.7rem"></i>2025</div><div class="cert-peek"><i class="fas fa-eye"></i><span data-i18n="see_detail">Lihat Detail</span></div></div></div>
+      <div class="cert-card rv d2" onclick="openMod('vk')"><div class="cert-img"><img src="image/sertifikat/vokasi.jpeg"          alt="Vokasi"></div><div class="cert-body"><div class="cert-iss">Fakultas Vokasi Unair</div><div class="cert-name" data-i18n="c3n">Kontributor Branding Vokasi</div><div class="cert-date"><i class="fas fa-calendar-alt" style="color:var(--pink);margin-right:4px;font-size:.7rem"></i>2025</div><div class="cert-peek"><i class="fas fa-eye"></i><span data-i18n="see_detail">Lihat Detail</span></div></div></div>
     </div>
   </div>
 </section>
@@ -627,27 +886,17 @@
     <p class="ssub rv d1" data-i18n="cv_sub">Dokumen CV lengkap — klik untuk memperbesar atau unduh.</p>
     <div class="cv-grid">
       <div class="cv-card rv">
-        <div class="cv-img-wrap">
-          <img src="image/cv1.jpg" alt="CV Halaman 1" id="cv1img">
-        </div>
+        <div class="cv-img-wrap"><img src="image/cv/cv1.jpg" alt="CV Halaman 1"></div>
         <div class="cv-label">
-          <div>
-            <div class="cv-label-txt" data-i18n="cv_p1">Halaman 1</div>
-            <div class="cv-label-sub" data-i18n="cv_p1s">Profil, Pendidikan, Keahlian</div>
-          </div>
-          <a href="image/cv1.jpg" download class="cv-download"><i class="fas fa-download"></i><span data-i18n="cv_dl">Unduh</span></a>
+          <div><div class="cv-label-txt" data-i18n="cv_p1">Halaman 1</div><div class="cv-label-sub" data-i18n="cv_p1s">Profil, Pendidikan, Keahlian</div></div>
+          <a href="image/cv/cv1.jpg" download class="cv-download"><i class="fas fa-download"></i><span data-i18n="cv_dl">Unduh</span></a>
         </div>
       </div>
       <div class="cv-card rv d1">
-        <div class="cv-img-wrap">
-          <img src="image/cv2.jpg" alt="CV Halaman 2" id="cv2img">
-        </div>
+        <div class="cv-img-wrap"><img src="image/cv/cv2.jpg" alt="CV Halaman 2"></div>
         <div class="cv-label">
-          <div>
-            <div class="cv-label-txt" data-i18n="cv_p2">Halaman 2</div>
-            <div class="cv-label-sub" data-i18n="cv_p2s">Pengalaman, Portofolio</div>
-          </div>
-          <a href="image/cv2.jpg" download class="cv-download"><i class="fas fa-download"></i><span data-i18n="cv_dl">Unduh</span></a>
+          <div><div class="cv-label-txt" data-i18n="cv_p2">Halaman 2</div><div class="cv-label-sub" data-i18n="cv_p2s">Pengalaman, Portofolio</div></div>
+          <a href="image/cv/cv2.jpg" download class="cv-download"><i class="fas fa-download"></i><span data-i18n="cv_dl">Unduh</span></a>
         </div>
       </div>
     </div>
@@ -662,7 +911,7 @@
       <p class="ct-sub" data-i18n="ct_sub">Selalu terbuka untuk project baru, ide kreatif, dan kolaborasi seru. Jangan ragu untuk menghubungi!</p>
       <div class="ct-cards">
         <a href="mailto:inasnajahz@gmail.com" class="cc"><div class="cc-icon"><i class="fas fa-envelope"></i></div><div><div class="cc-lbl" data-i18n="cc_email">Email</div><div class="cc-val">inasnajahz@gmail.com</div></div></a>
-        <a href="tel:+6289580535185"                         class="cc"><div class="cc-icon"><i class="fas fa-phone"></i></div><div><div class="cc-lbl">WhatsApp</div><div class="cc-val">+62 895 8053 5185</div></div></a>
+        <a href="tel:+6289580535185" class="cc"><div class="cc-icon"><i class="fas fa-phone"></i></div><div><div class="cc-lbl">WhatsApp</div><div class="cc-val">+62 895 8053 5185</div></div></a>
         <a href="https://github.com/inassiperboi" target="_blank" class="cc"><div class="cc-icon" style="background:var(--skydk)"><i class="fab fa-github"></i></div><div><div class="cc-lbl">GitHub</div><div class="cc-val">inassiperboi</div></div></a>
         <a href="https://instagram.com/inas.nais"  target="_blank" class="cc"><div class="cc-icon" style="background:var(--skydk)"><i class="fab fa-instagram"></i></div><div><div class="cc-lbl">Instagram</div><div class="cc-val">@inas.nais</div></div></a>
         <a href="https://www.linkedin.com/in/inas-najah-zhahirah/" target="_blank" class="cc"><div class="cc-icon" style="background:#0077b5"><i class="fab fa-linkedin-in"></i></div><div><div class="cc-lbl">LinkedIn</div><div class="cc-val">inas-najah-zhahirah</div></div></a>
@@ -687,7 +936,7 @@
   </div>
 </footer>
 
-<!-- MODAL -->
+<!-- CERT MODAL -->
 <div class="modal" id="modal">
   <div class="modal-box">
     <div class="modal-head"><span class="modal-title" id="modT"></span><button class="modal-close" onclick="closeMod()"><i class="fas fa-times"></i></button></div>
@@ -695,16 +944,23 @@
   </div>
 </div>
 
+<!-- PORTFOLIO LIGHTBOX MODAL -->
+<div id="pf-modal">
+  <div class="pfm-box">
+    <div class="pfm-close"><button onclick="closePfModal()"><i class="fas fa-times"></i></button></div>
+    <div class="pfm-img-area" id="pfm-img-area"></div>
+    <div class="pfm-info" id="pfm-info"></div>
+  </div>
+</div>
+
 <script>
-/* ═══════════════════════════════════
-   i18n
-═══════════════════════════════════ */
+/* ═══ i18n ═══ */
 const T = {
   id:{
     loading:"Memuat portfolio...",
     nav_about:"Tentang",nav_skills:"Keahlian",nav_edu:"Pendidikan",nav_exp:"Pengalaman",
     nav_port:"Portofolio",nav_cert:"Sertifikat",nav_cv:"CV",nav_contact:"Kontak",
-    hero_tag:"Terbuka untuk Kolaborasi",hero_hello:"Halo, aku",
+    hero_tag:"Open To Work!",hero_hello:"Halo, aku",
     hero_role:"Creative Designer & Full Stack Developer",
     hero_desc:"Mahasiswa D-IV Teknik Informatika Universitas Airlangga yang suka design, suka coding, dan suka explore hal-hal baru!",
     btn_portfolio:"Lihat Portofolio",btn_contact:"Hubungi Aku",scroll:"scroll",
@@ -718,7 +974,7 @@ const T = {
     lv_int:"Menengah",lv_beg:"Pemula",lv_pro:"Mahir",
     tk_uiux:"Desain UI/UX",tk_brand:"Branding",tk_ds:"Ilmu Data",tk_ml:"Pembelajaran Mesin",
     tk_info:"Infografis",tk_be:"Pengembangan Backend",tk_ct:"Berpikir Kreatif",tk_tp:"Tim yang Solid",
-    pill_ld:"Desain Layout",pill_ig:"Infografis",pill_md:"Pengembangan Mobile",
+    pill_ld:"Desain Layout",pill_ig:"Infografis",pill_md:"Pengembangan Web",
     edu_label:"Latar Belakang",edu_title:"Pendidikan",now:"Sekarang",edu_status:"Mahasiswa Aktif",
     exp_label:"Rekam Jejak",exp_t1:"Pengalaman",exp_t2:"Aktivitas",
     tab_org:"Organisasi",tab_work:"Pekerjaan",
@@ -726,15 +982,15 @@ const T = {
     o2r:"Divisi PDD",o2d:"Menangani Publikasi, Dokumentasi, dan Desain untuk kompetisi Dekan Cup — termasuk booklet dan guidebook.",
     o3r:"Advokasi & Kesejahteraan Mahasiswa, Bendahara",o3d:"Mengelola keuangan dan mendukung inisiatif kesejahteraan mahasiswa di divisi Advokasi dan Kesejahteraan.",
     o4r:"Penulis",o4d:"Berkontribusi sebagai penulis — membuat konten dan dokumentasi untuk konferensi nasional.",
-    w1r:"Staf Desain Kreatif",w1d:"Berkontribusi pada branding fakultas melalui desain grafis — layout, infografis, flyer, banner, dan banyak lagi!",
-    w2r:"Asisten Entri Data (Freelance/By Project)",w2d:"Melakukan entri data Kartu Rencana Studi (KRS) untuk sekitar 30 mata kuliah per hari, mencakup seluruh program studi di universitas. Memastikan akurasi dan kelengkapan data dalam sistem akademik, dengan fokus menyelesaikan 20% dari total data dalam batas waktu 8 jam per hari.",
-    w3r:"Tim Desain — Branding",w3d:"Bertanggung jawab atas desain visual untuk branding Fakultas Vokasi di Airlangga Education Expo 2025. Membuat flyer, banner, dan materi promosi menggunakan Canva dan Figma sesuai identitas visual dan tema acara.",
+    w2r:"Asisten Entri Data (Freelance/By Project)",w2d:"Melakukan entri data Kartu Rencana Studi (KRS) untuk sekitar 30 mata kuliah per hari, mencakup seluruh program studi di universitas.",
+    w3r:"Tim Desain — Branding",w3d:"Bertanggung jawab atas desain visual untuk branding Fakultas Vokasi di Airlangga Education Expo 2025.",
     w4r:"Product Management — Web & Mobile Developer (Magang)",w4d:"Menyelesaikan 100% desain dan implementasi chatbot penerimaan berbasis machine learning menggunakan Streamlit. Menyelesaikan 100% pengembangan sistem absensi karyawan berbasis Flutter. Merancang dan mengimplementasikan Faskes Implementation Tracker System menggunakan Laravel.",
-    w5r:"Fullstack Web Developer (Magang)",w5d:"Membangun ulang website resmi pemerintah provinsi secara mandiri (100% ownership). Merancang arsitektur database relasional SQL, mengembangkan backend dengan Laravel + Laravel Breeze, dan mengimplementasikan Role-Based Access Control 4 level. Mengurangi proses administrasi manual sebesar 60% melalui otomasi sistem.",
-    w_knv_r:"Penulis — Konferensi Nasional Vokasional",w_knv_d:"Menyelesaikan dan mempresentasikan paper 'Decision Support System for Beginner Workouts Using Machine Learning Methods, K-Means Clustering, and Decision Tree' dalam 5 hari. Mengeksplorasi rekomendasi workout berbasis machine learning untuk pemula.",
+    w5r:"Fullstack Web Developer (Magang)",w5d:"Membangun ulang website resmi pemerintah provinsi secara mandiri (100% ownership). Merancang arsitektur database relasional SQL, mengembangkan backend dengan Laravel + Laravel Breeze, dan mengimplementasikan Role-Based Access Control 4 level. Mengurangi proses administrasi manual sebesar 80% melalui otomasi sistem.",
+    w_knv_r:"Penulis — Konferensi Nasional Vokasional",w_knv_d:"Menyelesaikan dan mempresentasikan paper 'Decision Support System for Beginner Workouts Using Machine Learning Methods, K-Means Clustering, and Decision Tree' dalam 5 hari.",
     port_label:"Showcase",port_t1:"Karya",port_t2:"Pilihan",
     port_sub:"Kumpulan proyek programming dan karya desain.",
     f_all:"Semua",f_code:"Programming",f_design:"Desain",
+    p_db_name:"Website DisBud Jatim",p_db_d:"Website resmi Dinas Kebudayaan & Pariwisata Jawa Timur — fullstack Laravel + MySQL dengan 4-level RBAC.",
     p1d:"Platform belanja online wanita terinspirasi dari This Is April, dibangun dengan Laravel & MySQL.",
     p2d:"Website kepuasan pelanggan berbasis AI menggunakan metode Forward Chaining.",
     p3d:"E-commerce fashion pria dengan desain responsif modern dan animasi yang halus.",
@@ -756,12 +1012,10 @@ const T = {
     cv_label:"Curriculum Vitae",cv_t1:"Curriculum",
     cv_sub:"Dokumen CV lengkap — klik untuk memperbesar atau unduh.",
     cv_p1:"Halaman 1",cv_p1s:"Profil, Pendidikan, Keahlian",
-    cv_p2:"Halaman 2",cv_p2s:"Pengalaman, Portofolio",
-    cv_dl:"Unduh",
+    cv_p2:"Halaman 2",cv_p2s:"Pengalaman, Portofolio",cv_dl:"Unduh",
     ct_title:"Ayo",ct_em:"Berkolaborasi!",
     ct_sub:"Selalu terbuka untuk project baru, ide kreatif, dan kolaborasi seru. Jangan ragu untuk menghubungi!",
-    cc_email:"Email",send_email:"Kirim Email",view_gh:"Lihat GitHub",
-    ft_made:"Dibuat dengan",
+    cc_email:"Email",send_email:"Kirim Email",view_gh:"Lihat GitHub",ft_made:"Dibuat dengan",
     m_issuer:"Lembaga Penerbit",m_date:"Tanggal",m_desc:"Deskripsi",m_comp:"Kompetensi",
     jw_desc:"Sertifikasi yang memvalidasi kemampuan web development — frontend & backend, manajemen database, dan deployment aplikasi web.",
     ds_desc:"Sertifikasi yang menunjukkan kemampuan dalam analisis data, machine learning, statistical modeling, dan visualisasi data.",
@@ -788,7 +1042,7 @@ const T = {
     lv_int:"Intermediate",lv_beg:"Beginner",lv_pro:"Proficient",
     tk_uiux:"UI/UX Design",tk_brand:"Branding",tk_ds:"Data Science",tk_ml:"Machine Learning",
     tk_info:"Infographics",tk_be:"Backend Dev",tk_ct:"Creative Thinking",tk_tp:"Team Player",
-    pill_ld:"Layout Design",pill_ig:"Infographics",pill_md:"Mobile Dev",
+    pill_ld:"Layout Design",pill_ig:"Infographics",pill_md:"Web Dev",
     edu_label:"Background",edu_title:"Education",now:"Present",edu_status:"Active Student",
     exp_label:"Track Record",exp_t1:"Experience",exp_t2:"Activities",
     tab_org:"Organization",tab_work:"Work",
@@ -796,15 +1050,15 @@ const T = {
     o2r:"PDD Division",o2d:"Handled Publication, Documentation, and Design for the Dekan Cup competition — including booklets and guidebooks.",
     o3r:"Student Advocacy & Welfare, Treasurer",o3d:"Managed finances and supported student welfare initiatives in the Advocacy and Welfare division.",
     o4r:"Writer",o4d:"Contributed as a writer — creating content and documentation for the national conference.",
-    w1r:"Design Team — Branding",w1d:"Contributed to faculty branding through graphic design — layouts, infographics, flyers, banners, and more!",
-    w2r:"Data Entry Assistant (Freelance/By Project)",w2d:"Performed data entry for Course Registration Cards (KRS) for approximately 30 courses per day, covering all programs of study at the university. Ensured accuracy and completeness of data within the academic system, focusing on finalizing 20% of the data within an 8-hour daily timeframe.",
-    w3r:"Design Team — Branding",w3d:"Responsible for visual design supporting the branding of the Faculty of Vocational Studies at Airlangga Education Expo 2025. Utilized Canva and Figma to create flyers, banners, and promotional materials aligned with the faculty's visual identity.",
-    w4r:"Product Management — Web & Mobile Developer (Internship)",w4d:"Successfully completed 100% design and implementation of a machine-learning–based admission chatbot using Streamlit. Completed 100% development of a Flutter-based employee attendance system. Designed and implemented the Faskes Implementation Tracker System using Laravel.",
-    w5r:"Fullstack Web Developer (Internship)",w5d:"Rebuilt the official provincial government website independently (100% ownership). Designed relational SQL database architecture, developed backend using Laravel + Laravel Breeze, and implemented 4-level Role-Based Access Control. Reduced manual administrative processes by 60% through system automation.",
-    w_knv_r:"Writer — National Vocational Conference",w_knv_d:"Completed and presented the paper 'Decision Support System for Beginner Workouts Using Machine Learning Methods, K-Means Clustering, and Decision Tree' within 5 days. Explored machine learning-based workout recommendations for beginners.",
+    w2r:"Data Entry Assistant (Freelance/By Project)",w2d:"Performed data entry for Course Registration Cards (KRS) for approximately 30 courses per day.",
+    w3r:"Design Team — Branding",w3d:"Responsible for visual design supporting the Faculty of Vocational Studies at Airlangga Education Expo 2025.",
+    w4r:"Product Management — Web & Mobile Developer (Internship)",w4d:"Completed 100% design and implementation of a machine-learning–based admission chatbot using Streamlit. Completed 100% development of a Flutter-based employee attendance system. Designed and implemented the Faskes Implementation Tracker System using Laravel.",
+    w5r:"Fullstack Web Developer (Internship)",w5d:"Rebuilt the official provincial government website independently (100% ownership). Designed relational SQL database architecture, developed backend using Laravel + Laravel Breeze, and implemented 4-level Role-Based Access Control. Reduced manual administrative processes by 80% through system automation.",
+    w_knv_r:"Writer — National Vocational Conference",w_knv_d:"Completed and presented the paper 'Decision Support System for Beginner Workouts Using Machine Learning Methods, K-Means Clustering, and Decision Tree' within 5 days.",
     port_label:"Showcase",port_t1:"Selected",port_t2:"Works",
     port_sub:"A collection of programming projects and design works.",
     f_all:"All",f_code:"Programming",f_design:"Design",
+    p_db_name:"DisBud Jatim Website",p_db_d:"Official East Java Culture & Tourism Dept. website — fullstack Laravel + MySQL with 4-level RBAC.",
     p1d:"Women's online shopping platform inspired by This Is April, built with Laravel & MySQL.",
     p2d:"AI-powered customer satisfaction website using the Forward Chaining method.",
     p3d:"Men's fashion e-commerce with modern responsive design and smooth animations.",
@@ -826,12 +1080,10 @@ const T = {
     cv_label:"Curriculum Vitae",cv_t1:"Curriculum",
     cv_sub:"Full CV document — click to zoom or download.",
     cv_p1:"Page 1",cv_p1s:"Profile, Education, Skills",
-    cv_p2:"Page 2",cv_p2s:"Experience, Portfolio",
-    cv_dl:"Download",
+    cv_p2:"Page 2",cv_p2s:"Experience, Portfolio",cv_dl:"Download",
     ct_title:"Let's",ct_em:"Collaborate!",
     ct_sub:"Always open to new projects, creative ideas, and fun collaborations. Don't hesitate to reach out!",
-    cc_email:"Email",send_email:"Send Email",view_gh:"View GitHub",
-    ft_made:"Made with",
+    cc_email:"Email",send_email:"Send Email",view_gh:"View GitHub",ft_made:"Made with",
     m_issuer:"Issuing Body",m_date:"Date",m_desc:"Description",m_comp:"Competencies",
     jw_desc:"Certification validating web development skills — frontend & backend programming, database management, and web app deployment.",
     ds_desc:"Certification demonstrating proficiency in data analysis, machine learning, statistical modeling, and data visualization.",
@@ -843,106 +1095,128 @@ const T = {
 };
 
 const certMeta = {
-  jw:{img:'image/JuniorWebSertif.jpg', issuer_id:'LSP (Lembaga Sertifikasi Profesi)', issuer_en:'LSP (Lembaga Sertifikasi Profesi)', date:'Juni 2024 / June 2024'},
-  ds:{img:'image/DataSciencSertif.jpg',issuer_id:'LSP (Lembaga Sertifikasi Profesi)', issuer_en:'LSP (Lembaga Sertifikasi Profesi)', date:'2025'},
-  vk:{img:'image/vokasi.jpeg',          issuer_id:'Fakultas Vokasi Universitas Airlangga', issuer_en:'Faculty of Vokasi, Universitas Airlangga', date:'2025'}
+  jw:{img:'image/sertifikat/JuniorWebSertif.jpg', issuer_id:'LSP (Lembaga Sertifikasi Profesi)', issuer_en:'LSP (Lembaga Sertifikasi Profesi)', date:'Juni 2024 / June 2024'},
+  ds:{img:'image/sertifikat/DataSciencSertif.jpg',issuer_id:'LSP (Lembaga Sertifikasi Profesi)', issuer_en:'LSP (Lembaga Sertifikasi Profesi)', date:'2025'},
+  vk:{img:'image/sertifikat/vokasi.jpeg',         issuer_id:'Fakultas Vokasi Universitas Airlangga', issuer_en:'Faculty of Vokasi, Universitas Airlangga', date:'2025'}
 };
 
-/* ── state ── */
+/* ═══ PORTFOLIO DATA ═══ */
+const PF = {
+  disbud:{
+    name_id:'Website DisBud Jatim',name_en:'DisBud Jatim Website',cat:'Gov · Fullstack',
+    tags:['Laravel','MySQL','RBAC','Bootstrap','Laravel Breeze'],
+    desc_id:'Website resmi Dinas Kebudayaan & Pariwisata Provinsi Jawa Timur. Dibangun ulang secara mandiri dengan arsitektur database relasional SQL, backend Laravel + Laravel Breeze, dan Role-Based Access Control 4 level (Admin, Humas, Bidang, Guest). Mengurangi proses administrasi manual hingga 80%.',
+    desc_en:'Official East Java Culture & Tourism Department website. Rebuilt independently with relational SQL database architecture, Laravel + Laravel Breeze backend, and 4-level RBAC (Admin, Humas, Bidang, Guest). Reduced manual administrative processes by 80%.',
+    imgs:['image/disbud/auth.png','image/disbud/dashboardadmin.png','image/disbud/dashboardguest.png','image/disbud/dashboardhumas.png','image/disbud/dashboard bidang.png','image/disbud/beritaguest.png','image/disbud/responsive1.png','image/disbud/responsive2.png','image/disbud/responsive3.png','image/disbud/sweetalert.png'],
+    alts:['Login','Dashboard Admin','Dashboard Guest','Dashboard Humas','Dashboard Bidang','Berita Guest','Responsive 1','Responsive 2','Responsive 3','SweetAlert']
+  },
+  tij:{name_id:'This Is July',name_en:'This Is July',cat:'Laravel · E-Commerce',tags:['Laravel','MySQL','E-Commerce','Bootstrap'],desc_id:'Platform belanja online wanita terinspirasi dari This Is April. Dibangun menggunakan Laravel & MySQL dengan fitur katalog produk, keranjang belanja, dan manajemen order.',desc_en:"Women's online shopping platform inspired by This Is April. Built with Laravel & MySQL featuring product catalogue, shopping cart, and order management.",imgs:['image/This-Is-July.jpg']},
+  hg:{name_id:'HiddenGame',name_en:'HiddenGame',cat:'Flask · AI',tags:['Flask','Python','AI','Forward Chaining'],desc_id:'Website analisis kepuasan pelanggan berbasis AI menggunakan metode Forward Chaining. Membantu bisnis memahami feedback pelanggan secara otomatis dan cerdas.',desc_en:'AI-powered customer satisfaction analysis website using the Forward Chaining method. Helps businesses understand customer feedback automatically.',imgs:['image/HiddenGame.jpg']},
+  dob:{name_id:'Dobujack Indonesia',name_en:'Dobujack Indonesia',cat:'Bootstrap · E-Commerce',tags:['Bootstrap','jQuery','E-Commerce','Responsive'],desc_id:'E-commerce fashion pria dengan desain responsif modern dan animasi yang halus. Menampilkan produk dengan layout yang bersih dan pengalaman belanja yang nyaman.',desc_en:"Men's fashion e-commerce with modern responsive design and smooth animations.",imgs:['image/Dobujack.jpg']},
+  oi:{name_id:'Oemah Ibu',name_en:'Oemah Ibu',cat:'Flutter · Mobile',tags:['Flutter','Dart','CodeIgniter 4','API'],desc_id:'Aplikasi mobile menu restoran dengan Flutter & CodeIgniter 4 API. Memungkinkan pelanggan melihat menu, memesan, dan melacak pesanan langsung dari smartphone.',desc_en:'Restaurant menu mobile app built with Flutter & CodeIgniter 4 API.',imgs:['image/Oemah-Ibu.jpg']},
+  tmt:{name_id:'TrustMedis Tracker',name_en:'TrustMedis Tracker',cat:'Laravel · Healthcare',tags:['Laravel','MySQL','Healthcare','Real-time'],desc_id:'Sistem pemantauan kinerja fasilitas kesehatan secara real-time berbasis web. Membantu tim TrustMedis memantau implementasi di berbagai faskes secara efisien.',desc_en:'Real-time web-based health facility performance monitoring system.',imgs:['image/TrustMedisTracker.jpg']},
+  tmcb:{name_id:'TrustMedis Chatbot',name_en:'TrustMedis Chatbot',cat:'Streamlit · AI/ML',tags:['Python','Streamlit','Logistic Regression','ML'],desc_id:'Prototipe chatbot RME berbasis Logistic Regression untuk informasi medis dasar. Dibangun dengan Streamlit dan machine learning untuk penerimaan pasien otomatis.',desc_en:'RME chatbot prototype based on Logistic Regression for basic medical information.',imgs:['image/TrustMedisChatBot.jpg']},
+  cn:{name_id:'CareNest',name_en:'CareNest',cat:'HTML/CSS · Figma',tags:['HTML/CSS','Figma','UI/UX','Posyandu'],desc_id:'Aplikasi tracking Posyandu dengan antarmuka ganda (admin & pengguna). Dirancang untuk memudahkan pencatatan tumbuh kembang anak dan imunisasi.',desc_en:'Posyandu tracking application with dual interfaces (admin & user).',imgs:['image/CareNest.jpg']},
+  arc:{name_id:'Arcadia',name_en:'Arcadia',cat:'Laravel · Library',tags:['Laravel','MySQL','Figma','Library'],desc_id:'Website peminjaman buku perpustakaan dengan sistem manajemen yang efisien. Memudahkan admin mengelola koleksi dan peminjam melacak status buku.',desc_en:'Library book lending website with an efficient management system.',imgs:['image/Arcadia.jpg']},
+  bv:{name_id:'Branding Vokasi',name_en:'Vokasi Branding',cat:'Canva · Branding',tags:['Canva','Branding','Infografis','Flyer'],desc_id:'Materi branding lengkap Fakultas Vokasi Universitas Airlangga untuk Airlangga Education Expo 2025. Mencakup layout, infografis, flyer, dan banner.',desc_en:'Complete branding materials for Faculty of Vokasi for Airlangga Education Expo 2025.',imgs:['image/BrandingVokasi.jpg']},
+  puj:{name_id:'Pujasera App',name_en:'Pujasera App',cat:'Figma · UI/UX',tags:['Figma','UI/UX','Food Court','Mobile'],desc_id:'Desain UI/UX aplikasi pemesanan food court yang intuitif. Mencakup user flow lengkap dari browse menu hingga pembayaran digital.',desc_en:'Intuitive UI/UX design for a food court ordering app with complete user flow.',imgs:['image/PujaseraApp.jpg']},
+  et:{name_id:'E-Trashure',name_en:'E-Trashure',cat:'Figma · Eco',tags:['Figma','UI/UX','Environment','Digital'],desc_id:'Desain aplikasi bank sampah digital untuk meningkatkan kesadaran lingkungan. Memudahkan warga mengelola sampah daur ulang dan mendapatkan reward.',desc_en:'Digital waste bank application design to promote environmental awareness.',imgs:['image/E-Trashure.jpg']},
+  gg:{name_id:'GreenGlam',name_en:'GreenGlam',cat:'Figma · Sustainable',tags:['Figma','UI/UX','Sustainable','Cosmetic'],desc_id:'Desain aplikasi daur ulang kosmetik dengan pendekatan sustainable beauty. Mendorong pengguna mendaur ulang kemasan kosmetik dengan cara yang fun.',desc_en:'Cosmetic recycling application design with a sustainable beauty approach.',imgs:['image/GreenGlam.jpg']},
+  park:{name_id:'Parkopedia',name_en:'Parkopedia',cat:'Figma · Smart City',tags:['Figma','UI/UX','Smart City','Parking'],desc_id:'Antarmuka aplikasi parkir digital untuk manajemen parkir yang lebih modern. Menyederhanakan proses cari parkir, booking, dan pembayaran.',desc_en:'Digital parking application interface for smarter parking management.',imgs:['image/Parkopedia.jpg']},
+  dk:{name_id:'Dekan Cup Vokasi',name_en:'Dekan Cup Vokasi',cat:'Canva · Print',tags:['Canva','Print','Booklet','Guidebook'],desc_id:'Booklet dan guidebook resmi kompetisi Dekan Cup Fakultas Vokasi. Layout bersih dan terstruktur untuk panduan peserta dan jadwal acara.',desc_en:'Official Dekan Cup competition booklet and guidebook with clean layout.',imgs:['image/Dekan-Cup-Vokasi.jpg']}
+};
+
 let lang = localStorage.getItem('lang') || 'id';
 let dark = localStorage.getItem('theme') === 'dark';
 
-/* ── theme ── */
-function applyTheme(d, anim=false){
-  dark = d;
-  document.documentElement.setAttribute('data-theme', d ? 'dark' : 'light');
-  document.getElementById('dkTgl').classList.toggle('on', d);
-  document.getElementById('dkBall').textContent = d ? '🌙' : '☀️';
-  localStorage.setItem('theme', d ? 'dark' : 'light');
-  if(anim){ const f=document.getElementById('tfl'); f.classList.add('go'); setTimeout(()=>f.classList.remove('go'),280); }
+function applyTheme(d,anim=false){
+  dark=d;
+  document.documentElement.setAttribute('data-theme',d?'dark':'light');
+  document.getElementById('dkTgl').classList.toggle('on',d);
+  document.getElementById('dkBall').textContent=d?'🌙':'☀️';
+  localStorage.setItem('theme',d?'dark':'light');
+  if(anim){const f=document.getElementById('tfl');f.classList.add('go');setTimeout(()=>f.classList.remove('go'),280);}
 }
-function toggleDark(){ applyTheme(!dark, true); }
+function toggleDark(){applyTheme(!dark,true);}
 
-/* ── lang ── */
 function applyLang(l){
-  lang = l;
-  const t = T[l];
+  lang=l;
+  const t=T[l];
   document.querySelectorAll('[data-i18n]').forEach(el=>{
-    const k = el.getAttribute('data-i18n');
-    if(t[k] !== undefined) el.innerHTML = t[k];
+    const k=el.getAttribute('data-i18n');
+    if(t[k]!==undefined) el.innerHTML=t[k];
   });
-  document.getElementById('btnID').classList.toggle('on', l==='id');
-  document.getElementById('btnEN').classList.toggle('on', l==='en');
-  document.documentElement.setAttribute('lang', l);
-  localStorage.setItem('lang', l);
+  document.getElementById('btnID').classList.toggle('on',l==='id');
+  document.getElementById('btnEN').classList.toggle('on',l==='en');
+  document.documentElement.setAttribute('lang',l);
+  localStorage.setItem('lang',l);
 }
 function setLang(l){
-  const b = l==='id' ? document.getElementById('btnID') : document.getElementById('btnEN');
-  b.style.transform='scale(1.18)'; setTimeout(()=>b.style.transform='',200);
+  const b=l==='id'?document.getElementById('btnID'):document.getElementById('btnEN');
+  b.style.transform='scale(1.18)';setTimeout(()=>b.style.transform='',200);
   applyLang(l);
 }
 
-/* ── LOADER ── */
 window.addEventListener('load',()=>{
   document.getElementById('lf').style.width='100%';
   setTimeout(()=>document.getElementById('loader').classList.add('out'),1300);
 });
-/* ── INIT ── */
-applyTheme(dark, false);
+
+applyTheme(dark,false);
 applyLang(lang);
 
-/* ── CURSOR ── */
-const cur=document.getElementById('cur'), cur2=document.getElementById('cur2');
+/* ═══ CURSOR ═══ */
+const cur=document.getElementById('cur'),cur2=document.getElementById('cur2');
 let mx=0,my=0,rx=0,ry=0;
-document.addEventListener('mousemove',e=>{ mx=e.clientX; my=e.clientY; cur.style.left=mx+'px'; cur.style.top=my+'px'; });
-(function lp(){ rx+=(mx-rx)*.12; ry+=(my-ry)*.12; cur2.style.left=rx+'px'; cur2.style.top=ry+'px'; requestAnimationFrame(lp); })();
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px';});
+(function lp(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;cur2.style.left=rx+'px';cur2.style.top=ry+'px';requestAnimationFrame(lp);})();
 document.querySelectorAll('a,button,.cert-card,.sk-card,.pf-item,.cv-card').forEach(el=>{
   el.addEventListener('mouseenter',()=>cur2.classList.add('big'));
   el.addEventListener('mouseleave',()=>cur2.classList.remove('big'));
 });
 
-/* ── BUBBLES ── */
-const cv=document.getElementById('bc'), cx=cv.getContext('2d');
+/* ═══ BUBBLES ═══ */
+const cv_el=document.getElementById('bc'),cx=cv_el.getContext('2d');
 let W,H,bubs=[];
-function rsz(){ W=cv.width=window.innerWidth; H=cv.height=window.innerHeight; }
-rsz(); window.addEventListener('resize',rsz);
-function mkB(){ return{x:Math.random()*W,y:H+50+Math.random()*200,r:7+Math.random()*24,vx:(Math.random()-.5)*.4,vy:-.3-.7*Math.random(),col:Math.random()>.5?'rgba(174,222,252,':'rgba(248,117,170,',a:.1+Math.random()*.28,ph:Math.random()*Math.PI*2}; }
+function rsz(){W=cv_el.width=window.innerWidth;H=cv_el.height=window.innerHeight;}
+rsz();window.addEventListener('resize',rsz);
+function mkB(){return{x:Math.random()*W,y:H+50+Math.random()*200,r:7+Math.random()*24,vx:(Math.random()-.5)*.4,vy:-.3-.7*Math.random(),col:Math.random()>.5?'rgba(174,222,252,':'rgba(248,117,170,',a:.1+Math.random()*.28,ph:Math.random()*Math.PI*2};}
 for(let i=0;i<42;i++){const b=mkB();b.y=Math.random()*H;bubs.push(b);}
 let tt=0;
 (function loop(){
-  cx.clearRect(0,0,W,H); tt+=.011;
+  cx.clearRect(0,0,W,H);tt+=.011;
   bubs.forEach(b=>{
-    b.x+=b.vx+Math.sin(tt+b.ph)*.25; b.y+=b.vy;
-    if(b.y<-60) Object.assign(b,mkB());
-    cx.save(); cx.shadowBlur=9; cx.shadowColor=b.col+'0.22)';
-    cx.beginPath(); cx.arc(b.x,b.y,b.r,0,Math.PI*2);
-    cx.fillStyle=b.col+b.a+')'; cx.fill();
-    cx.strokeStyle=b.col+'0.48)'; cx.lineWidth=1.4; cx.stroke();
-    cx.beginPath(); cx.arc(b.x-b.r*.27,b.y-b.r*.29,b.r*.18,0,Math.PI*2);
-    cx.fillStyle='rgba(255,255,255,.48)'; cx.fill();
+    b.x+=b.vx+Math.sin(tt+b.ph)*.25;b.y+=b.vy;
+    if(b.y<-60)Object.assign(b,mkB());
+    cx.save();cx.shadowBlur=9;cx.shadowColor=b.col+'0.22)';
+    cx.beginPath();cx.arc(b.x,b.y,b.r,0,Math.PI*2);
+    cx.fillStyle=b.col+b.a+')';cx.fill();
+    cx.strokeStyle=b.col+'0.48)';cx.lineWidth=1.4;cx.stroke();
+    cx.beginPath();cx.arc(b.x-b.r*.27,b.y-b.r*.29,b.r*.18,0,Math.PI*2);
+    cx.fillStyle='rgba(255,255,255,.48)';cx.fill();
     cx.restore();
   });
   requestAnimationFrame(loop);
 })();
 
-/* ── REVEAL ── */
-const rOb = new IntersectionObserver(es=>{ es.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('on'); }); },{threshold:.1,rootMargin:'0px 0px -30px 0px'});
+/* ═══ REVEAL ═══ */
+const rOb=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on');});},{threshold:.1,rootMargin:'0px 0px -30px 0px'});
 document.querySelectorAll('.rv').forEach(el=>rOb.observe(el));
-const eOb = new IntersectionObserver(es=>{ es.forEach(e=>{ if(e.isIntersecting){ const its=e.target.querySelectorAll('.exp-item'); its.forEach((it,i)=>setTimeout(()=>it.classList.add('on'),i*110)); } }); },{threshold:.05});
+const eOb=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){const its=e.target.querySelectorAll('.exp-item');its.forEach((it,i)=>setTimeout(()=>it.classList.add('on'),i*110));}});},{threshold:.05});
 document.querySelectorAll('.exp-pane').forEach(p=>eOb.observe(p));
 
-/* ── NAV ── */
+/* ═══ NAV ═══ */
 window.addEventListener('scroll',()=>{
   const n=document.getElementById('nav');
-  n.style.boxShadow = window.scrollY>60 ? '0 6px 28px rgba(248,117,170,.16)' : '0 4px 24px rgba(248,117,170,.12)';
+  n.style.boxShadow=window.scrollY>60?'0 6px 28px rgba(248,117,170,.16)':'0 4px 24px rgba(248,117,170,.12)';
 });
 document.getElementById('nHam').addEventListener('click',()=>{
   const nl=document.getElementById('nLinks');
-  if(nl.style.display==='flex'){ nl.style.display='none'; }
-  else { nl.style.cssText='display:flex;flex-direction:column;position:absolute;top:3.1rem;left:0;right:0;background:var(--nav-bg);padding:1rem 1.6rem;gap:.9rem;border-top:2px solid var(--nav-bdr);z-index:99;backdrop-filter:blur(18px);'; }
+  if(nl.style.display==='flex'){nl.style.display='none';}
+  else{nl.style.cssText='display:flex;flex-direction:column;position:absolute;top:3.1rem;left:0;right:0;background:var(--nav-bg);padding:1rem 1.6rem;gap:.9rem;border-top:2px solid var(--nav-bdr);z-index:99;backdrop-filter:blur(18px);';}
 });
 
-/* ── EXP TABS ── */
+/* ═══ EXP TABS ═══ */
 function swTab(id,btn){
   document.querySelectorAll('.exp-tab').forEach(b=>b.classList.remove('on'));
   document.querySelectorAll('.exp-pane').forEach(p=>p.classList.remove('on'));
@@ -953,21 +1227,75 @@ function swTab(id,btn){
   setTimeout(()=>pane.querySelectorAll('.exp-item').forEach((it,i)=>setTimeout(()=>it.classList.add('on'),i*110)),55);
 }
 
-/* ── PORTFOLIO FILTER ── */
+/* ═══ PORTFOLIO FILTER ═══ */
 function pfF(cat,btn){
-  document.querySelectorAll('.pf-btn').forEach(b=>b.classList.remove('on')); btn.classList.add('on');
+  document.querySelectorAll('.pf-btn').forEach(b=>b.classList.remove('on'));btn.classList.add('on');
   document.querySelectorAll('.pf-item').forEach(i=>(cat==='all'||i.dataset.cat===cat)?i.classList.remove('hide'):i.classList.add('hide'));
 }
 
-/* ── MODAL ── */
+/* ═══ PORTFOLIO MODAL ═══ */
+let pfmCur=0,pfmTotal=0;
+
+function openPfModal(id){
+  const d=PF[id]; if(!d) return;
+  pfmCur=0; pfmTotal=d.imgs.length;
+  const name=lang==='id'?d.name_id:d.name_en;
+  const desc=lang==='id'?d.desc_id:d.desc_en;
+
+  const imgArea=document.getElementById('pfm-img-area');
+  if(pfmTotal>1){
+    const slides=d.imgs.map((src,i)=>`<div class="pfm-slide"><img src="${src}" alt="${d.alts?d.alts[i]:name}"></div>`).join('');
+    const dots=d.imgs.map((_,i)=>`<button class="pfm-dot${i===0?' on':''}" onclick="pfmGo(${i})"></button>`).join('');
+    const thumbs=d.imgs.map((src,i)=>`<img src="${src}" class="pfm-thumb-sm${i===0?' on':''}" onclick="pfmGo(${i})" alt="${d.alts?d.alts[i]:''}"/>`).join('');
+    imgArea.innerHTML=`
+      <div class="pfm-slide-wrap">
+        <div class="pfm-slides" id="pfm-slides">${slides}</div>
+        <button class="pfm-nav prev" onclick="pfmMove(-1)"><i class="fas fa-chevron-left"></i></button>
+        <button class="pfm-nav next" onclick="pfmMove(1)"><i class="fas fa-chevron-right"></i></button>
+      </div>
+      <div class="pfm-dot-row" id="pfm-dots">${dots}</div>
+      <div class="pfm-strip">${thumbs}</div>`;
+  } else {
+    imgArea.innerHTML=`<img src="${d.imgs[0]}" class="pfm-img-main" alt="${name}">`;
+  }
+
+  const tagHtml=d.tags.map(t=>`<span class="ptg">${t}</span>`).join('');
+  document.getElementById('pfm-info').innerHTML=`
+    <div class="pfm-header">
+      <div class="pfm-name">${name}</div>
+      <span class="pfm-cat-badge">${d.cat}</span>
+    </div>
+    <div class="pfm-tags">${tagHtml}</div>
+    <div class="pfm-desc">${desc}</div>`;
+
+  document.getElementById('pf-modal').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+
+function pfmGo(idx){
+  pfmCur=(idx+pfmTotal)%pfmTotal;
+  const s=document.getElementById('pfm-slides');
+  if(s) s.style.transform=`translateX(-${pfmCur*100}%)`;
+  document.querySelectorAll('#pfm-dots .pfm-dot').forEach((d,i)=>d.classList.toggle('on',i===pfmCur));
+  document.querySelectorAll('.pfm-strip .pfm-thumb-sm').forEach((d,i)=>d.classList.toggle('on',i===pfmCur));
+}
+function pfmMove(dir){pfmGo(pfmCur+dir);}
+
+function closePfModal(){
+  document.getElementById('pf-modal').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.getElementById('pf-modal').addEventListener('click',e=>{if(e.target===e.currentTarget)closePfModal();});
+
+/* ═══ CERT MODAL ═══ */
 function openMod(id){
-  const t=T[lang], m=certMeta[id];
-  const names={jw:t.c1n, ds:t.c2n, vk:t.c3n};
-  const descs={jw:t.jw_desc, ds:t.ds_desc, vk:t.vk_desc};
-  const comps={jw:t.jw_comps, ds:t.ds_comps, vk:t.vk_comps};
-  const issuer = lang==='id' ? m.issuer_id : m.issuer_en;
-  document.getElementById('modT').textContent = names[id];
-  document.getElementById('modB').innerHTML = `
+  const t=T[lang],m=certMeta[id];
+  const names={jw:t.c1n,ds:t.c2n,vk:t.c3n};
+  const descs={jw:t.jw_desc,ds:t.ds_desc,vk:t.vk_desc};
+  const comps={jw:t.jw_comps,ds:t.ds_comps,vk:t.vk_comps};
+  const issuer=lang==='id'?m.issuer_id:m.issuer_en;
+  document.getElementById('modT').textContent=names[id];
+  document.getElementById('modB').innerHTML=`
     <img src="${m.img}" class="modal-img" alt="${names[id]}">
     <div class="modal-meta">
       <div><div class="mm-lbl">${t.m_issuer}</div><div class="mm-val">${issuer}</div></div>
@@ -976,24 +1304,31 @@ function openMod(id){
     <div class="mm-lbl" style="margin-bottom:.45rem">${t.m_desc}</div>
     <div class="modal-desc">${descs[id]}</div>
     <div class="mm-lbl" style="margin-bottom:.6rem">${t.m_comp}</div>
-    <div class="comp-list">${comps[id].map(c=>`<span class="ctag"><i class="fas fa-check"></i>${c}</span>`).join('')}</div>
-  `;
+    <div class="comp-list">${comps[id].map(c=>`<span class="ctag"><i class="fas fa-check"></i>${c}</span>`).join('')}</div>`;
   document.getElementById('modal').classList.add('open');
   document.body.style.overflow='hidden';
 }
-function closeMod(){ document.getElementById('modal').classList.remove('open'); document.body.style.overflow=''; }
-document.getElementById('modal').addEventListener('click',e=>{ if(e.target===e.currentTarget) closeMod(); });
-document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeMod(); });
+function closeMod(){document.getElementById('modal').classList.remove('open');document.body.style.overflow='';}
+document.getElementById('modal').addEventListener('click',e=>{if(e.target===e.currentTarget)closeMod();});
 
-/* ── FLOATING STARS ── */
+/* shared ESC + arrow keys */
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){closeMod();closePfModal();}
+  if(document.getElementById('pf-modal').classList.contains('open')){
+    if(e.key==='ArrowRight') pfmMove(1);
+    if(e.key==='ArrowLeft')  pfmMove(-1);
+  }
+});
+
+/* ═══ FLOATING STARS ═══ */
 const ems=['✦','✿','⋆','◇','✩','·'];
 function addStar(){
-  const s=document.createElement('div'); s.className='star';
+  const s=document.createElement('div');s.className='star';
   s.textContent=ems[Math.floor(Math.random()*ems.length)];
   s.style.cssText=`left:${Math.random()*100}vw;animation-duration:${9+Math.random()*13}s;animation-delay:${Math.random()*3}s;font-size:${.5+Math.random()*.7}rem;color:${Math.random()>.5?'rgba(248,117,170,.35)':'rgba(174,222,252,.48)'}`;
-  document.body.appendChild(s); setTimeout(()=>s.remove(),25000);
+  document.body.appendChild(s);setTimeout(()=>s.remove(),25000);
 }
-setInterval(addStar,1100); for(let i=0;i<8;i++) addStar();
+setInterval(addStar,1100);for(let i=0;i<8;i++)addStar();
 </script>
 </body>
 </html>
